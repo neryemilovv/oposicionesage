@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tema 1 Gratis — Procesadores de Texto (Word) | OpositoresAGE</title>
+<meta name="description" content="50 preguntas gratuitas sobre Microsoft Word para oposiciones Auxiliar Administrativo del Estado. Practica y aprueba.">
+<meta name="robots" content="index, follow">
+<style>
+  :root {
+    --navy: #1a2744;
+    --orange: #f97316;
+    --orange-light: #fff7ed;
+    --green: #16a34a;
+    --green-light: #dcfce7;
+    --red: #dc2626;
+    --red-light: #fee2e2;
+    --gray: #6b7280;
+    --gray-light: #f3f4f6;
+    --border: #e5e7eb;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f8fafc; color: #1f2937; }
+
+  /* HEADER */
+  .header { background: var(--navy); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; }
+  .header-logo { color: white; font-size: 18px; font-weight: 700; text-decoration: none; }
+  .header-logo span { color: var(--orange); }
+  .header-cta { background: var(--orange); color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: 600; white-space: nowrap; }
+
+  /* HERO */
+  .hero { background: var(--navy); color: white; padding: 40px 20px 50px; text-align: center; }
+  .badge { display: inline-block; background: rgba(249,115,22,0.2); color: var(--orange); border: 1px solid var(--orange); padding: 4px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 5vw, 34px); font-weight: 800; margin-bottom: 10px; }
+  .hero p { color: #94a3b8; font-size: 16px; max-width: 520px; margin: 0 auto 20px; }
+  .hero-stats { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+  .hero-stat { text-align: center; }
+  .hero-stat strong { display: block; font-size: 22px; color: var(--orange); }
+  .hero-stat span { font-size: 12px; color: #94a3b8; }
+
+  /* PROGRESS */
+  .progress-bar-wrap { background: white; border-bottom: 1px solid var(--border); padding: 12px 20px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 14px; }
+  .progress-label { font-size: 13px; font-weight: 600; color: var(--navy); white-space: nowrap; }
+  .progress-track { flex: 1; height: 8px; background: var(--gray-light); border-radius: 4px; overflow: hidden; }
+  .progress-fill { height: 100%; background: var(--orange); border-radius: 4px; transition: width 0.4s ease; }
+  .progress-pct { font-size: 13px; font-weight: 700; color: var(--orange); white-space: nowrap; }
+
+  /* MAIN CONTAINER */
+  .container { max-width: 760px; margin: 0 auto; padding: 24px 16px 60px; }
+
+  /* QUESTION CARD */
+  .question-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 18px; display: none; }
+  .question-card.active { display: block; }
+  .q-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+  .q-num { font-size: 12px; font-weight: 700; color: var(--gray); text-transform: uppercase; letter-spacing: 0.5px; }
+  .q-topic { font-size: 11px; background: var(--orange-light); color: var(--orange); padding: 3px 10px; border-radius: 20px; font-weight: 600; }
+  .q-text { font-size: 17px; font-weight: 600; line-height: 1.5; margin-bottom: 20px; color: var(--navy); }
+  .options { display: flex; flex-direction: column; gap: 10px; }
+  .option { padding: 12px 16px; border: 2px solid var(--border); border-radius: 8px; cursor: pointer; font-size: 15px; transition: all 0.15s; display: flex; align-items: flex-start; gap: 12px; }
+  .option:hover:not(.disabled) { border-color: var(--orange); background: var(--orange-light); }
+  .option-letter { font-weight: 700; color: var(--gray); min-width: 20px; }
+  .option.correct { border-color: var(--green); background: var(--green-light); }
+  .option.correct .option-letter { color: var(--green); }
+  .option.wrong { border-color: var(--red); background: var(--red-light); }
+  .option.wrong .option-letter { color: var(--red); }
+  .option.disabled { cursor: default; }
+  .explanation { margin-top: 16px; padding: 12px 16px; background: var(--gray-light); border-radius: 8px; font-size: 14px; color: #374151; line-height: 1.5; border-left: 3px solid var(--orange); display: none; }
+  .explanation.show { display: block; }
+
+  /* NAV BUTTONS */
+  .q-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border); }
+  .btn { padding: 10px 20px; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; border: none; transition: all 0.15s; }
+  .btn-back { background: var(--gray-light); color: #374151; }
+  .btn-back:hover { background: var(--border); }
+  .btn-next { background: var(--navy); color: white; }
+  .btn-next:hover { background: #0f172a; }
+  .btn-finish { background: var(--orange); color: white; }
+  .btn-finish:hover { background: #ea580c; }
+
+  /* RESULTS */
+  #results-screen { display: none; }
+  .results-hero { background: var(--navy); color: white; padding: 40px 20px; text-align: center; }
+  .score-circle { width: 120px; height: 120px; border-radius: 50%; background: rgba(255,255,255,0.1); border: 4px solid var(--orange); display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 auto 20px; }
+  .score-num { font-size: 36px; font-weight: 800; color: white; }
+  .score-total { font-size: 14px; color: #94a3b8; }
+  .results-title { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
+  .results-sub { color: #94a3b8; font-size: 15px; }
+  .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 24px 16px; max-width: 760px; margin: 0 auto; }
+  .results-stat { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 20px; text-align: center; }
+  .results-stat strong { display: block; font-size: 28px; font-weight: 800; margin-bottom: 4px; }
+  .results-stat span { font-size: 13px; color: var(--gray); }
+  .rs-green strong { color: var(--green); }
+  .rs-red strong { color: var(--red); }
+  .rs-blue strong { color: #3b82f6; }
+
+  /* UPSELL */
+  .upsell { max-width: 760px; margin: 0 auto; padding: 0 16px 60px; }
+  .upsell-box { background: linear-gradient(135deg, var(--navy) 0%, #0f2460 100%); color: white; border-radius: 16px; padding: 32px 24px; text-align: center; margin-bottom: 20px; }
+  .upsell-box h2 { font-size: 22px; font-weight: 800; margin-bottom: 10px; }
+  .upsell-box p { color: #94a3b8; margin-bottom: 20px; font-size: 15px; }
+  .locked-temas { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; text-align: left; }
+  .locked-tema { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; }
+  .locked-tema-name { font-size: 14px; font-weight: 500; color: #e2e8f0; }
+  .locked-tema-badge { background: rgba(249,115,22,0.2); color: var(--orange); font-size: 12px; padding: 3px 10px; border-radius: 20px; font-weight: 600; }
+  .lock-icon { color: #64748b; font-size: 16px; }
+  .btn-buy { display: block; background: var(--orange); color: white; font-size: 17px; font-weight: 700; padding: 16px 24px; border-radius: 10px; text-decoration: none; text-align: center; margin-bottom: 10px; transition: background 0.15s; }
+  .btn-buy:hover { background: #ea580c; }
+  .buy-guarantee { color: #94a3b8; font-size: 13px; }
+  .btn-retry { display: block; text-align: center; color: var(--gray); font-size: 14px; text-decoration: none; margin-top: 16px; cursor: pointer; background: none; border: none; width: 100%; }
+  .btn-retry:hover { color: var(--navy); }
+
+  @media (max-width: 480px) {
+    .results-grid { grid-template-columns: 1fr 1fr; }
+    .hero-stats { gap: 20px; }
+    .upsell-box { padding: 24px 16px; }
+  }
+</style>
+<link rel="canonical" href="https://opositoresage.es/tema1-gratis/">
+</head>
+<body>
+
+<header class="header">
+  <a href="/" class="header-logo">opositors<span>AGE</span></a>
+  <a href="/#comprar" class="header-cta">Pack Completo — 47€</a>
+</header>
+
+<!-- TEST SCREEN -->
+<div id="test-screen">
+  <div class="hero">
+    <div class="badge">🎁 TEMA 1 GRATUITO</div>
+    <h1>Procesadores de Texto (Word)</h1>
+    <p>50 preguntas tipo examen oficial. Responde, comprueba y aprende con explicaciones.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>50</strong><span>preguntas</span></div>
+      <div class="hero-stat"><strong>~20 min</strong><span>duración</span></div>
+      <div class="hero-stat"><strong>100%</strong><span>gratuito</span></div>
+    </div>
+  </div>
+
+  <div class="progress-bar-wrap">
+    <span class="progress-label">Pregunta <span id="q-current">1</span> de 50</span>
+    <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:2%"></div></div>
+    <span class="progress-pct" id="progress-pct">2%</span>
+  </div>
+
+  <div class="container" id="questions-container">
+    <!-- Questions injected by JS -->
+  </div>
+</div>
+
+<!-- RESULTS SCREEN -->
+<div id="results-screen">
+  <div class="results-hero">
+    <div class="score-circle">
+      <span class="score-num" id="score-num">0</span>
+      <span class="score-total">de 50</span>
+    </div>
+    <div class="results-title" id="results-title">¡Buen trabajo!</div>
+    <div class="results-sub" id="results-sub">Has completado el Tema 1 de Word</div>
+  </div>
+  <div class="results-grid">
+    <div class="results-stat rs-green"><strong id="res-correct">0</strong><span>Correctas</span></div>
+    <div class="results-stat rs-red"><strong id="res-wrong">0</strong><span>Incorrectas</span></div>
+    <div class="results-stat rs-blue"><strong id="res-pct">0%</strong><span>Nota</span></div>
+  </div>
+  <div class="upsell">
+    <div class="upsell-box">
+      <h2>¿Quieres el pack completo?</h2>
+      <p>Tienes acceso a 50 preguntas de Word. El pack incluye 300 preguntas en 6 temas completos:</p>
+      <div class="locked-temas">
+        <div class="locked-tema">
+          <span class="locked-tema-name">✅ Tema 1 — Procesadores de texto (Word)</span>
+          <span class="locked-tema-badge">Gratis</span>
+        </div>
+        <div class="locked-tema">
+          <span class="locked-tema-name">🔒 Tema 2 — Hojas de cálculo (Excel)</span>
+          <span class="lock-icon">🔒</span>
+        </div>
+        <div class="locked-tema">
+          <span class="locked-tema-name">🔒 Tema 3 — Redes e Internet</span>
+          <span class="lock-icon">🔒</span>
+        </div>
+        <div class="locked-tema">
+          <span class="locked-tema-name">🔒 Tema 4 — Windows y sistema operativo</span>
+          <span class="lock-icon">🔒</span>
+        </div>
+        <div class="locked-tema">
+          <span class="locked-tema-name">🔒 Tema 5 — Hardware y componentes</span>
+          <span class="lock-icon">🔒</span>
+        </div>
+        <div class="locked-tema">
+          <span class="locked-tema-name">🔒 Tema 6 — Seguridad informática</span>
+          <span class="lock-icon">🔒</span>
+        </div>
+      </div>
+      <a href="https://pay.hotmart.com/C97752336" class="btn-buy">🎯 Conseguir el Pack Completo — 47€</a>
+      <p class="buy-guarantee">30 días de garantía · Acceso inmediato · Pago seguro</p>
+    </div>
+    <button class="btn-retry" onclick="retryTest()">🔄 Repetir el test de Word</button>
+  </div>
+</div>
+
+<script>
+const QUESTIONS = [
+  // --- INTERFAZ Y BÁSICOS ---
+  { topic: "Interfaz", text: "¿Cómo se llama la barra de herramientas de acceso rápido en Word?", options: ["Cinta de opciones", "Barra de acceso rápido", "Barra de estado", "Panel de tareas"], answer: 1, explanation: "La Barra de acceso rápido (Quick Access Toolbar) se sitúa en la parte superior izquierda y permite acceder rápidamente a comandos frecuentes como Guardar, Deshacer y Rehacer." },
+  { topic: "Interfaz", text: "¿Qué tecla abre el panel 'Mostrar todo' para ver marcas de formato ocultas?", options: ["Ctrl+H", "Ctrl+*", "Ctrl+Mayús+8", "Alt+F4"], answer: 2, explanation: "Ctrl+Mayús+8 (o el botón ¶ en la cinta) activa/desactiva la visualización de todos los caracteres no imprimibles como saltos de párrafo, espacios y tabulaciones." },
+  { topic: "Interfaz", text: "¿Dónde se muestra el número de páginas y palabras del documento en Word?", options: ["Cinta de opciones", "Barra de título", "Barra de estado", "Panel de navegación"], answer: 2, explanation: "La barra de estado (parte inferior de la ventana) muestra información como número de páginas, número de palabras, idioma del corrector y el modo de vista actual." },
+  { topic: "Interfaz", text: "¿Cuál es la extensión por defecto de los documentos de Word 2010 en adelante?", options: [".doc", ".docx", ".rtf", ".odt"], answer: 1, explanation: ".docx es el formato predeterminado de Word desde la versión 2007. Se basa en XML comprimido. El formato .doc era el usado en versiones anteriores." },
+  { topic: "Interfaz", text: "La 'Cinta de opciones' de Word está organizada en:", options: ["Menús desplegables", "Pestañas y grupos", "Barras flotantes", "Paneles anclables"], answer: 1, explanation: "La Cinta de opciones agrupa los comandos en Pestañas (Inicio, Insertar, Diseño...) y dentro de cada pestaña hay Grupos (por ejemplo, Fuente, Párrafo, Estilos)." },
+
+  // --- EDICIÓN DE TEXTO ---
+  { topic: "Edición", text: "¿Qué combinación de teclas permite deshacer la última acción en Word?", options: ["Ctrl+Z", "Ctrl+Y", "Ctrl+S", "Ctrl+A"], answer: 0, explanation: "Ctrl+Z deshace la última acción. Ctrl+Y rehace la acción deshecha. Se pueden deshacer múltiples acciones pulsando Ctrl+Z varias veces." },
+  { topic: "Edición", text: "Para seleccionar todo el documento en Word se usa:", options: ["Ctrl+S", "Ctrl+A", "Ctrl+E", "Ctrl+F"], answer: 1, explanation: "Ctrl+A (o Ctrl+E en versiones en español antiguas) selecciona todo el contenido del documento activo." },
+  { topic: "Edición", text: "¿Qué función realiza la tecla Insert en Word?", options: ["Insertar una imagen", "Alternar entre modo sobreescritura e inserción", "Abrir cuadro de diálogo Insertar tabla", "Insertar salto de página"], answer: 1, explanation: "La tecla Insert alterna entre el modo de inserción (desplaza el texto existente) y el modo de sobreescritura (reemplaza el texto al teclear)." },
+  { topic: "Edición", text: "¿Con qué atajo se abre el cuadro Buscar y reemplazar?", options: ["Ctrl+B", "Ctrl+H", "Ctrl+F", "Ctrl+R"], answer: 1, explanation: "Ctrl+H abre el cuadro 'Buscar y reemplazar' directamente en la pestaña Reemplazar. Ctrl+B o Ctrl+F abre solo la función Buscar." },
+  { topic: "Edición", text: "La función Autocorrección en Word sirve para:", options: ["Corregir el formato de párrafos", "Corregir automáticamente errores tipográficos frecuentes", "Verificar la gramática del documento", "Ajustar los márgenes del documento"], answer: 1, explanation: "Autocorrección corrige automáticamente errores comunes como 'teh' → 'the', cambia fracciones, añade mayúsculas al inicio de frase, etc. Se configura en Archivo → Opciones → Revisión." },
+
+  // --- FORMATO DE FUENTE ---
+  { topic: "Fuente", text: "¿Qué atajo activa el formato Negrita en Word?", options: ["Ctrl+N", "Ctrl+B", "Ctrl+G", "Ctrl+K"], answer: 1, explanation: "Ctrl+B (Bold) activa la negrita. En versiones en español antiguas se usaba Ctrl+N. En la versión moderna de Office en español el estándar es Ctrl+B." },
+  { topic: "Fuente", text: "Para aplicar formato Cursiva se usa:", options: ["Ctrl+C", "Ctrl+I", "Ctrl+K", "Ctrl+T"], answer: 1, explanation: "Ctrl+I (Italic) aplica formato cursiva. Se puede combinar con negrita (Ctrl+B+I) para negrita cursiva." },
+  { topic: "Fuente", text: "¿Qué efecto tiene el formato 'Tachado' sobre el texto?", options: ["Subrayado doble", "Línea horizontal atravesando el texto", "Texto en superíndice", "Texto en color rojo"], answer: 1, explanation: "El formato Tachado dibuja una línea horizontal que atraviesa el texto, útil para indicar contenido eliminado o pendiente de revisión." },
+  { topic: "Fuente", text: "El 'Resaltado' de texto en Word equivale a:", options: ["Cambiar el color de la fuente", "Aplicar color de fondo al texto como un rotulador fluorescente", "Subrayar el texto en colores", "Aplicar negrita con color"], answer: 1, explanation: "El Resaltado (Color de resaltado de texto) aplica un color de fondo al texto seleccionado, simulando un marcador fluorescente. Se diferencia del color de fuente." },
+  { topic: "Fuente", text: "¿Qué función tiene el botón 'Cambiar mayúsculas/minúsculas' (Aa)?", options: ["Cambia el tipo de fuente", "Convierte el texto entre MAYÚSCULAS, minúsculas y Tipo Oración", "Aplica versalitas al texto", "Aumenta el tamaño de fuente"], answer: 1, explanation: "El botón Aa (Cambiar mayúsculas y minúsculas) ofrece opciones como Tipo oración, minúsculas, MAYÚSCULAS, Poner En Mayúsculas Cada Palabra y aLTERNAR mAY/MIN." },
+
+  // --- FORMATO DE PÁRRAFO ---
+  { topic: "Párrafo", text: "¿Qué atajo aplica alineación Justificada al párrafo?", options: ["Ctrl+J", "Ctrl+L", "Ctrl+E", "Ctrl+R"], answer: 0, explanation: "Ctrl+J aplica alineación justificada (texto alineado en ambos márgenes). Ctrl+L es izquierda, Ctrl+E es centrado y Ctrl+R es derecha." },
+  { topic: "Párrafo", text: "¿Qué es el 'Interlineado' en un párrafo?", options: ["El espacio entre caracteres", "El espacio entre líneas de texto dentro de un párrafo", "El margen entre párrafos", "La sangría del párrafo"], answer: 1, explanation: "El interlineado es el espacio vertical entre las líneas de texto dentro de un párrafo. Los valores comunes son: sencillo (1.0), 1,5 líneas y doble (2.0)." },
+  { topic: "Párrafo", text: "¿Qué es la 'Sangría de primera línea'?", options: ["Espacio extra al final del párrafo", "Sangría aplicada solo a la primera línea del párrafo", "Sangría que afecta a todo el párrafo menos la primera línea", "El espacio entre caracteres de la primera línea"], answer: 1, explanation: "La sangría de primera línea desplaza solo el primer renglón del párrafo hacia la derecha. La sangría francesa hace lo contrario: sangra todo excepto la primera línea." },
+  { topic: "Párrafo", text: "¿Cómo se llama la función que evita que un párrafo quede separado entre dos páginas?", options: ["Conservar con el siguiente", "Controlar líneas viudas y huérfanas", "Salto de página anterior", "Mantener líneas juntas"], answer: 3, explanation: "La opción 'Mantener líneas juntas' impide que un párrafo se divida entre dos páginas. 'Control de líneas viudas y huérfanas' evita que quede una sola línea al inicio o final de página." },
+  { topic: "Párrafo", text: "Las 'Tabulaciones' en Word permiten:", options: ["Insertar tablas automáticas", "Definir posiciones fijas de alineación dentro de una línea", "Controlar los saltos de página", "Configurar los márgenes del documento"], answer: 1, explanation: "Las tabulaciones son posiciones fijas en la línea a las que se desplaza el cursor al pulsar Tab. Pueden ser: izquierda, derecha, centrada, decimal y de barra." },
+
+  // --- ESTILOS Y TEMAS ---
+  { topic: "Estilos", text: "¿Para qué sirven los 'Estilos' en Word?", options: ["Cambiar el tema de colores del documento", "Aplicar conjuntos predefinidos de formato a texto o párrafos", "Insertar plantillas de documento", "Configurar el diseño de página"], answer: 1, explanation: "Los estilos son conjuntos de formatos (fuente, párrafo, etc.) guardados con un nombre. Permiten aplicar formato consistente y facilitan la generación automática de tabla de contenido." },
+  { topic: "Estilos", text: "¿Qué estilo se debe aplicar a los títulos principales para generar la tabla de contenido automática?", options: ["Normal", "Título 1", "Encabezado principal", "Cuerpo de texto"], answer: 1, explanation: "Los estilos Título 1, Título 2, Título 3... son los que Word utiliza para generar automáticamente la tabla de contenido. 'Título 1' es el nivel jerárquico más alto." },
+  { topic: "Estilos", text: "¿Qué es un 'Tema' en Word?", options: ["Una plantilla de documento guardada", "Un conjunto coordinado de colores, fuentes y efectos para el documento", "Un tipo de estilo de párrafo", "Un formato de página personalizado"], answer: 1, explanation: "Los Temas son combinaciones coordinadas de colores, fuentes y efectos gráficos que se aplican a todo el documento para darle una apariencia consistente y profesional." },
+
+  // --- TABLAS ---
+  { topic: "Tablas", text: "¿Cómo se pueden fusionar celdas en una tabla de Word?", options: ["Seleccionarlas y pulsar Ctrl+M", "Seleccionarlas, clic derecho → Combinar celdas", "Arrastrar el borde entre celdas", "Usar Insertar → Combinar"], answer: 1, explanation: "Para combinar (fusionar) celdas: seleccionar las celdas, clic derecho y elegir 'Combinar celdas', o usar la pestaña Presentación de Herramientas de tabla." },
+  { topic: "Tablas", text: "En una tabla de Word, ¿qué hace la opción 'Autoajuste al contenido'?", options: ["Ajusta el ancho de la tabla al papel", "Ajusta el ancho de columnas automáticamente al contenido de cada celda", "Iguala el alto de todas las filas", "Centra la tabla en la página"], answer: 1, explanation: "Autoajuste al contenido hace que el ancho de cada columna se ajuste automáticamente al texto más largo que contiene. También existen Autoajuste a la ventana y Ancho de columna fijo." },
+  { topic: "Tablas", text: "¿Qué tecla permite moverse a la siguiente celda en una tabla de Word?", options: ["Enter", "Tab", "→", "Ctrl+Tab"], answer: 1, explanation: "Tab avanza a la siguiente celda. Mayús+Tab va a la celda anterior. Si se pulsa Tab en la última celda de la tabla, se crea automáticamente una nueva fila." },
+  { topic: "Tablas", text: "¿Dónde aparecen las pestañas de 'Herramientas de tabla' en Word?", options: ["Siempre visibles en la cinta", "Solo cuando el cursor está dentro de una tabla", "En el menú contextual exclusivamente", "Solo al insertar una nueva tabla"], answer: 1, explanation: "Las pestañas 'Diseño' y 'Presentación' de Herramientas de tabla son contextuales: solo aparecen en la cinta cuando el cursor se coloca dentro de una tabla." },
+
+  // --- IMÁGENES Y OBJETOS ---
+  { topic: "Imágenes", text: "¿Qué opción de ajuste de texto permite que el texto fluya alrededor de la imagen?", options: ["En línea con el texto", "Cuadrado", "Transparente", "Solo ajuste superior e inferior"], answer: 1, explanation: "El ajuste 'Cuadrado' hace que el texto rodee la imagen siguiendo su marco rectangular. 'Transparente' sigue el contorno real de la imagen. 'En línea' trata la imagen como un carácter." },
+  { topic: "Imágenes", text: "¿Qué es un 'Cuadro de texto' en Word?", options: ["Un campo de formulario para entrada de datos", "Un contenedor flotante donde se puede escribir texto independiente", "Un tipo especial de tabla de una celda", "Un marcador de posición para imágenes"], answer: 1, explanation: "Un cuadro de texto es un objeto flotante que contiene texto propio, independiente del flujo principal del documento. Se puede colocar en cualquier posición de la página." },
+  { topic: "Imágenes", text: "¿Cómo se insertan formas geométricas en Word?", options: ["Insertar → Imágenes → Formas", "Insertar → Ilustraciones → Formas", "Diseño → Elementos → Formas", "Inicio → Insertar → Formas"], answer: 1, explanation: "Para insertar formas: Insertar → Ilustraciones → Formas. Ofrece líneas, rectángulos, formas básicas, flechas, cintas, etc." },
+
+  // --- DISEÑO DE PÁGINA ---
+  { topic: "Diseño", text: "¿Dónde se configuran los márgenes del documento en Word?", options: ["Inicio → Párrafo", "Insertar → Página", "Diseño de página / Formato → Márgenes", "Vista → Documento"], answer: 2, explanation: "Los márgenes se configuran en la pestaña 'Diseño de página' (o 'Formato' en versiones antiguas), en el grupo 'Configurar página' → Márgenes." },
+  { topic: "Diseño", text: "¿Qué es un 'Salto de sección' en Word?", options: ["Un salto de línea forzado", "Un divisor que permite aplicar formato de página diferente a distintas partes", "Un salto de columna en texto en columnas", "Un marcador para la tabla de contenido"], answer: 1, explanation: "Los saltos de sección dividen el documento en secciones independientes, cada una con su propio formato de página (orientación, márgenes, encabezados, columnas, etc.)." },
+  { topic: "Diseño", text: "¿Cómo se inserta un número de página en Word?", options: ["Inicio → Número → Página", "Insertar → Encabezado y pie de página → Número de página", "Vista → Número de página", "Diseño → Configurar página → Numeración"], answer: 1, explanation: "Para insertar números de página: Insertar → Encabezado y pie de página → Número de página. Se puede elegir la posición (parte superior, inferior, márgenes) y el formato." },
+  { topic: "Diseño", text: "¿Para qué sirve la opción 'Primera página diferente' en encabezados?", options: ["Cambia el diseño solo de la primera página", "Permite que el encabezado/pie de la primera página sea distinto al resto", "Numeración desde 0 en la primera página", "Inserta portada automática"], answer: 1, explanation: "La opción 'Primera página diferente' permite tener un encabezado y pie de página distintos en la primera página (por ejemplo, sin número en la portada)." },
+  { topic: "Diseño", text: "¿Qué orientación de página es la predeterminada en Word?", options: ["Horizontal (apaisada)", "Vertical (retrato)", "Cuadrada", "Depende de la impresora"], answer: 1, explanation: "La orientación predeterminada es Vertical (Portrait/Retrato), con la página más alta que ancha. La orientación Horizontal (Landscape/Apaisada) es la alternativa." },
+
+  // --- REVISIÓN ---
+  { topic: "Revisión", text: "¿Qué tecla de función abre el corrector ortográfico en Word?", options: ["F5", "F7", "F9", "F11"], answer: 1, explanation: "F7 inicia el corrector ortográfico y gramatical. En versiones modernas de Word también se puede acceder desde Revisar → Ortografía y gramática." },
+  { topic: "Revisión", text: "¿Qué función usa Word para comparar dos versiones de un documento?", options: ["Combinar documentos", "Comparar documentos", "Control de cambios avanzado", "Historial de versiones"], answer: 1, explanation: "Revisar → Comparar → Comparar documentos crea un nuevo documento que muestra las diferencias entre dos versiones con marcas de revisión." },
+  { topic: "Revisión", text: "El 'Control de cambios' en Word sirve para:", options: ["Registrar el historial de guardado del archivo", "Mostrar las modificaciones realizadas para que puedan aceptarse o rechazarse", "Comparar el documento con una plantilla", "Controlar los cambios de formato automático"], answer: 1, explanation: "El Control de cambios (Revisar → Control de cambios) registra todas las modificaciones (inserciones, eliminaciones, cambios de formato) mostrándolas visualmente para revisión." },
+  { topic: "Revisión", text: "¿Cómo se añade un comentario en Word?", options: ["Ctrl+Alt+C", "Insertar → Comentario (o Revisar → Nuevo comentario)", "Doble clic en el margen", "Vista → Comentarios → Añadir"], answer: 1, explanation: "Para insertar un comentario: seleccionar el texto, ir a Revisar → Nuevo comentario, o hacer clic derecho → Insertar comentario. Los comentarios aparecen en el margen del documento." },
+
+  // --- IMPRESIÓN Y GUARDADO ---
+  { topic: "Archivo", text: "¿Qué atajo guarda el documento con su nombre actual?", options: ["Ctrl+G", "Ctrl+S", "Ctrl+A", "F12"], answer: 1, explanation: "Ctrl+S guarda el documento. Si el documento no tiene nombre, abrirá el cuadro de diálogo 'Guardar como'. F12 abre siempre 'Guardar como' directamente." },
+  { topic: "Archivo", text: "¿Qué formato se debe usar para que el documento sea accesible en cualquier programa sin modificaciones?", options: [".docx", ".pdf", ".rtf", ".odt"], answer: 1, explanation: "PDF (Portable Document Format) preserva el formato exacto y puede leerse en cualquier dispositivo sin Word. Word permite guardar como PDF desde Archivo → Guardar como → PDF." },
+  { topic: "Archivo", text: "¿Dónde se configuran las opciones de impresión en Word?", options: ["Inicio → Imprimir", "Archivo → Imprimir (o Ctrl+P)", "Vista → Impresión", "Diseño → Configurar página → Imprimir"], answer: 1, explanation: "Archivo → Imprimir (o Ctrl+P) abre el panel de impresión con vista previa, donde se configura impresora, rango de páginas, copias, orientación y más." },
+  { topic: "Archivo", text: "La opción 'Guardar como PDF/XPS' en Word permite:", options: ["Guardar el documento como imagen", "Exportar el documento a formato PDF manteniendo el formato", "Convertir el documento a presentación PowerPoint", "Comprimir el archivo Word"], answer: 1, explanation: "Archivo → Exportar → Crear documento PDF/XPS genera un archivo PDF con el formato del documento preservado. El PDF no es editable fácilmente, lo que lo protege del cambio accidental." },
+
+  // --- REFERENCIAS ---
+  { topic: "Referencias", text: "¿Qué es la 'Tabla de contenido' automática en Word?", options: ["Un índice de palabras clave del documento", "Una lista generada automáticamente con los títulos y sus números de página", "Un glosario de términos del documento", "Una tabla con el contenido de las celdas"], answer: 1, explanation: "La Tabla de contenido automática se genera en Referencias → Tabla de contenido, basándose en los estilos Título 1, Título 2, etc. aplicados en el documento." },
+  { topic: "Referencias", text: "¿Cómo se actualiza la tabla de contenido cuando cambia el documento?", options: ["Se borra y se vuelve a crear", "Clic derecho sobre la tabla → Actualizar campos", "Se actualiza sola al guardar", "Revisar → Actualizar tabla"], answer: 1, explanation: "Para actualizar la tabla de contenido: clic derecho sobre ella → Actualizar campos. Permite actualizar solo los números de página o toda la tabla (si se añadieron/cambiaron títulos)." },
+  { topic: "Referencias", text: "Las 'Notas al pie' en Word:", options: ["Aparecen al final del documento siempre", "Son anotaciones que aparecen al pie de la página o al final del documento", "Son comentarios del revisor", "Son hipervínculos a páginas web"], answer: 1, explanation: "Las Notas al pie (Referencias → Insertar nota al pie) aparecen al pie de la página. Las Notas al final aparecen al final del documento. Se numeran automáticamente." },
+  { topic: "Referencias", text: "¿Qué es un 'Marcador' en Word?", options: ["Un resaltado de color aplicado al texto", "Una posición o selección de texto con nombre para navegar o referenciar", "Un comentario especial visible en el margen", "Un tipo de campo de formulario"], answer: 1, explanation: "Un marcador (Insertar → Marcador) asigna un nombre a una posición o selección del documento. Se usan para crear hipervínculos internos o referencias cruzadas." },
+
+  // --- MAILING / CORRESPONDENCIA ---
+  { topic: "Combinación", text: "¿Qué es la 'Combinación de correspondencia' en Word?", options: ["Una función para combinar varios documentos Word en uno", "Un proceso para crear documentos personalizados a partir de una lista de datos", "Una forma de importar datos de Excel a una tabla de Word", "El proceso de revisar y combinar documentos de varios autores"], answer: 1, explanation: "La Combinación de correspondencia (Correspondencia → Iniciar combinación de correspondencia) permite crear cartas, etiquetas o emails personalizados combinando un documento principal con una lista de datos (Excel, Outlook, etc.)." },
+  { topic: "Combinación", text: "En combinación de correspondencia, ¿cómo se llama el archivo que contiene los datos de los destinatarios?", options: ["Documento principal", "Origen de datos", "Plantilla de correspondencia", "Archivo de fusión"], answer: 1, explanation: "El 'Origen de datos' es el archivo (tabla Excel, base de datos, etc.) que contiene los registros con los datos de cada destinatario. El 'Documento principal' es la carta o plantilla con los campos combinados." },
+
+  // --- VISTAS Y VENTANAS ---
+  { topic: "Vistas", text: "¿Qué vista de Word muestra el documento tal como se imprimirá?", options: ["Vista Borrador", "Vista Diseño de impresión", "Vista Esquema", "Vista de lectura"], answer: 1, explanation: "Vista Diseño de impresión (la vista predeterminada) muestra el documento tal como quedará impreso, con márgenes, encabezados, pies de página y elementos gráficos en su posición real." },
+  { topic: "Vistas", text: "¿Para qué sirve la 'Vista Esquema' en Word?", options: ["Ver el documento sin formatos", "Ver y reorganizar la estructura jerárquica de títulos del documento", "Comparar dos documentos lado a lado", "Revisar el documento con control de cambios activo"], answer: 1, explanation: "La Vista Esquema muestra la jerarquía de títulos del documento y permite reorganizarla fácilmente. Es muy útil para documentos largos con muchos niveles de títulos." },
+  { topic: "Vistas", text: "¿Qué permite la opción 'Ver en paralelo' en Word?", options: ["Dividir la pantalla en dos partes del mismo documento", "Mostrar dos documentos Word distintos uno al lado del otro", "Ver el documento en dos idiomas simultáneamente", "Comparar el documento con una plantilla"], answer: 1, explanation: "Vista → Ver en paralelo muestra dos documentos distintos uno al lado del otro para compararlos visualmente. Opcionalmente se puede activar el desplazamiento sincrónico." },
+
+  // --- PLANTILLAS Y MACROS ---
+  { topic: "Avanzado", text: "¿Qué es una 'Plantilla' (.dotx) en Word?", options: ["Un documento protegido con contraseña", "Un documento modelo que sirve de base para crear nuevos documentos con formato predefinido", "Un documento de solo lectura", "Un archivo de respaldo automático"], answer: 1, explanation: "Una plantilla .dotx es un documento modelo con estilos, formato, encabezados y contenido predefinidos. Al crear un documento basado en ella, se copia todo su contenido sin modificar la plantilla original." },
+  { topic: "Avanzado", text: "¿Qué son las 'Macros' en Word?", options: ["Atajos de teclado personalizados", "Secuencias de comandos grabadas para automatizar tareas repetitivas", "Plantillas de formato rápido", "Campos de texto automáticos"], answer: 1, explanation: "Las Macros son secuencias de acciones grabadas (o escritas en VBA) que se pueden ejecutar automáticamente. Sirven para automatizar tareas repetitivas como aplicar formato complejo o generar informes." },
+  { topic: "Avanzado", text: "¿Cuál es el atajo para insertar la fecha actual como campo en Word?", options: ["Ctrl+D", "Alt+Mayús+D", "Ctrl+F5", "F3"], answer: 1, explanation: "Alt+Mayús+D inserta la fecha actual como campo (se actualiza automáticamente). Para insertar la hora actual: Alt+Mayús+H. Para insertar la hora y la fecha fijas sin campo, se usa el cuadro de diálogo Insertar → Texto → Fecha y hora." },
+  { topic: "Avanzado", text: "El 'Panel de navegación' en Word permite:", options: ["Navegar entre páginas manualmente", "Buscar texto y navegar entre los encabezados del documento", "Ver el mapa del sitemap del documento", "Controlar el desplazamiento automático"], answer: 1, explanation: "El Panel de navegación (Ctrl+F o Vista → Mostrar → Panel de navegación) permite buscar texto en el documento y navegar rápidamente entre encabezados, páginas y resultados de búsqueda." },
+  { topic: "Avanzado", text: "¿Qué es la 'Reproducción automática de formato' (Copiar formato)?", options: ["Aplicar el mismo estilo de párrafo a todo el documento", "Copiar el formato de un texto seleccionado y aplicarlo a otro texto", "Guardar un estilo personalizado", "Aplicar formato automático al documento entero"], answer: 1, explanation: "El botón 'Copiar formato' (brocha en Inicio, atajo Ctrl+Mayús+C para copiar y Ctrl+Mayús+V para pegar) copia el formato de un texto seleccionado para aplicarlo a otro texto." }
+];
+
+let currentQ = 0;
+let answers = new Array(QUESTIONS.length).fill(null);
+let correctCount = 0;
+
+function init() {
+  const container = document.getElementById('questions-container');
+  container.innerHTML = '';
+  QUESTIONS.forEach((q, i) => {
+    const card = document.createElement('div');
+    card.className = 'question-card' + (i === 0 ? ' active' : '');
+    card.id = 'q-' + i;
+    card.innerHTML = `
+      <div class="q-header">
+        <span class="q-num">Pregunta ${i+1} de ${QUESTIONS.length}</span>
+        <span class="q-topic">${q.topic}</span>
+      </div>
+      <div class="q-text">${q.text}</div>
+      <div class="options" id="opts-${i}">
+        ${q.options.map((opt, j) => `
+          <div class="option" id="opt-${i}-${j}" onclick="selectAnswer(${i}, ${j})">
+            <span class="option-letter">${['A','B','C','D'][j]}</span>
+            <span>${opt}</span>
+          </div>
+        `).join('')}
+      </div>
+      <div class="explanation" id="exp-${i}">${q.explanation}</div>
+      <div class="q-nav">
+        <button class="btn btn-back" onclick="goBack(${i})" ${i === 0 ? 'style="visibility:hidden"' : ''}>← Anterior</button>
+        ${i < QUESTIONS.length - 1
+          ? `<button class="btn btn-next" id="next-${i}" onclick="goNext(${i})">Siguiente →</button>`
+          : `<button class="btn btn-finish" id="next-${i}" onclick="showResults()">Ver resultados →</button>`
+        }
+      </div>
+    `;
+    container.appendChild(card);
+  });
+  updateProgress(0);
+}
+
+function selectAnswer(qIdx, optIdx) {
+  if (answers[qIdx] !== null) return; // already answered
+  answers[qIdx] = optIdx;
+  const q = QUESTIONS[qIdx];
+  const opts = document.getElementById('opts-' + qIdx);
+  opts.querySelectorAll('.option').forEach(o => o.classList.add('disabled'));
+  opts.querySelectorAll('.option').forEach((o, j) => {
+    if (j === q.answer) o.classList.add('correct');
+    if (j === optIdx && optIdx !== q.answer) o.classList.add('wrong');
+  });
+  document.getElementById('exp-' + qIdx).classList.add('show');
+}
+
+function goNext(qIdx) {
+  if (qIdx + 1 >= QUESTIONS.length) { showResults(); return; }
+  document.getElementById('q-' + qIdx).classList.remove('active');
+  document.getElementById('q-' + (qIdx + 1)).classList.add('active');
+  currentQ = qIdx + 1;
+  updateProgress(currentQ);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function goBack(qIdx) {
+  if (qIdx === 0) return;
+  document.getElementById('q-' + qIdx).classList.remove('active');
+  document.getElementById('q-' + (qIdx - 1)).classList.add('active');
+  currentQ = qIdx - 1;
+  updateProgress(currentQ);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function updateProgress(idx) {
+  const pct = Math.round(((idx + 1) / QUESTIONS.length) * 100);
+  document.getElementById('q-current').textContent = idx + 1;
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('progress-pct').textContent = pct + '%';
+}
+
+function showResults() {
+  correctCount = answers.reduce((acc, ans, i) => ans === QUESTIONS[i].answer ? acc + 1 : acc, 0);
+  document.getElementById('test-screen').style.display = 'none';
+  const rs = document.getElementById('results-screen');
+  rs.style.display = 'block';
+  document.getElementById('score-num').textContent = correctCount;
+  document.getElementById('res-correct').textContent = correctCount;
+  document.getElementById('res-wrong').textContent = QUESTIONS.length - correctCount;
+  const pct = Math.round((correctCount / QUESTIONS.length) * 100);
+  document.getElementById('res-pct').textContent = pct + '%';
+  let title, sub;
+  if (pct >= 80) { title = '🏆 ¡Excelente! Dominas Word'; sub = 'Estás muy preparado. Practica el resto de temas para asegurar el aprobado.'; }
+  else if (pct >= 60) { title = '👍 Buen nivel de partida'; sub = 'Ya tienes una buena base. Con el pack completo reforzarás los puntos débiles.'; }
+  else if (pct >= 40) { title = '📚 Hay margen de mejora'; sub = 'Es normal al empezar. El pack completo te da las herramientas para aprobar.'; }
+  else { title = '💪 Ahora sí que hay que estudiar'; sub = 'Con nuestro material estructurado llegarás al nivel que necesitas. ¡Tú puedes!'; }
+  document.getElementById('results-title').textContent = title;
+  document.getElementById('results-sub').textContent = sub;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function retryTest() {
+  answers = new Array(QUESTIONS.length).fill(null);
+  currentQ = 0;
+  document.getElementById('results-screen').style.display = 'none';
+  document.getElementById('test-screen').style.display = 'block';
+  init();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+init();
+</script>
+</body>
+</html>

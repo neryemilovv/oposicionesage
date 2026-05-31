@@ -1,0 +1,1853 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Acceso Pack Auxiliar Administrativo del Estado — 184 Preguntas | OpositorESAGE</title>
+<style>
+:root{--primary:#0d1b2a;--accent:#e63946;--gold:#f59e0b;--bg:#f8fafc;--card:#fff;--border:#e2e8f0;--green:#22c55e;--red:#ef4444}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:#1a2744;min-height:100vh}
+header{background:var(--primary);color:#fff;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+header h1{font-size:1.1rem;font-weight:700}
+.header-badge{background:var(--accent);color:#fff;padding:6px 14px;border-radius:20px;font-size:.8rem;font-weight:700}
+.stats-bar{background:var(--primary);border-top:1px solid rgba(255,255,255,.1);padding:10px 24px;display:flex;gap:24px;flex-wrap:wrap}
+.stat{color:rgba(255,255,255,.85);font-size:.8rem}.stat span{color:var(--gold);font-weight:700}
+.sim-bar{background:#1e3a5f;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.sim-btn{background:var(--gold);color:#1a2744;border:none;padding:10px 24px;border-radius:8px;font-weight:700;cursor:pointer;font-size:.9rem}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;padding:16px 20px;background:#fff;border-bottom:2px solid var(--border);position:sticky;top:0;z-index:10}
+.tab-btn{background:var(--bg);border:1.5px solid var(--border);padding:8px 14px;border-radius:8px;cursor:pointer;font-size:.78rem;font-weight:600;color:#475569;transition:all .2s}
+.tab-btn.active,.tab-btn:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
+main{max-width:860px;margin:0 auto;padding:20px}
+.qcard{background:var(--card);border:1.5px solid var(--border);border-radius:12px;padding:20px;margin-bottom:16px;transition:box-shadow .2s}
+.qcard:hover{box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.qnum{font-size:.75rem;color:#94a3b8;margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.qtxt{font-size:1rem;font-weight:600;color:#1a2744;line-height:1.5;margin-bottom:14px}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt-btn{background:#f8fafc;border:1.5px solid var(--border);border-radius:8px;padding:12px 16px;text-align:left;cursor:pointer;font-size:.9rem;transition:all .2s;font-weight:500}
+.opt-btn:hover:not([disabled]){background:#e8f4fd;border-color:#3b82f6}
+.opt-btn.correct{background:#dcfce7;border-color:var(--green);color:#15803d;font-weight:700}
+.opt-btn.wrong{background:#fee2e2;border-color:var(--red);color:#b91c1c}
+.opt-btn[disabled]{cursor:default}
+.expl{background:#fef3c7;border-left:4px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 16px;margin-top:12px;font-size:.88rem;color:#92400e;line-height:1.5}
+.sim-overlay{display:none;position:fixed;inset:0;background:rgba(13,27,42,.97);z-index:100;flex-direction:column;overflow-y:auto}
+.sim-overlay.active{display:flex}
+.sim-header{background:rgba(255,255,255,.05);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.1)}
+.sim-title{color:#fff;font-weight:700;font-size:1rem}
+.sim-timer{background:var(--accent);color:#fff;padding:6px 16px;border-radius:20px;font-weight:700;font-size:.95rem;font-family:monospace}
+.sim-body{flex:1;max-width:760px;margin:0 auto;padding:20px;width:100%}
+.sim-qcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:22px;margin-bottom:14px}
+.sim-qnum{color:rgba(255,255,255,.5);font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.sim-qtxt{color:#fff;font-weight:600;font-size:.97rem;line-height:1.5;margin-bottom:14px}
+.sim-opts{display:flex;flex-direction:column;gap:8px}
+.sim-opt{background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.2);border-radius:8px;padding:12px 16px;color:#e2e8f0;cursor:pointer;font-size:.88rem;text-align:left;font-weight:500;transition:all .2s}
+.sim-opt:hover:not([disabled]){background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.4)}
+.sim-opt.correct{background:rgba(34,197,94,.2);border-color:var(--green);color:#86efac}
+.sim-opt.wrong{background:rgba(239,68,68,.2);border-color:var(--red);color:#fca5a5}
+.sim-nav{display:flex;gap:10px;flex-wrap:wrap;padding:16px 20px;background:rgba(0,0,0,.3);position:sticky;bottom:0;border-top:1px solid rgba(255,255,255,.1)}
+.sim-nav button{background:var(--accent);color:#fff;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;font-weight:600;font-size:.9rem}
+.sim-nav button:disabled{opacity:.4;cursor:not-allowed}
+.sim-result{background:rgba(34,197,94,.15);border:2px solid var(--green);border-radius:16px;padding:28px;text-align:center;color:#fff;margin-bottom:20px}
+.sim-result h2{font-size:2.5rem;color:var(--gold);margin-bottom:8px}
+@media(max-width:600px){.tab-btn{font-size:.72rem;padding:6px 10px}.qcard{padding:16px}}
+</style>
+<link rel="canonical" href="https://opositoresage.es/administrativo-estado/acceso/">
+<meta name="robots" content="index, follow">
+</head>
+<body>
+<header>
+  <div>
+    <div style="font-size:.75rem;color:rgba(255,255,255,.6);margin-bottom:4px">OpositorESAGE — Pack Auxiliar Administrativo del Estado</div>
+    <h1>🏛️ 184 Preguntas Test — Auxiliar Administrativo del Estado</h1>
+  </div>
+  <span class="header-badge">ACCESO EXCLUSIVO</span>
+</header>
+<div class="stats-bar">
+  <div class="stat">Preguntas totales: <span>184</span></div>
+  <div class="stat">Bloques temáticos: <span>7</span></div>
+  <div class="stat">Simulacro: <span>50 preguntas · 45 min</span></div>
+  <div class="stat">Dificultad: <span>Examen real</span></div>
+</div>
+<div class="sim-bar">
+  <div style="color:rgba(255,255,255,.85);font-size:.88rem">🎯 <strong style="color:#fff">Simulacro oficial:</strong> 50 preguntas aleatorias de todos los bloques · Cronómetro 45 minutos</div>
+  <button class="sim-btn" onclick="startExam()">▶ Iniciar Simulacro</button>
+</div>
+<div class="tabs"><button class="tab-btn active" onclick="showSection('CE')">⚖️ Constitución Española (40)</button>
+<button class="tab-btn " onclick="showSection('ORG')">🏛️ Organización del Estado (25)</button>
+<button class="tab-btn " onclick="showSection('LEY39')">📋 Ley 39/2015 (25)</button>
+<button class="tab-btn " onclick="showSection('LEY40')">📜 Ley 40/2015 (23)</button>
+<button class="tab-btn " onclick="showSection('INFORM')">💻 Informática AGE (30)</button>
+<button class="tab-btn " onclick="showSection('HACIENDA')">💰 Hacienda (16)</button>
+<button class="tab-btn " onclick="showSection('PSICO')">🧠 Psicotécnicos (25)</button>
+</div>
+<main><div class="tab-content" id="tab_CE" style="display:block">
+<div class="qcard" id="q_CE_0">
+  <p class="qnum">Pregunta 1 de 40</p>
+  <p class="qtxt">¿Cuál es la forma de gobierno de España según el artículo 1 CE?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_0')">A) Monarquía parlamentaria</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_0')">B) República democrática</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_0')">C) Estado federal</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_0')">D) Monarquía constitucional absoluta</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_1">
+  <p class="qnum">Pregunta 2 de 40</p>
+  <p class="qtxt">¿Cuántos artículos tiene la Constitución Española de 1978?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_1')">A) 169</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_1')">B) 170</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_1')">C) 171</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_1')">D) 168</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_2">
+  <p class="qnum">Pregunta 3 de 40</p>
+  <p class="qtxt">¿En qué fecha fue aprobada la Constitución Española en referéndum?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_2')">A) 6 de diciembre de 1978</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_2')">B) 29 de diciembre de 1978</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_2')">C) 27 de octubre de 1978</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_2')">D) 15 de junio de 1977</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_3">
+  <p class="qnum">Pregunta 4 de 40</p>
+  <p class="qtxt">Según el artículo 2 CE, la Constitución reconoce el derecho a la autonomía de:</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_3')">A) Las nacionalidades y regiones</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_3')">B) Los municipios y provincias</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_3')">C) Las comunidades autónomas</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_3')">D) Los territorios históricos</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_4">
+  <p class="qnum">Pregunta 5 de 40</p>
+  <p class="qtxt">¿Cuál es el idioma oficial del Estado según el artículo 3 CE?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_4')">A) El castellano</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_4')">B) El español</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_4')">C) El castellano y las lenguas cooficiales</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_4')">D) El español en todo el territorio</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_5">
+  <p class="qnum">Pregunta 6 de 40</p>
+  <p class="qtxt">¿Cuántos títulos tiene la Constitución Española?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_5')">A) 10</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_5')">B) 11</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_5')">C) 12</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_5')">D) 9</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_6">
+  <p class="qnum">Pregunta 7 de 40</p>
+  <p class="qtxt">¿Qué artículo de la CE recoge el derecho a la igualdad?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_6')">A) Art. 14</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_6')">B) Art. 15</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_6')">C) Art. 16</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_6')">D) Art. 17</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_7">
+  <p class="qnum">Pregunta 8 de 40</p>
+  <p class="qtxt">El derecho a la vida se recoge en el artículo:</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_7')">A) 15</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_7')">B) 14</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_7')">C) 16</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_7')">D) 17</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_8">
+  <p class="qnum">Pregunta 9 de 40</p>
+  <p class="qtxt">¿Qué son los derechos fundamentales y libertades públicas?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_8')">A) Arts. 15 a 29</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_8')">B) Arts. 14 a 38</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_8')">C) Arts. 30 a 38</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_8')">D) Arts. 39 a 52</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_9">
+  <p class="qnum">Pregunta 10 de 40</p>
+  <p class="qtxt">¿Cuál es el plazo máximo de detención preventiva sin orden judicial?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_9')">A) 72 horas</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_9')">B) 48 horas</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_9')">C) 24 horas</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_9')">D) 96 horas</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_10">
+  <p class="qnum">Pregunta 11 de 40</p>
+  <p class="qtxt">La inviolabilidad del domicilio se recoge en el artículo:</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_10')">A) 18</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_10')">B) 19</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_10')">C) 20</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_10')">D) 21</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_11">
+  <p class="qnum">Pregunta 12 de 40</p>
+  <p class="qtxt">¿Qué artículo reconoce la libertad de expresión?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_11')">A) 20</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_11')">B) 18</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_11')">C) 19</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_11')">D) 21</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_12">
+  <p class="qnum">Pregunta 13 de 40</p>
+  <p class="qtxt">El derecho de sufragio activo y pasivo se recoge en el artículo:</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_12')">A) 23</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_12')">B) 22</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_12')">C) 24</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_12')">D) 25</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_13">
+  <p class="qnum">Pregunta 14 de 40</p>
+  <p class="qtxt">¿En qué artículo se recoge la tutela judicial efectiva?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_13')">A) 24</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_13')">B) 23</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_13')">C) 25</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_13')">D) 26</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_14">
+  <p class="qnum">Pregunta 15 de 40</p>
+  <p class="qtxt">¿Cuántas Cámaras tiene Las Cortes Generales?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_14')">A) 2</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_14')">B) 1</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_14')">C) 3</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_14')">D) 4</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_15">
+  <p class="qnum">Pregunta 16 de 40</p>
+  <p class="qtxt">¿Cuántos diputados tiene el Congreso?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_15')">A) 350</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_15')">B) 300</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_15')">C) 400</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_15')">D) 352</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_16">
+  <p class="qnum">Pregunta 17 de 40</p>
+  <p class="qtxt">El Rey sanciona las leyes en un plazo de:</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_16')">A) 15 días</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_16')">B) 30 días</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_16')">C) 10 días</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_16')">D) 20 días</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_17">
+  <p class="qnum">Pregunta 18 de 40</p>
+  <p class="qtxt">¿Quién nombra al Presidente del Gobierno?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_17')">A) El Rey, a propuesta del Congreso</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_17')">B) El Congreso directamente</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_17')">C) El Senado</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_17')">D) El pueblo directamente</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_18">
+  <p class="qnum">Pregunta 19 de 40</p>
+  <p class="qtxt">¿Cuántos miembros tiene el Tribunal Constitucional?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_18')">A) 12</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_18')">B) 9</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_18')">C) 15</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_18')">D) 11</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_19">
+  <p class="qnum">Pregunta 20 de 40</p>
+  <p class="qtxt">¿Cuál es el periodo de mandato de los magistrados del TC?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_19')">A) 9 años</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_19')">B) 6 años</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_19')">C) 12 años</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_19')">D) 4 años</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_20">
+  <p class="qnum">Pregunta 21 de 40</p>
+  <p class="qtxt">El Defensor del Pueblo es elegido por:</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_20')">A) Las Cortes Generales</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_20')">B) El Gobierno</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_20')">C) El Tribunal Supremo</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_20')">D) El Rey</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_21">
+  <p class="qnum">Pregunta 22 de 40</p>
+  <p class="qtxt">¿Cuántos años dura el mandato del Defensor del Pueblo?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_21')">A) 5</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_21')">B) 4</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_21')">C) 6</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_21')">D) 3</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_22">
+  <p class="qnum">Pregunta 23 de 40</p>
+  <p class="qtxt">La iniciativa legislativa popular requiere como mínimo:</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_22')">A) 500.000 firmas</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_22')">B) 250.000 firmas</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_22')">C) 1.000.000 firmas</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_22')">D) 100.000 firmas</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_23">
+  <p class="qnum">Pregunta 24 de 40</p>
+  <p class="qtxt">¿Qué tipo de reforma requiere el artículo 168 CE?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_23')">A) Mayoría de 2/3 + referéndum</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_23')">B) Mayoría absoluta</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_23')">C) Mayoría simple</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_23')">D) Mayoría 3/5</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_24">
+  <p class="qnum">Pregunta 25 de 40</p>
+  <p class="qtxt">El Senado tiene principalmente carácter:</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_24')">A) De representación territorial</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_24')">B) De representación proporcional</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_24')">C) Colegislador pleno</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_24')">D) Ejecutivo</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_25">
+  <p class="qnum">Pregunta 26 de 40</p>
+  <p class="qtxt">¿En qué artículo se reconoce el derecho a la educación?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_25')">A) 27</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_25')">B) 26</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_25')">C) 28</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_25')">D) 29</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_26">
+  <p class="qnum">Pregunta 27 de 40</p>
+  <p class="qtxt">¿Cuántos meses como máximo puede regir un presupuesto prorrogado?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_26')">A) 12 meses</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_26')">B) 6 meses</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_26')">C) 24 meses</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_26')">D) 3 meses</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_27">
+  <p class="qnum">Pregunta 28 de 40</p>
+  <p class="qtxt">La Corona es inviolable. ¿A quién corresponde refrendar los actos del Rey?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_27')">A) Al Presidente del Gobierno o ministros competentes</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_27')">B) Al Presidente del Congreso</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_27')">C) Al Presidente del TC</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_27')">D) Al Presidente del Senado</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_28">
+  <p class="qnum">Pregunta 29 de 40</p>
+  <p class="qtxt">¿Qué artículo prohíbe expresamente la guerra?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_28')">A) 63.3</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_28')">B) 55</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_28')">C) 96</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_28')">D) 62</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_29">
+  <p class="qnum">Pregunta 30 de 40</p>
+  <p class="qtxt">La moción de censura en España es de tipo:</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_29')">A) Constructiva</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_29')">B) Destructiva</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_29')">C) Simple</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_29')">D) Mixta</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_30">
+  <p class="qnum">Pregunta 31 de 40</p>
+  <p class="qtxt">El Consejo de Estado es el supremo órgano:</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_30')">A) Consultivo del Gobierno</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_30')">B) Jurisdiccional</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_30')">C) Ejecutivo</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_30')">D) Legislativo</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_31">
+  <p class="qnum">Pregunta 32 de 40</p>
+  <p class="qtxt">¿Cuántas Comunidades Autónomas tiene España?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_31')">A) 17</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_31')">B) 16</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_31')">C) 18</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_31')">D) 19</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_32">
+  <p class="qnum">Pregunta 33 de 40</p>
+  <p class="qtxt">¿Qué artículo CE regula el estado de alarma, excepción y sitio?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_32')">A) 116</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_32')">B) 115</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_32')">C) 117</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_32')">D) 118</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_33">
+  <p class="qnum">Pregunta 34 de 40</p>
+  <p class="qtxt">El Tribunal de Cuentas es el supremo órgano fiscalizador de:</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,1,'CE_33')">A) Las cuentas del Estado</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,1,'CE_33')">B) La gestión económica del sector público</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,1,'CE_33')">C) Los delitos económicos</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,1,'CE_33')">D) Las comunidades autónomas</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_34">
+  <p class="qnum">Pregunta 35 de 40</p>
+  <p class="qtxt">¿Cuál es la edad mínima para ser diputado en el Congreso?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_34')">A) 18 años</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_34')">B) 21 años</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_34')">C) 25 años</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_34')">D) 16 años</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_35">
+  <p class="qnum">Pregunta 36 de 40</p>
+  <p class="qtxt">El derecho de huelga se recoge en el artículo:</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_35')">A) 28</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_35')">B) 27</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_35')">C) 29</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_35')">D) 30</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_36">
+  <p class="qnum">Pregunta 37 de 40</p>
+  <p class="qtxt">¿Qué principio rige el sistema tributario según el art. 31 CE?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_36')">A) Capacidad económica</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_36')">B) Igualdad absoluta</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_36')">C) Proporcionalidad</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_36')">D) Suficiencia</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_37">
+  <p class="qnum">Pregunta 38 de 40</p>
+  <p class="qtxt">¿Cuál es el periodo de sesiones ordinarias de las Cortes?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_37')">A) Dos periodos: septiembre-diciembre y febrero-junio</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_37')">B) Un periodo anual continuo</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_37')">C) Tres periodos al año</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_37')">D) Solo uno de octubre a junio</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_38">
+  <p class="qnum">Pregunta 39 de 40</p>
+  <p class="qtxt">El artículo 9.3 CE garantiza entre otros principios:</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_38')">A) La seguridad jurídica y la irretroactividad</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_38')">B) La separación de poderes</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_38')">C) La soberanía popular</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_38')">D) El pluralismo político</button>
+</div>
+</div>
+<div class="qcard" id="q_CE_39">
+  <p class="qnum">Pregunta 40 de 40</p>
+  <p class="qtxt">¿Cuántos miembros del TC designa el Gobierno?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'CE_39')">A) 2</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'CE_39')">B) 3</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'CE_39')">C) 4</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'CE_39')">D) 1</button>
+</div>
+</div>
+</div>
+<div class="tab-content" id="tab_ORG" style="display:none">
+<div class="qcard" id="q_ORG_0">
+  <p class="qnum">Pregunta 1 de 25</p>
+  <p class="qtxt">¿Quién es el jefe del Gobierno?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'ORG_0')">A) El Presidente del Gobierno</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'ORG_0')">B) El Rey</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'ORG_0')">C) El Presidente del Congreso</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'ORG_0')">D) El Presidente del Senado</button>
+</div>
+</div>
+<div class="qcard" id="q_ORG_1">
+  <p class="qnum">Pregunta 2 de 25</p>
+  <p class="qtxt">¿Cuántos ministerios existen actualmente en el Gobierno de España (aprox. 2024)?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'ORG_1')">A) 22</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'ORG_1')">B) 18</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'ORG_1')">C) 25</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'ORG_1')">D) 30</button>
+</div>
+</div>
+<div class="qcard" id="q_ORG_2">
+  <p class="qnum">Pregunta 3 de 25</p>
+  <p class="qtxt">¿Qué órgano coordina la actuación de los ministros?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'ORG_2')">A) El Consejo de Ministros</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'ORG_2')">B) El Congreso</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'ORG_2')">C) El Senado</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'ORG_2')">D) El Presidente del TC</button>
+</div>
+</div>
+<div class="qcard" id="q_ORG_3">
+  <p class="qnum">Pregunta 4 de 25</p>
+  <p class="qtxt">La Secretaría de Estado está por debajo de:</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'ORG_3')">A) El Ministro</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'ORG_3')">B) El Director General</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'ORG_3')">C) El Subsecretario</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'ORG_3')">D) El Delegado del Gobierno</button>
+</div>
+</div>
+<div class="qcard" id="q_ORG_4">
+  <p class="qnum">Pregunta 5 de 25</p>
+  <p class="qtxt">¿Qué órgano dirige la Administración General del Estado en cada CC.AA.?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'ORG_4')">A) La Delegación del Gobierno</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'ORG_4')">B) La Subdelegación del Gobierno</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'ORG_4')">C) La Dirección General Territorial</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'ORG_4')">D) El Ministerio competente</button>
+</div>
+</div>
+<div class="qcard" id="q_ORG_5">
+  <p class="qnum">Pregunta 6 de 25</p>
+  <p class="qtxt">Los Delegados del Gobierno son nombrados y separados por:</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'ORG_5')">A) El Consejo de Ministros a propuesta del Ministro de Política Territorial</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'ORG_5')">B) El Presidente del Gobierno directamente</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'ORG_5')">C) Las Cortes Generales</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'ORG_5')">D) El Presidente de la CC.AA.</button>
+</div>
+</div>
+<div class="qcard" id="q_ORG_6">
+  <p class="qnum">Pregunta 7 de 25</p>
+  <p class="qtxt">¿Qué es la Comisión Delegada del Gobierno?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'ORG_6')">A) Un órgano colegiado del Gobierno para coordinación sectorial</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'ORG_6')">B) El Parlamento reducido</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'ORG_6')">C) Una Comisión del Congreso</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'ORG_6')">D) El Pleno del Senado</button>
+</div>
+</div>
+<div class="qcard" id="q_ORG_7">
+  <p class="qnum">Pregunta 8 de 25</p>
+  <p class="qtxt">¿Cuál es el órgano de gobierno del Poder Judicial?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'ORG_7')">A) El Consejo General del Poder Judicial (CGPJ)</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'ORG_7')">B) El Tribunal Supremo</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'ORG_7')">C) El Ministerio de Justicia</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'ORG_7')">D) El Tribunal Constitucional</button>
+</div>
+</div>
+<div class="qcard" id="q_ORG_8">
+  <p class="qnum">Pregunta 9 de 25</p>
+  <p class="qtxt">¿Cuántos miembros tiene el CGPJ?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'ORG_8')">A) 20 + el Presidente</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'ORG_8')">B) 12 + el Presidente</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'ORG_8')">C) 15</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'ORG_8')">D) 21</button>
+</div>
+</div>
+<div class="qcard" id="q_ORG_9">
+  <p class="qnum">Pregunta 10 de 25</p>
+  <p class="qtxt">El Tribunal Supremo tiene su sede en:</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'ORG_9')">A) Madrid</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'ORG_9')">B) Barcelona</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'ORG_9')">C) Valencia</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'ORG_9')">D) Sevilla</button>
+</div>
+</div>
+<div class="qcard" id="q_ORG_10">
+  <p class="qnum">Pregunta 11 de 25</p>
+  <p class="qtxt">¿Qué son los Órganos Constitucionales?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'ORG_10')">A) Aquellos creados y regulados directamente por la Constitución</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'ORG_10')">B) Los ministerios del Gobierno</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'ORG_10')">C) Los parlamentos autonómicos</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'ORG_10')">D) Los ayuntamientos</button>
+</div>
+</div>
+<div class="qcard" id="q_ORG_11">
+  <p class="qnum">Pregunta 12 de 25</p>
+  <p class="qtxt">¿Qué es la Administración Periférica del Estado?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'ORG_11')">A) La organización de la AGE en el territorio nacional</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'ORG_11')">B) Los entes locales</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'ORG_11')">C) Las administraciones autonómicas</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'ORG_11')">D) Los organismos autónomos</button>
+</div>
+</div>
+<div class="qcard" id="q_ORG_12">
+  <p class="qnum">Pregunta 13 de 25</p>
+  <p class="qtxt">¿Cuál es el principio básico de organización administrativa según la LRJSP?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'ORG_12')">A) Jerarquía, descentralización, desconcentración y coordinación</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'ORG_12')">B) Autonomía e independencia</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'ORG_12')">C) Legalidad y eficacia</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'ORG_12')">D) Proporcionalidad y subsidiariedad</button>
+</div>
+</div>
+<div class="qcard" id="q_ORG_13">
+  <p class="qnum">Pregunta 14 de 25</p>
+  <p class="qtxt">¿Qué es un Organismo Autónomo?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'ORG_13')">A) Entidad de derecho público vinculada a un ministerio con personalidad jurídica propia</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'ORG_13')">B) Una empresa pública</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'ORG_13')">C) Una fundación del Estado</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'ORG_13')">D) Un órgano del Gobierno</button>
+</div>
+</div>
+<div class="qcard" id="q_ORG_14">
+  <p class="qnum">Pregunta 15 de 25</p>
+  <p class="qtxt">¿Quién dirige la Subdelegación del Gobierno?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'ORG_14')">A) El Subdelegado del Gobierno</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'ORG_14')">B) El Delegado del Gobierno</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'ORG_14')">C) El Secretario de Estado</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'ORG_14')">D) El Gobernador Civil</button>
+</div>
+</div>
+<div class="qcard" id="q_ORG_15">
+  <p class="qnum">Pregunta 16 de 25</p>
+  <p class="qtxt">¿Qué es el Ministerio de Hacienda respecto a la AGE?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'ORG_15')">A) Un departamento ministerial con competencias sobre presupuestos y fiscalidad</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'ORG_15')">B) Un organismo autónomo</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'ORG_15')">C) Una agencia estatal</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'ORG_15')">D) Un ente público</button>
+</div>
+</div>
+<div class="qcard" id="q_ORG_16">
+  <p class="qnum">Pregunta 17 de 25</p>
+  <p class="qtxt">¿Qué es la Agencia Estatal de Administración Tributaria (AEAT)?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'ORG_16')">A) Entidad de derecho público adscrita al Min. de Hacienda</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'ORG_16')">B) Organismo autónomo del MINHAC</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'ORG_16')">C) Empresa pública</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'ORG_16')">D) Entidad privada colaboradora</button>
+</div>
+</div>
+<div class="qcard" id="q_ORG_17">
+  <p class="qnum">Pregunta 18 de 25</p>
+  <p class="qtxt">La iniciativa legislativa del Gobierno se llama:</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'ORG_17')">A) Proyecto de ley</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'ORG_17')">B) Proposición de ley</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'ORG_17')">C) Decreto-ley</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'ORG_17')">D) Decreto legislativo</button>
+</div>
+</div>
+<div class="qcard" id="q_ORG_18">
+  <p class="qnum">Pregunta 19 de 25</p>
+  <p class="qtxt">¿Cuál es la norma con rango de ley que puede dictar el Gobierno en casos de urgencia?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'ORG_18')">A) Decreto-ley</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'ORG_18')">B) Decreto legislativo</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'ORG_18')">C) Reglamento</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'ORG_18')">D) Orden ministerial</button>
+</div>
+</div>
+<div class="qcard" id="q_ORG_19">
+  <p class="qnum">Pregunta 20 de 25</p>
+  <p class="qtxt">¿Qué es el Decreto Legislativo?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'ORG_19')">A) Una norma con rango de ley dictada por el Gobierno con autorización de las Cortes</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'ORG_19')">B) Una ley del Parlamento</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'ORG_19')">C) Un reglamento ejecutivo</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'ORG_19')">D) Una orden ministerial urgente</button>
+</div>
+</div>
+<div class="qcard" id="q_ORG_20">
+  <p class="qnum">Pregunta 21 de 25</p>
+  <p class="qtxt">¿Cuántos tipos de Decretos Legislativos existen?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'ORG_20')">A) 2 (textos refundidos y textos articulados)</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'ORG_20')">B) 3</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'ORG_20')">C) 1</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'ORG_20')">D) 4</button>
+</div>
+</div>
+<div class="qcard" id="q_ORG_21">
+  <p class="qnum">Pregunta 22 de 25</p>
+  <p class="qtxt">El Consejo Económico y Social (CES) es un órgano:</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'ORG_21')">A) Consultivo en materia socioeconómica y laboral</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'ORG_21')">B) Ejecutivo del Gobierno</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'ORG_21')">C) Jurisdiccional</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'ORG_21')">D) Legislativo</button>
+</div>
+</div>
+<div class="qcard" id="q_ORG_22">
+  <p class="qnum">Pregunta 23 de 25</p>
+  <p class="qtxt">¿Qué Ministerio tiene competencias sobre la función pública?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'ORG_22')">A) Ministerio para la Transformación Digital y de la Función Pública (varía)</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'ORG_22')">B) Ministerio del Interior</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'ORG_22')">C) Ministerio de Economía</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'ORG_22')">D) Ministerio de Hacienda</button>
+</div>
+</div>
+<div class="qcard" id="q_ORG_23">
+  <p class="qnum">Pregunta 24 de 25</p>
+  <p class="qtxt">¿Cuál es la diferencia entre descentralización y desconcentración?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'ORG_23')">A) La descentralización transfiere a entes distintos; la desconcentración transfiere dentro del mismo ente</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'ORG_23')">B) Son sinónimos</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'ORG_23')">C) La desconcentración transfiere a entes distintos</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'ORG_23')">D) Ninguna diferencia práctica</button>
+</div>
+</div>
+<div class="qcard" id="q_ORG_24">
+  <p class="qnum">Pregunta 25 de 25</p>
+  <p class="qtxt">¿Qué ley regula la Administración General del Estado?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'ORG_24')">A) La Ley 40/2015 (LRJSP)</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'ORG_24')">B) La Ley 39/2015 (LPACAP)</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'ORG_24')">C) La Ley 7/1985 LBRL</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'ORG_24')">D) La Ley 9/1987</button>
+</div>
+</div>
+</div>
+<div class="tab-content" id="tab_LEY39" style="display:none">
+<div class="qcard" id="q_LEY39_0">
+  <p class="qnum">Pregunta 1 de 25</p>
+  <p class="qtxt">¿Cuál es el nombre completo de la Ley 39/2015?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY39_0')">A) Ley del Procedimiento Administrativo Común de las Administraciones Públicas</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY39_0')">B) Ley de Régimen Jurídico del Sector Público</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY39_0')">C) Ley de Bases de Régimen Local</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY39_0')">D) Ley de Contratos del Sector Público</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY39_1">
+  <p class="qnum">Pregunta 2 de 25</p>
+  <p class="qtxt">¿Cuál es el plazo general para resolver y notificar los procedimientos administrativos según la Ley 39/2015?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY39_1')">A) 6 meses</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY39_1')">B) 3 meses</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY39_1')">C) 1 año</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY39_1')">D) 2 meses</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY39_2">
+  <p class="qnum">Pregunta 3 de 25</p>
+  <p class="qtxt">¿Qué es el silencio administrativo positivo?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY39_2')">A) La estimación del acto solicitado por el transcurso del plazo sin resolución</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY39_2')">B) La denegación por falta de respuesta</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY39_2')">C) La nulidad del procedimiento</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY39_2')">D) La suspensión del expediente</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY39_3">
+  <p class="qnum">Pregunta 4 de 25</p>
+  <p class="qtxt">¿Cuál es la regla general del silencio administrativo en procedimientos iniciados a solicitud del interesado?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY39_3')">A) Silencio positivo</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY39_3')">B) Silencio negativo</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY39_3')">C) Depende del tipo de acto</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY39_3')">D) No existe silencio</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY39_4">
+  <p class="qnum">Pregunta 5 de 25</p>
+  <p class="qtxt">¿En qué plazo deben practicarse las notificaciones?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY39_4')">A) 10 días desde la resolución</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY39_4')">B) 5 días</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY39_4')">C) 1 mes</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY39_4')">D) 15 días</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY39_5">
+  <p class="qnum">Pregunta 6 de 25</p>
+  <p class="qtxt">¿Cuáles son los medios válidos de notificación según la Ley 39/2015?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY39_5')">A) Electrónica o en papel según el caso</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY39_5')">B) Solo electrónica</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY39_5')">C) Solo en papel</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY39_5')">D) Solo mediante notario</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY39_6">
+  <p class="qnum">Pregunta 7 de 25</p>
+  <p class="qtxt">¿Qué es la notificación por comparecencia espontánea?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY39_6')">A) Cuando el interesado accede al contenido del acto en sede electrónica</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY39_6')">B) Una notificación en persona en la oficina</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY39_6')">C) La notificación por edictos</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY39_6')">D) La notificación por correo certificado</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY39_7">
+  <p class="qnum">Pregunta 8 de 25</p>
+  <p class="qtxt">¿Cuántos intentos de notificación fallida permiten acudir al BOE?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY39_7')">A) 2</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY39_7')">B) 1</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY39_7')">C) 3</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY39_7')">D) 4</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY39_8">
+  <p class="qnum">Pregunta 9 de 25</p>
+  <p class="qtxt">¿Qué es el Registro Electrónico General de Apoderamientos?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY39_8')">A) Un registro donde se inscriben los poderes de representación</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY39_8')">B) El registro de actos administrativos</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY39_8')">C) El archivo electrónico general</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY39_8')">D) El registro de contratos</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY39_9">
+  <p class="qnum">Pregunta 10 de 25</p>
+  <p class="qtxt">¿Cuál es el plazo para interponer un recurso de alzada?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY39_9')">A) 1 mes si el acto es expreso; 3 meses si es presunto</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY39_9')">B) 15 días</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY39_9')">C) 6 meses</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY39_9')">D) 2 meses</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY39_10">
+  <p class="qnum">Pregunta 11 de 25</p>
+  <p class="qtxt">¿Ante quién se interpone el recurso de alzada?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY39_10')">A) El órgano superior jerárquico</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY39_10')">B) El mismo órgano que dictó el acto</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY39_10')">C) El Tribunal Administrativo</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY39_10')">D) El Defensor del Pueblo</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY39_11">
+  <p class="qnum">Pregunta 12 de 25</p>
+  <p class="qtxt">¿Cuándo puede interponerse recurso de reposición?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,1,'LEY39_11')">A) Contra actos que no ponen fin a la vía administrativa, ante el mismo órgano</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,1,'LEY39_11')">B) Solo contra actos definitivos</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,1,'LEY39_11')">C) Antes del recurso de alzada</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,1,'LEY39_11')">D) Solo en vía jurisdiccional</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY39_12">
+  <p class="qnum">Pregunta 13 de 25</p>
+  <p class="qtxt">¿En qué plazo debe resolverse el recurso de reposición?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY39_12')">A) 1 mes</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY39_12')">B) 3 meses</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY39_12')">C) 6 meses</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY39_12')">D) 15 días</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY39_13">
+  <p class="qnum">Pregunta 14 de 25</p>
+  <p class="qtxt">¿Qué causa de nulidad de pleno derecho establece el artículo 47 LPACAP?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY39_13')">A) Lesión de derechos y libertades susceptibles de amparo constitucional</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY39_13')">B) Defecto de forma</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY39_13')">C) Incompetencia territorial</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY39_13')">D) Falta de motivación</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY39_14">
+  <p class="qnum">Pregunta 15 de 25</p>
+  <p class="qtxt">¿Cuál es la diferencia entre nulidad y anulabilidad?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY39_14')">A) La nulidad es insubsanable; la anulabilidad puede convalidarse</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY39_14')">B) Son sinónimos</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY39_14')">C) La anulabilidad es más grave</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY39_14')">D) La nulidad puede subsanarse</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY39_15">
+  <p class="qnum">Pregunta 16 de 25</p>
+  <p class="qtxt">¿Qué es la revisión de oficio de actos nulos?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY39_15')">A) Un procedimiento para que la Administración anule sus propios actos nulos de pleno derecho</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY39_15')">B) Un recurso administrativo</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY39_15')">C) La revocación de actos favorables</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY39_15')">D) Un recurso judicial</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY39_16">
+  <p class="qnum">Pregunta 17 de 25</p>
+  <p class="qtxt">¿Cuántos días tiene el interesado para subsanar deficiencias en su solicitud?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY39_16')">A) 10 días</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY39_16')">B) 5 días</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY39_16')">C) 15 días</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY39_16')">D) 30 días</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY39_17">
+  <p class="qnum">Pregunta 18 de 25</p>
+  <p class="qtxt">¿Qué es el cómputo de plazos en días hábiles?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY39_17')">A) Los plazos excluyen sábados, domingos y festivos</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY39_17')">B) Los plazos incluyen todos los días</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY39_17')">C) Solo se excluyen festivos nacionales</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY39_17')">D) Solo se excluyen domingos</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY39_18">
+  <p class="qnum">Pregunta 19 de 25</p>
+  <p class="qtxt">¿Cuándo se entiende presentado un documento en registro electrónico?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY39_18')">A) En el momento de la transmisión</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY39_18')">B) Al día siguiente hábil</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY39_18')">C) A las 00:00 del día siguiente</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY39_18')">D) Cuando lo valide el funcionario</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY39_19">
+  <p class="qnum">Pregunta 20 de 25</p>
+  <p class="qtxt">¿Qué es la caducidad del procedimiento?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY39_19')">A) La terminación por inactividad del interesado</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY39_19')">B) La prescripción de la acción</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY39_19')">C) La nulidad por falta de resolución</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY39_19')">D) El archivo del expediente por resolución expresa</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY39_20">
+  <p class="qnum">Pregunta 21 de 25</p>
+  <p class="qtxt">¿Cuál es el plazo de caducidad del procedimiento iniciado de oficio?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY39_20')">A) 3 meses</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY39_20')">B) 6 meses</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY39_20')">C) 1 año</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY39_20')">D) No existe plazo</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY39_21">
+  <p class="qnum">Pregunta 22 de 25</p>
+  <p class="qtxt">¿Cuándo puede la Administración iniciar un procedimiento de oficio?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY39_21')">A) Cuando lo exige el interés público</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY39_21')">B) Solo a solicitud de interesado</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY39_21')">C) Nunca, sin solicitud previa</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY39_21')">D) Solo en caso de urgencia</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY39_22">
+  <p class="qnum">Pregunta 23 de 25</p>
+  <p class="qtxt">¿Qué es el trámite de audiencia?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY39_22')">A) El derecho del interesado a conocer y alegar sobre el expediente antes de resolverse</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY39_22')">B) Una comparecencia obligatoria</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY39_22')">C) La vista oral del procedimiento</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY39_22')">D) La notificación de la resolución</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY39_23">
+  <p class="qnum">Pregunta 24 de 25</p>
+  <p class="qtxt">¿Qué organismos tienen la obligación de relacionarse electrónicamente con la Administración?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY39_23')">A) Las personas jurídicas</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY39_23')">B) Las personas físicas mayores de 65 años</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY39_23')">C) Solo los abogados</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY39_23')">D) Todos los ciudadanos sin excepción</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY39_24">
+  <p class="qnum">Pregunta 25 de 25</p>
+  <p class="qtxt">¿Qué es la Sede Electrónica?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY39_24')">A) Dirección electrónica de referencia con responsabilidad de la Administración sobre su gestión</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY39_24')">B) Una página web informativa</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY39_24')">C) El correo electrónico oficial</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY39_24')">D) Un portal de acceso genérico</button>
+</div>
+</div>
+</div>
+<div class="tab-content" id="tab_LEY40" style="display:none">
+<div class="qcard" id="q_LEY40_0">
+  <p class="qnum">Pregunta 1 de 23</p>
+  <p class="qtxt">¿Cuál es el nombre completo de la Ley 40/2015?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY40_0')">A) Ley de Régimen Jurídico del Sector Público</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY40_0')">B) Ley del Procedimiento Administrativo Común</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY40_0')">C) Ley de Contratos del Sector Público</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY40_0')">D) Ley de Organización y Funcionamiento de la AGE</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY40_1">
+  <p class="qnum">Pregunta 2 de 23</p>
+  <p class="qtxt">¿Qué principios recoge el artículo 3 LRJSP para las AAPP?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY40_1')">A) Eficacia, jerarquía, descentralización, desconcentración, coordinación</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY40_1')">B) Solo legalidad y eficiencia</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY40_1')">C) Autonomía, independencia y control</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY40_1')">D) Proporcionalidad y subsidiariedad</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY40_2">
+  <p class="qnum">Pregunta 3 de 23</p>
+  <p class="qtxt">¿Qué es un convenio administrativo?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY40_2')">A) Un acuerdo con efectos jurídicos entre AAPP o con entidades privadas</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY40_2')">B) Un contrato público</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY40_2')">C) Una ley negociada</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY40_2')">D) Un acto administrativo bilateral</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY40_3">
+  <p class="qnum">Pregunta 4 de 23</p>
+  <p class="qtxt">¿Cuál es la duración máxima de un convenio administrativo?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY40_3')">A) 4 años prorrogables</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY40_3')">B) 2 años improrrogables</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY40_3')">C) Indefinida</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY40_3')">D) 1 año renovable</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY40_4">
+  <p class="qnum">Pregunta 5 de 23</p>
+  <p class="qtxt">¿Qué son las relaciones interadministrativas?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY40_4')">A) Las relaciones entre distintas Administraciones Públicas</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY40_4')">B) Las relaciones entre órganos del mismo ministerio</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY40_4')">C) Las relaciones con los ciudadanos</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY40_4')">D) Las relaciones internacionales del Estado</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY40_5">
+  <p class="qnum">Pregunta 6 de 23</p>
+  <p class="qtxt">¿Qué es la Conferencia Sectorial?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY40_5')">A) Órgano de cooperación entre el Estado y las CC.AA. en una materia</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY40_5')">B) Un órgano del Senado</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY40_5')">C) Una reunión de alcaldes</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY40_5')">D) Un organismo consultivo</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY40_6">
+  <p class="qnum">Pregunta 7 de 23</p>
+  <p class="qtxt">¿Qué son los organismos públicos vinculados o dependientes de la AGE?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY40_6')">A) Los organismos autónomos, las entidades públicas empresariales y las agencias estatales</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY40_6')">B) Solo los ministerios</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY40_6')">C) Las empresas privadas colaboradoras</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY40_6')">D) Los entes locales</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY40_7">
+  <p class="qnum">Pregunta 8 de 23</p>
+  <p class="qtxt">¿Cuándo se puede usar el procedimiento abreviado en el ejercicio de la potestad sancionadora?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY40_7')">A) Cuando haya reconocimiento de responsabilidad por el infractor</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY40_7')">B) En todos los casos</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY40_7')">C) Solo en infracciones leves</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY40_7')">D) Nunca</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY40_8">
+  <p class="qnum">Pregunta 9 de 23</p>
+  <p class="qtxt">¿Qué principio exige que las sanciones sean proporcionales a la gravedad de la infracción?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY40_8')">A) Principio de proporcionalidad</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY40_8')">B) Principio de legalidad</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY40_8')">C) Principio de tipicidad</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY40_8')">D) Principio de non bis in idem</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY40_9">
+  <p class="qnum">Pregunta 10 de 23</p>
+  <p class="qtxt">¿Qué es el principio non bis in idem?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY40_9')">A) Nadie puede ser sancionado dos veces por los mismos hechos</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY40_9')">B) La doble instancia procesal</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY40_9')">C) El principio de igualdad ante la ley</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY40_9')">D) La prohibición de retroactividad</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY40_10">
+  <p class="qnum">Pregunta 11 de 23</p>
+  <p class="qtxt">¿Cuál es la diferencia entre potestad reglamentaria y potestad legislativa?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY40_10')">A) La reglamentaria la ejerce la Administración; la legislativa las Cortes</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY40_10')">B) Son equivalentes</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY40_10')">C) La reglamentaria tiene rango de ley</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY40_10')">D) La legislativa es más limitada</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY40_11">
+  <p class="qnum">Pregunta 12 de 23</p>
+  <p class="qtxt">¿Qué es el principio de jerarquía normativa?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY40_11')">A) Las normas de rango superior prevalecen sobre las de rango inferior</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY40_11')">B) Todas las normas tienen igual valor</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY40_11')">C) Las normas autonómicas prevalecen sobre las estatales</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY40_11')">D) Las costumbres prevalecen sobre las leyes</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY40_12">
+  <p class="qnum">Pregunta 13 de 23</p>
+  <p class="qtxt">¿Quién tiene la responsabilidad patrimonial de las AAPP?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY40_12')">A) Las propias Administraciones Públicas</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY40_12')">B) Los funcionarios causantes</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY40_12')">C) El Estado con carácter exclusivo</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY40_12')">D) Los ciudadanos en todo caso</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY40_13">
+  <p class="qnum">Pregunta 14 de 23</p>
+  <p class="qtxt">¿Cuáles son los requisitos para que exista responsabilidad patrimonial de la Administración?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY40_13')">A) Daño efectivo, relación de causalidad y antijuridicidad</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY40_13')">B) Solo daño efectivo</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY40_13')">C) Solo nexo causal</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY40_13')">D) Culpa del funcionario</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY40_14">
+  <p class="qnum">Pregunta 15 de 23</p>
+  <p class="qtxt">¿Cuál es el plazo de prescripción de la acción de responsabilidad patrimonial?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY40_14')">A) 1 año</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY40_14')">B) 6 meses</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY40_14')">C) 4 años</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY40_14')">D) 3 años</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY40_15">
+  <p class="qnum">Pregunta 16 de 23</p>
+  <p class="qtxt">¿Qué son las encomiendas de gestión?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY40_15')">A) El encargo de actividades materiales a otro órgano sin cesión de competencias</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY40_15')">B) La delegación de competencias</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY40_15')">C) La avocación de competencias</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY40_15')">D) La sustitución de un órgano por otro</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY40_16">
+  <p class="qnum">Pregunta 17 de 23</p>
+  <p class="qtxt">¿Qué es la delegación de competencias?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY40_16')">A) La transferencia del ejercicio de una competencia a un órgano inferior</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY40_16')">B) La cesión definitiva de una competencia</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY40_16')">C) La creación de un nuevo órgano</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY40_16')">D) La fusión de dos órganos</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY40_17">
+  <p class="qnum">Pregunta 18 de 23</p>
+  <p class="qtxt">¿Puede delegarse la competencia delegada?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY40_17')">A) No, salvo autorización expresa</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY40_17')">B) Sí, siempre</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY40_17')">C) Solo en casos urgentes</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY40_17')">D) Sí, mediante decreto</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY40_18">
+  <p class="qnum">Pregunta 19 de 23</p>
+  <p class="qtxt">¿Qué es la avocación?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY40_18')">A) El órgano superior asume la resolución de un asunto atribuido al inferior</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY40_18')">B) El inferior delega en el superior</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY40_18')">C) La inhibición del órgano competente</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY40_18')">D) Un recurso administrativo especial</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY40_19">
+  <p class="qnum">Pregunta 20 de 23</p>
+  <p class="qtxt">¿Cuándo es posible la abstención de un funcionario?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY40_19')">A) Cuando concurra una causa de abstención prevista en el art. 23 LRJSP</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY40_19')">B) Nunca es posible</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY40_19')">C) Solo en procedimientos sancionadores</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY40_19')">D) Cuando el interesado lo solicite</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY40_20">
+  <p class="qnum">Pregunta 21 de 23</p>
+  <p class="qtxt">¿Quién puede plantear la recusación?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY40_20')">A) Los interesados en el procedimiento</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY40_20')">B) El propio funcionario</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY40_20')">C) El órgano superior</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY40_20')">D) Solo el Defensor del Pueblo</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY40_21">
+  <p class="qnum">Pregunta 22 de 23</p>
+  <p class="qtxt">¿Qué es el sector público institucional?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY40_21')">A) Los organismos y entidades dependientes de las AAPP con personalidad jurídica propia</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY40_21')">B) Los ministerios y consejerías</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY40_21')">C) Solo las empresas públicas</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY40_21')">D) Los entes locales</button>
+</div>
+</div>
+<div class="qcard" id="q_LEY40_22">
+  <p class="qnum">Pregunta 23 de 23</p>
+  <p class="qtxt">¿Qué diferencia a una entidad pública empresarial de un organismo autónomo?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'LEY40_22')">A) La entidad pública empresarial se rige por el derecho privado en sus actividades</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'LEY40_22')">B) No hay diferencia</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'LEY40_22')">C) El organismo autónomo tiene más autonomía</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'LEY40_22')">D) La entidad pública empresarial no tiene personalidad jurídica</button>
+</div>
+</div>
+</div>
+<div class="tab-content" id="tab_INFORM" style="display:none">
+<div class="qcard" id="q_INFORM_0">
+  <p class="qnum">Pregunta 1 de 30</p>
+  <p class="qtxt">¿Qué es un sistema operativo?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'INFORM_0')">A) Software que gestiona los recursos del hardware y proporciona servicios a los programas</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'INFORM_0')">B) Un tipo de procesador</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'INFORM_0')">C) Una red de ordenadores</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'INFORM_0')">D) Un dispositivo de almacenamiento</button>
+</div>
+</div>
+<div class="qcard" id="q_INFORM_1">
+  <p class="qnum">Pregunta 2 de 30</p>
+  <p class="qtxt">¿Cuál es el sistema de ficheros más común en Windows?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'INFORM_1')">A) NTFS</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'INFORM_1')">B) FAT32</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'INFORM_1')">C) ext4</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'INFORM_1')">D) exFAT</button>
+</div>
+</div>
+<div class="qcard" id="q_INFORM_2">
+  <p class="qnum">Pregunta 3 de 30</p>
+  <p class="qtxt">¿Qué significa CPU?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'INFORM_2')">A) Central Processing Unit (Unidad Central de Proceso)</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'INFORM_2')">B) Computer Processing Unit</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'INFORM_2')">C) Control Program Unit</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'INFORM_2')">D) Central Power Unit</button>
+</div>
+</div>
+<div class="qcard" id="q_INFORM_3">
+  <p class="qnum">Pregunta 4 de 30</p>
+  <p class="qtxt">¿Cuál es la diferencia entre RAM y ROM?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'INFORM_3')">A) La RAM es volátil y modificable; la ROM es permanente y no modificable</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'INFORM_3')">B) Son equivalentes</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'INFORM_3')">C) La ROM es más rápida</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'INFORM_3')">D) La RAM es de solo lectura</button>
+</div>
+</div>
+<div class="qcard" id="q_INFORM_4">
+  <p class="qnum">Pregunta 5 de 30</p>
+  <p class="qtxt">¿Qué es una dirección IP?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'INFORM_4')">A) Identificador numérico de un dispositivo en una red</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'INFORM_4')">B) Un tipo de protocolo de seguridad</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'INFORM_4')">C) Un nombre de dominio web</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'INFORM_4')">D) Un algoritmo de cifrado</button>
+</div>
+</div>
+<div class="qcard" id="q_INFORM_5">
+  <p class="qnum">Pregunta 6 de 30</p>
+  <p class="qtxt">¿Cuántos bits tiene una dirección IPv4?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'INFORM_5')">A) 32</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'INFORM_5')">B) 64</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'INFORM_5')">C) 128</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'INFORM_5')">D) 16</button>
+</div>
+</div>
+<div class="qcard" id="q_INFORM_6">
+  <p class="qnum">Pregunta 7 de 30</p>
+  <p class="qtxt">¿Cuántos bits tiene una dirección IPv6?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'INFORM_6')">A) 128</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'INFORM_6')">B) 32</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'INFORM_6')">C) 64</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'INFORM_6')">D) 256</button>
+</div>
+</div>
+<div class="qcard" id="q_INFORM_7">
+  <p class="qnum">Pregunta 8 de 30</p>
+  <p class="qtxt">¿Qué es el protocolo HTTP?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'INFORM_7')">A) Protocolo de transferencia de hipertexto para la web</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'INFORM_7')">B) Un protocolo de correo electrónico</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'INFORM_7')">C) Un protocolo de seguridad</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'INFORM_7')">D) Un protocolo de enrutamiento</button>
+</div>
+</div>
+<div class="qcard" id="q_INFORM_8">
+  <p class="qnum">Pregunta 9 de 30</p>
+  <p class="qtxt">¿Qué diferencia HTTPS de HTTP?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'INFORM_8')">A) HTTPS cifra la comunicación mediante SSL/TLS</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'INFORM_8')">B) HTTPS es más lento</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'INFORM_8')">C) HTTPS no usa puertos estándar</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'INFORM_8')">D) HTTPS no requiere servidor</button>
+</div>
+</div>
+<div class="qcard" id="q_INFORM_9">
+  <p class="qnum">Pregunta 10 de 30</p>
+  <p class="qtxt">¿En qué puerto trabaja por defecto HTTPS?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'INFORM_9')">A) 443</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'INFORM_9')">B) 80</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'INFORM_9')">C) 21</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'INFORM_9')">D) 25</button>
+</div>
+</div>
+<div class="qcard" id="q_INFORM_10">
+  <p class="qnum">Pregunta 11 de 30</p>
+  <p class="qtxt">¿Qué es el DNS?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'INFORM_10')">A) Sistema de nombres de dominio que traduce nombres a direcciones IP</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'INFORM_10')">B) Un protocolo de seguridad</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'INFORM_10')">C) Un tipo de servidor web</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'INFORM_10')">D) Un lenguaje de programación</button>
+</div>
+</div>
+<div class="qcard" id="q_INFORM_11">
+  <p class="qnum">Pregunta 12 de 30</p>
+  <p class="qtxt">¿Qué es el phishing?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'INFORM_11')">A) Un ataque de suplantación de identidad para obtener información confidencial</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'INFORM_11')">B) Un virus informático</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'INFORM_11')">C) Un tipo de cortafuegos</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'INFORM_11')">D) Un protocolo de seguridad</button>
+</div>
+</div>
+<div class="qcard" id="q_INFORM_12">
+  <p class="qnum">Pregunta 13 de 30</p>
+  <p class="qtxt">¿Qué es el ransomware?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'INFORM_12')">A) Malware que cifra los datos y pide rescate para recuperarlos</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'INFORM_12')">B) Un virus que borra archivos</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'INFORM_12')">C) Un programa espía</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'INFORM_12')">D) Un ataque de denegación de servicio</button>
+</div>
+</div>
+<div class="qcard" id="q_INFORM_13">
+  <p class="qnum">Pregunta 14 de 30</p>
+  <p class="qtxt">¿Qué es una VPN?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'INFORM_13')">A) Red privada virtual que cifra y encapsula el tráfico de red</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'INFORM_13')">B) Un antivirus</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'INFORM_13')">C) Un tipo de servidor</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'INFORM_13')">D) Un protocolo de correo</button>
+</div>
+</div>
+<div class="qcard" id="q_INFORM_14">
+  <p class="qnum">Pregunta 15 de 30</p>
+  <p class="qtxt">¿Qué es el modelo OSI?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'INFORM_14')">A) Un modelo de referencia de 7 capas para redes de comunicaciones</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'INFORM_14')">B) Un sistema operativo</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'INFORM_14')">C) Un protocolo de internet</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'INFORM_14')">D) Un tipo de red inalámbrica</button>
+</div>
+</div>
+<div class="qcard" id="q_INFORM_15">
+  <p class="qnum">Pregunta 16 de 30</p>
+  <p class="qtxt">¿Qué capa del modelo OSI se encarga del enrutamiento?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'INFORM_15')">A) Capa de Red (capa 3)</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'INFORM_15')">B) Capa Física (capa 1)</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'INFORM_15')">C) Capa de Transporte (capa 4)</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'INFORM_15')">D) Capa de Enlace (capa 2)</button>
+</div>
+</div>
+<div class="qcard" id="q_INFORM_16">
+  <p class="qnum">Pregunta 17 de 30</p>
+  <p class="qtxt">¿Qué significa SaaS en computación en la nube?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'INFORM_16')">A) Software como Servicio</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'INFORM_16')">B) Sistema como Servicio</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'INFORM_16')">C) Seguridad como Servicio</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'INFORM_16')">D) Servidor como Servicio</button>
+</div>
+</div>
+<div class="qcard" id="q_INFORM_17">
+  <p class="qnum">Pregunta 18 de 30</p>
+  <p class="qtxt">¿Qué es IaaS?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'INFORM_17')">A) Infraestructura como Servicio (servidores, almacenamiento, red en la nube)</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'INFORM_17')">B) Información como Servicio</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'INFORM_17')">C) Integración como Servicio</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'INFORM_17')">D) Internet como Servicio</button>
+</div>
+</div>
+<div class="qcard" id="q_INFORM_18">
+  <p class="qnum">Pregunta 19 de 30</p>
+  <p class="qtxt">¿Qué es PaaS?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'INFORM_18')">A) Plataforma como Servicio (entorno de desarrollo en la nube)</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'INFORM_18')">B) Pago como Servicio</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'INFORM_18')">C) Privacidad como Servicio</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'INFORM_18')">D) Protocolo como Servicio</button>
+</div>
+</div>
+<div class="qcard" id="q_INFORM_19">
+  <p class="qnum">Pregunta 20 de 30</p>
+  <p class="qtxt">¿Qué es el protocolo FTP?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'INFORM_19')">A) Protocolo de transferencia de archivos</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'INFORM_19')">B) Protocolo de correo electrónico</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'INFORM_19')">C) Protocolo de seguridad</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'INFORM_19')">D) Protocolo de enrutamiento</button>
+</div>
+</div>
+<div class="qcard" id="q_INFORM_20">
+  <p class="qnum">Pregunta 21 de 30</p>
+  <p class="qtxt">¿Qué es la firma digital?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'INFORM_20')">A) Un mecanismo criptográfico que garantiza autenticidad e integridad de documentos electrónicos</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'INFORM_20')">B) Una imagen de la firma manuscrita</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'INFORM_20')">C) Un sello de tiempo</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'INFORM_20')">D) Un certificado digital</button>
+</div>
+</div>
+<div class="qcard" id="q_INFORM_21">
+  <p class="qnum">Pregunta 22 de 30</p>
+  <p class="qtxt">¿Qué es el certificado digital?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'INFORM_21')">A) Un documento electrónico que vincula una clave pública con la identidad de su titular</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'INFORM_21')">B) Un antivirus</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'INFORM_21')">C) Una contraseña segura</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'INFORM_21')">D) Un protocolo de seguridad</button>
+</div>
+</div>
+<div class="qcard" id="q_INFORM_22">
+  <p class="qnum">Pregunta 23 de 30</p>
+  <p class="qtxt">¿Cuál es la diferencia entre criptografía simétrica y asimétrica?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'INFORM_22')">A) La simétrica usa una clave; la asimétrica usa un par de claves (pública y privada)</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'INFORM_22')">B) Son equivalentes</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'INFORM_22')">C) La asimétrica es menos segura</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'INFORM_22')">D) La simétrica usa más claves</button>
+</div>
+</div>
+<div class="qcard" id="q_INFORM_23">
+  <p class="qnum">Pregunta 24 de 30</p>
+  <p class="qtxt">¿Qué es el backup según la regla 3-2-1?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'INFORM_23')">A) 3 copias, en 2 soportes distintos, 1 fuera del sitio principal</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'INFORM_23')">B) 3 copias en el mismo soporte</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'INFORM_23')">C) 2 copias en 1 soporte</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'INFORM_23')">D) 1 copia en 3 lugares</button>
+</div>
+</div>
+<div class="qcard" id="q_INFORM_24">
+  <p class="qnum">Pregunta 25 de 30</p>
+  <p class="qtxt">¿Qué es una hoja de cálculo?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'INFORM_24')">A) Programa para organizar y calcular datos en celdas dispuestas en filas y columnas</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'INFORM_24')">B) Un procesador de textos</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'INFORM_24')">C) Un sistema de gestión de bases de datos</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'INFORM_24')">D) Un programa de presentaciones</button>
+</div>
+</div>
+<div class="qcard" id="q_INFORM_25">
+  <p class="qnum">Pregunta 26 de 30</p>
+  <p class="qtxt">¿Qué es Word/Writer en el contexto ofimático?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'INFORM_25')">A) Un procesador de textos</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'INFORM_25')">B) Una hoja de cálculo</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'INFORM_25')">C) Un gestor de correo</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'INFORM_25')">D) Un programa de presentaciones</button>
+</div>
+</div>
+<div class="qcard" id="q_INFORM_26">
+  <p class="qnum">Pregunta 27 de 30</p>
+  <p class="qtxt">¿Qué es SQL?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'INFORM_26')">A) Lenguaje de consulta estructurado para bases de datos relacionales</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'INFORM_26')">B) Un protocolo de red</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'INFORM_26')">C) Un sistema operativo</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'INFORM_26')">D) Un tipo de hardware</button>
+</div>
+</div>
+<div class="qcard" id="q_INFORM_27">
+  <p class="qnum">Pregunta 28 de 30</p>
+  <p class="qtxt">¿Qué es un firewall o cortafuegos?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'INFORM_27')">A) Sistema de seguridad que filtra el tráfico de red entrante y saliente</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'INFORM_27')">B) Un antivirus</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'INFORM_27')">C) Un tipo de cable de red</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'INFORM_27')">D) Un protocolo de comunicación</button>
+</div>
+</div>
+<div class="qcard" id="q_INFORM_28">
+  <p class="qnum">Pregunta 29 de 30</p>
+  <p class="qtxt">¿Qué es la autenticación de dos factores (2FA)?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'INFORM_28')">A) Verificar la identidad con dos elementos distintos (contraseña + código)</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'INFORM_28')">B) Una contraseña doble</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'INFORM_28')">C) Un tipo de cifrado</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'INFORM_28')">D) Un protocolo de red</button>
+</div>
+</div>
+<div class="qcard" id="q_INFORM_29">
+  <p class="qnum">Pregunta 30 de 30</p>
+  <p class="qtxt">¿Qué significa RGPD?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'INFORM_29')">A) Reglamento General de Protección de Datos de la UE</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'INFORM_29')">B) Registro General de Procedimientos Digitales</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'INFORM_29')">C) Reglamento de Gestión de Programas Digitales</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'INFORM_29')">D) Red General de Protección de Datos</button>
+</div>
+</div>
+</div>
+<div class="tab-content" id="tab_HACIENDA" style="display:none">
+<div class="qcard" id="q_HACIENDA_0">
+  <p class="qnum">Pregunta 1 de 16</p>
+  <p class="qtxt">¿Cuál es el marco legal principal de los Presupuestos Generales del Estado?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'HACIENDA_0')">A) El artículo 134 de la Constitución Española</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'HACIENDA_0')">B) La Ley General Tributaria</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'HACIENDA_0')">C) La Ley de Contratos del Sector Público</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'HACIENDA_0')">D) El Estatuto de Autonomía</button>
+</div>
+</div>
+<div class="qcard" id="q_HACIENDA_1">
+  <p class="qnum">Pregunta 2 de 16</p>
+  <p class="qtxt">¿Quién elabora los Presupuestos Generales del Estado?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'HACIENDA_1')">A) El Gobierno</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'HACIENDA_1')">B) El Congreso de los Diputados</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'HACIENDA_1')">C) El Senado</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'HACIENDA_1')">D) El Ministerio de Hacienda por iniciativa propia</button>
+</div>
+</div>
+<div class="qcard" id="q_HACIENDA_2">
+  <p class="qnum">Pregunta 3 de 16</p>
+  <p class="qtxt">¿Antes de qué fecha deben presentarse los PGE al Congreso?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'HACIENDA_2')">A) 1 de octubre de cada año</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'HACIENDA_2')">B) 31 de diciembre</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'HACIENDA_2')">C) 1 de septiembre</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'HACIENDA_2')">D) 15 de noviembre</button>
+</div>
+</div>
+<div class="qcard" id="q_HACIENDA_3">
+  <p class="qnum">Pregunta 4 de 16</p>
+  <p class="qtxt">¿Qué ocurre si no se aprueban los PGE antes del 1 de enero?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'HACIENDA_3')">A) Se prorrogarán automáticamente los del ejercicio anterior</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'HACIENDA_3')">B) El Gobierno dimite</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'HACIENDA_3')">C) Se disuelven las Cortes</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'HACIENDA_3')">D) No existe presupuesto</button>
+</div>
+</div>
+<div class="qcard" id="q_HACIENDA_4">
+  <p class="qnum">Pregunta 5 de 16</p>
+  <p class="qtxt">¿Qué es el principio de anualidad presupuestaria?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'HACIENDA_4')">A) Los presupuestos se aprueban y ejecutan por periodos anuales</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'HACIENDA_4')">B) Los presupuestos son plurianuales</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'HACIENDA_4')">C) Los presupuestos no tienen límite temporal</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'HACIENDA_4')">D) Los presupuestos se renuevan automáticamente cada mes</button>
+</div>
+</div>
+<div class="qcard" id="q_HACIENDA_5">
+  <p class="qnum">Pregunta 6 de 16</p>
+  <p class="qtxt">¿Qué es el IRPF?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'HACIENDA_5')">A) Impuesto sobre la Renta de las Personas Físicas</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'HACIENDA_5')">B) Impuesto sobre el Rendimiento de las Propiedades Físicas</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'HACIENDA_5')">C) Impuesto sobre la Renta de las Pequeñas Fuentes</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'HACIENDA_5')">D) Índice de Renta de las Personas Físicas</button>
+</div>
+</div>
+<div class="qcard" id="q_HACIENDA_6">
+  <p class="qnum">Pregunta 7 de 16</p>
+  <p class="qtxt">¿Qué es el IVA?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'HACIENDA_6')">A) Impuesto sobre el Valor Añadido, impuesto indirecto sobre el consumo</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'HACIENDA_6')">B) Impuesto sobre la Vivienda y el Arrendamiento</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'HACIENDA_6')">C) Impuesto al Valor de los Activos</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'HACIENDA_6')">D) Impuesto sobre los Valores Añadidos de empresas</button>
+</div>
+</div>
+<div class="qcard" id="q_HACIENDA_7">
+  <p class="qnum">Pregunta 8 de 16</p>
+  <p class="qtxt">¿Cuántos tipos impositivos tiene el IVA en España?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'HACIENDA_7')">A) 3 (general 21%, reducido 10%, superreducido 4%)</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'HACIENDA_7')">B) 2</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'HACIENDA_7')">C) 4</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'HACIENDA_7')">D) 1</button>
+</div>
+</div>
+<div class="qcard" id="q_HACIENDA_8">
+  <p class="qnum">Pregunta 9 de 16</p>
+  <p class="qtxt">¿Qué es el Impuesto de Sociedades?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'HACIENDA_8')">A) Impuesto que grava los beneficios de las personas jurídicas</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'HACIENDA_8')">B) Un impuesto sobre el consumo</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'HACIENDA_8')">C) Un impuesto sobre la importación</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'HACIENDA_8')">D) Un impuesto local</button>
+</div>
+</div>
+<div class="qcard" id="q_HACIENDA_9">
+  <p class="qnum">Pregunta 10 de 16</p>
+  <p class="qtxt">¿Qué es la Intervención General del Estado (IGAE)?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'HACIENDA_9')">A) El centro directivo que ejerce el control interno de la ejecución del gasto público</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'HACIENDA_9')">B) El Tribunal de Cuentas</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'HACIENDA_9')">C) El Ministerio de Hacienda</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'HACIENDA_9')">D) La Agencia Tributaria</button>
+</div>
+</div>
+<div class="qcard" id="q_HACIENDA_10">
+  <p class="qnum">Pregunta 11 de 16</p>
+  <p class="qtxt">¿Qué diferencia hay entre impuestos directos e indirectos?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'HACIENDA_10')">A) Los directos gravan la renta o patrimonio; los indirectos gravan el consumo o tráfico</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'HACIENDA_10')">B) Son equivalentes</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'HACIENDA_10')">C) Los directos son más recaudatorios</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'HACIENDA_10')">D) Los indirectos gravan la renta</button>
+</div>
+</div>
+<div class="qcard" id="q_HACIENDA_11">
+  <p class="qnum">Pregunta 12 de 16</p>
+  <p class="qtxt">¿Qué es la deuda pública?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'HACIENDA_11')">A) El conjunto de deudas que tiene el Estado con sus acreedores</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'HACIENDA_11')">B) El gasto público total</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'HACIENDA_11')">C) El déficit presupuestario</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'HACIENDA_11')">D) El presupuesto aprobado</button>
+</div>
+</div>
+<div class="qcard" id="q_HACIENDA_12">
+  <p class="qnum">Pregunta 13 de 16</p>
+  <p class="qtxt">¿Qué es el déficit presupuestario?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'HACIENDA_12')">A) Cuando los gastos superan a los ingresos en el presupuesto</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'HACIENDA_12')">B) Cuando los ingresos superan los gastos</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'HACIENDA_12')">C) El equilibrio presupuestario</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'HACIENDA_12')">D) La reserva de fondos</button>
+</div>
+</div>
+<div class="qcard" id="q_HACIENDA_13">
+  <p class="qnum">Pregunta 14 de 16</p>
+  <p class="qtxt">¿Qué es la Ley General Presupuestaria?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'HACIENDA_13')">A) La norma que regula la actividad financiera del sector público estatal</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'HACIENDA_13')">B) La ley anual de presupuestos</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'HACIENDA_13')">C) La CE en materia fiscal</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'HACIENDA_13')">D) El Tratado de Maastricht</button>
+</div>
+</div>
+<div class="qcard" id="q_HACIENDA_14">
+  <p class="qnum">Pregunta 15 de 16</p>
+  <p class="qtxt">¿Qué es el control externo del gasto público?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'HACIENDA_14')">A) El ejercido por el Tribunal de Cuentas</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'HACIENDA_14')">B) El ejercido por la IGAE</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'HACIENDA_14')">C) El ejercido por el Ministerio de Hacienda</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'HACIENDA_14')">D) El ejercido por el Banco de España</button>
+</div>
+</div>
+<div class="qcard" id="q_HACIENDA_15">
+  <p class="qnum">Pregunta 16 de 16</p>
+  <p class="qtxt">¿Qué es el Fondo de Garantía Salarial (FOGASA)?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'HACIENDA_15')">A) Organismo que garantiza a los trabajadores el pago de salarios en caso de insolvencia empresarial</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'HACIENDA_15')">B) Un fondo de pensiones del Estado</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'HACIENDA_15')">C) El fondo de desempleo</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'HACIENDA_15')">D) Una entidad bancaria pública</button>
+</div>
+</div>
+</div>
+<div class="tab-content" id="tab_PSICO" style="display:none">
+<div class="qcard" id="q_PSICO_0">
+  <p class="qnum">Pregunta 1 de 25</p>
+  <p class="qtxt">Si A>B y B>C, ¿cuál es la relación entre A y C?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'PSICO_0')">A) A>C</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'PSICO_0')">B) A<C</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'PSICO_0')">C) A=C</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'PSICO_0')">D) No se puede determinar</button>
+</div>
+</div>
+<div class="qcard" id="q_PSICO_1">
+  <p class="qnum">Pregunta 2 de 25</p>
+  <p class="qtxt">¿Cuál es el siguiente término en la serie: 2, 4, 8, 16, __?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'PSICO_1')">A) 32</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'PSICO_1')">B) 24</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'PSICO_1')">C) 20</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'PSICO_1')">D) 28</button>
+</div>
+</div>
+<div class="qcard" id="q_PSICO_2">
+  <p class="qnum">Pregunta 3 de 25</p>
+  <p class="qtxt">¿Cuál es el siguiente término: 1, 1, 2, 3, 5, 8, 13, __?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'PSICO_2')">A) 21</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'PSICO_2')">B) 18</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'PSICO_2')">C) 20</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'PSICO_2')">D) 24</button>
+</div>
+</div>
+<div class="qcard" id="q_PSICO_3">
+  <p class="qnum">Pregunta 4 de 25</p>
+  <p class="qtxt">Si un tren recorre 120 km en 2 horas, ¿cuál es su velocidad media?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'PSICO_3')">A) 60 km/h</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'PSICO_3')">B) 240 km/h</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'PSICO_3')">C) 30 km/h</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'PSICO_3')">D) 180 km/h</button>
+</div>
+</div>
+<div class="qcard" id="q_PSICO_4">
+  <p class="qnum">Pregunta 5 de 25</p>
+  <p class="qtxt">¿Qué número sigue en la serie: 5, 10, 20, 40, __?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'PSICO_4')">A) 80</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'PSICO_4')">B) 60</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'PSICO_4')">C) 100</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'PSICO_4')">D) 70</button>
+</div>
+</div>
+<div class="qcard" id="q_PSICO_5">
+  <p class="qnum">Pregunta 6 de 25</p>
+  <p class="qtxt">Si el 30% de un número es 60, ¿cuál es el número?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'PSICO_5')">A) 200</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'PSICO_5')">B) 180</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'PSICO_5')">C) 600</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'PSICO_5')">D) 20</button>
+</div>
+</div>
+<div class="qcard" id="q_PSICO_6">
+  <p class="qnum">Pregunta 7 de 25</p>
+  <p class="qtxt">¿Cuánto es el 15% de 400?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'PSICO_6')">A) 60</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'PSICO_6')">B) 40</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'PSICO_6')">C) 80</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'PSICO_6')">D) 100</button>
+</div>
+</div>
+<div class="qcard" id="q_PSICO_7">
+  <p class="qnum">Pregunta 8 de 25</p>
+  <p class="qtxt">En un grupo de 40 personas, el 25% son hombres. ¿Cuántas mujeres hay?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'PSICO_7')">A) 30</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'PSICO_7')">B) 10</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'PSICO_7')">C) 20</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'PSICO_7')">D) 15</button>
+</div>
+</div>
+<div class="qcard" id="q_PSICO_8">
+  <p class="qnum">Pregunta 9 de 25</p>
+  <p class="qtxt">¿Cuál es el siguiente en la serie: 100, 90, 81, 73, 66, __?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'PSICO_8')">A) 60</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'PSICO_8')">B) 55</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'PSICO_8')">C) 65</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'PSICO_8')">D) 70</button>
+</div>
+</div>
+<div class="qcard" id="q_PSICO_9">
+  <p class="qnum">Pregunta 10 de 25</p>
+  <p class="qtxt">Si A es hermano de B, y B es hijo de C, ¿qué es A respecto de C?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'PSICO_9')">A) Hijo</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'PSICO_9')">B) Nieto</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'PSICO_9')">C) Sobrino</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'PSICO_9')">D) Primo</button>
+</div>
+</div>
+<div class="qcard" id="q_PSICO_10">
+  <p class="qnum">Pregunta 11 de 25</p>
+  <p class="qtxt">¿Cuánto es la mitad de un cuarto de 200?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'PSICO_10')">A) 25</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'PSICO_10')">B) 50</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'PSICO_10')">C) 100</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'PSICO_10')">D) 12.5</button>
+</div>
+</div>
+<div class="qcard" id="q_PSICO_11">
+  <p class="qnum">Pregunta 12 de 25</p>
+  <p class="qtxt">Una mercancía costaba 80€ y sube un 25%. ¿Cuánto cuesta ahora?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'PSICO_11')">A) 100€</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'PSICO_11')">B) 105€</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'PSICO_11')">C) 95€</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'PSICO_11')">D) 110€</button>
+</div>
+</div>
+<div class="qcard" id="q_PSICO_12">
+  <p class="qnum">Pregunta 13 de 25</p>
+  <p class="qtxt">¿Qué número falta en la serie: 3, 6, __, 24, 48?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'PSICO_12')">A) 12</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'PSICO_12')">B) 9</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'PSICO_12')">C) 15</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'PSICO_12')">D) 18</button>
+</div>
+</div>
+<div class="qcard" id="q_PSICO_13">
+  <p class="qnum">Pregunta 14 de 25</p>
+  <p class="qtxt">Si hoy es martes, ¿qué día será dentro de 10 días?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'PSICO_13')">A) Viernes</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'PSICO_13')">B) Jueves</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'PSICO_13')">C) Sábado</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'PSICO_13')">D) Miércoles</button>
+</div>
+</div>
+<div class="qcard" id="q_PSICO_14">
+  <p class="qnum">Pregunta 15 de 25</p>
+  <p class="qtxt">¿Cuál es el perímetro de un cuadrado de lado 7 cm?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'PSICO_14')">A) 28 cm</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'PSICO_14')">B) 14 cm</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'PSICO_14')">C) 49 cm</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'PSICO_14')">D) 21 cm</button>
+</div>
+</div>
+<div class="qcard" id="q_PSICO_15">
+  <p class="qnum">Pregunta 16 de 25</p>
+  <p class="qtxt">¿Cuánto es 3/4 de 120?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'PSICO_15')">A) 90</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'PSICO_15')">B) 30</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'PSICO_15')">C) 40</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'PSICO_15')">D) 60</button>
+</div>
+</div>
+<div class="qcard" id="q_PSICO_16">
+  <p class="qnum">Pregunta 17 de 25</p>
+  <p class="qtxt">En la serie: A, C, E, G, ¿cuál es el siguiente?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'PSICO_16')">A) I</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'PSICO_16')">B) H</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'PSICO_16')">C) J</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'PSICO_16')">D) K</button>
+</div>
+</div>
+<div class="qcard" id="q_PSICO_17">
+  <p class="qnum">Pregunta 18 de 25</p>
+  <p class="qtxt">Si el precio de un artículo baja un 20% y luego sube un 20%, ¿qué ocurre?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'PSICO_17')">A) Queda por debajo del precio inicial</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'PSICO_17')">B) Queda igual</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'PSICO_17')">C) Queda por encima</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'PSICO_17')">D) Varía según el precio</button>
+</div>
+</div>
+<div class="qcard" id="q_PSICO_18">
+  <p class="qnum">Pregunta 19 de 25</p>
+  <p class="qtxt">¿Cuántos segundos hay en una hora?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'PSICO_18')">A) 3.600</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'PSICO_18')">B) 600</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'PSICO_18')">C) 360</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'PSICO_18')">D) 7.200</button>
+</div>
+</div>
+<div class="qcard" id="q_PSICO_19">
+  <p class="qnum">Pregunta 20 de 25</p>
+  <p class="qtxt">Un depósito tiene 150 litros y se vacía a razón de 5 litros/min. ¿En cuánto tiempo queda vacío?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'PSICO_19')">A) 30 minutos</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'PSICO_19')">B) 25 minutos</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'PSICO_19')">C) 15 minutos</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'PSICO_19')">D) 35 minutos</button>
+</div>
+</div>
+<div class="qcard" id="q_PSICO_20">
+  <p class="qnum">Pregunta 21 de 25</p>
+  <p class="qtxt">¿Cuál es el número impar mayor que 10 y menor que 14?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'PSICO_20')">A) 13</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'PSICO_20')">B) 11</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'PSICO_20')">C) 12</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'PSICO_20')">D) 15</button>
+</div>
+</div>
+<div class="qcard" id="q_PSICO_21">
+  <p class="qnum">Pregunta 22 de 25</p>
+  <p class="qtxt">Si 5 obreros tardan 12 días en hacer una obra, ¿cuánto tardarán 10 obreros?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'PSICO_21')">A) 6 días</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'PSICO_21')">B) 24 días</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'PSICO_21')">C) 2.4 días</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'PSICO_21')">D) 10 días</button>
+</div>
+</div>
+<div class="qcard" id="q_PSICO_22">
+  <p class="qnum">Pregunta 23 de 25</p>
+  <p class="qtxt">¿Cuál es el área de un rectángulo de 8 cm × 5 cm?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'PSICO_22')">A) 40 cm²</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'PSICO_22')">B) 26 cm²</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'PSICO_22')">C) 13 cm²</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'PSICO_22')">D) 80 cm²</button>
+</div>
+</div>
+<div class="qcard" id="q_PSICO_23">
+  <p class="qnum">Pregunta 24 de 25</p>
+  <p class="qtxt">En la serie: 1, 4, 9, 16, 25, ¿cuál es el siguiente?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'PSICO_23')">A) 36</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'PSICO_23')">B) 30</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'PSICO_23')">C) 35</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'PSICO_23')">D) 49</button>
+</div>
+</div>
+<div class="qcard" id="q_PSICO_24">
+  <p class="qnum">Pregunta 25 de 25</p>
+  <p class="qtxt">¿Cuántos meses tienen 31 días?</p>
+  <div class="opts"><button class="opt-btn" onclick="checkAnswer(this,0,0,'PSICO_24')">A) 7</button>
+<button class="opt-btn" onclick="checkAnswer(this,1,0,'PSICO_24')">B) 6</button>
+<button class="opt-btn" onclick="checkAnswer(this,2,0,'PSICO_24')">C) 8</button>
+<button class="opt-btn" onclick="checkAnswer(this,3,0,'PSICO_24')">D) 5</button>
+</div>
+</div>
+</div>
+</main>
+
+<div class="sim-overlay" id="simOverlay">
+  <div class="sim-header">
+    <span class="sim-title">📝 Simulacro Auxiliar Administrativo del Estado</span>
+    <div style="display:flex;align-items:center;gap:14px">
+      <span class="sim-timer" id="simTimer">45:00</span>
+      <button onclick="endExam()" style="background:rgba(255,255,255,.15);color:#fff;border:none;padding:7px 16px;border-radius:8px;cursor:pointer;font-weight:600">Terminar</button>
+    </div>
+  </div>
+  <div class="sim-body" id="simBody"></div>
+  <div class="sim-nav">
+    <button id="simPrev" onclick="simNav(-1)" disabled>← Anterior</button>
+    <span style="color:rgba(255,255,255,.6);font-size:.88rem;align-self:center" id="simProgress">1 / 50</span>
+    <button id="simNext" onclick="simNav(1)">Siguiente →</button>
+    <button id="simSubmit" onclick="submitExam()" style="display:none;background:var(--gold);color:#1a2744">Enviar Examen</button>
+  </div>
+</div>
+
+<script>
+const ALL = [{"q": "¿Cuál es la forma de gobierno de España según el artículo 1 CE?", "opts": ["Monarquía parlamentaria", "República democrática", "Estado federal", "Monarquía constitucional absoluta"], "correct": 0, "expl": "Art. 1.3 CE: 'La forma política del Estado español es la Monarquía parlamentaria'.", "block": "CE"}, {"q": "¿Cuántos artículos tiene la Constitución Española de 1978?", "opts": ["169", "170", "171", "168"], "correct": 0, "expl": "La CE de 1978 tiene 169 artículos, 11 disposiciones adicionales, 9 transitorias, 1 derogatoria y 1 final.", "block": "CE"}, {"q": "¿En qué fecha fue aprobada la Constitución Española en referéndum?", "opts": ["6 de diciembre de 1978", "29 de diciembre de 1978", "27 de octubre de 1978", "15 de junio de 1977"], "correct": 0, "expl": "El referéndum constitucional se celebró el 6 de diciembre de 1978.", "block": "CE"}, {"q": "Según el artículo 2 CE, la Constitución reconoce el derecho a la autonomía de:", "opts": ["Las nacionalidades y regiones", "Los municipios y provincias", "Las comunidades autónomas", "Los territorios históricos"], "correct": 0, "expl": "Art. 2 CE: '...garantiza el derecho a la autonomía de las nacionalidades y regiones que la integran'.", "block": "CE"}, {"q": "¿Cuál es el idioma oficial del Estado según el artículo 3 CE?", "opts": ["El castellano", "El español", "El castellano y las lenguas cooficiales", "El español en todo el territorio"], "correct": 0, "expl": "Art. 3.1: 'El castellano es la lengua española oficial del Estado'.", "block": "CE"}, {"q": "¿Cuántos títulos tiene la Constitución Española?", "opts": ["10", "11", "12", "9"], "correct": 0, "expl": "La CE tiene un Título Preliminar más 10 Títulos (I al X).", "block": "CE"}, {"q": "¿Qué artículo de la CE recoge el derecho a la igualdad?", "opts": ["Art. 14", "Art. 15", "Art. 16", "Art. 17"], "correct": 0, "expl": "Art. 14 CE: 'Los españoles son iguales ante la ley, sin que pueda prevalecer discriminación alguna'.", "block": "CE"}, {"q": "El derecho a la vida se recoge en el artículo:", "opts": ["15", "14", "16", "17"], "correct": 0, "expl": "Art. 15 CE reconoce el derecho a la vida y a la integridad física y moral.", "block": "CE"}, {"q": "¿Qué son los derechos fundamentales y libertades públicas?", "opts": ["Arts. 15 a 29", "Arts. 14 a 38", "Arts. 30 a 38", "Arts. 39 a 52"], "correct": 0, "expl": "La Sección 1ª del Capítulo II del Título I (arts. 15-29) recoge los DDFF y libertades públicas.", "block": "CE"}, {"q": "¿Cuál es el plazo máximo de detención preventiva sin orden judicial?", "opts": ["72 horas", "48 horas", "24 horas", "96 horas"], "correct": 0, "expl": "Art. 17.2 CE: la detención preventiva no puede durar más de 72 horas.", "block": "CE"}, {"q": "La inviolabilidad del domicilio se recoge en el artículo:", "opts": ["18", "19", "20", "21"], "correct": 0, "expl": "Art. 18.2 CE: 'El domicilio es inviolable'.", "block": "CE"}, {"q": "¿Qué artículo reconoce la libertad de expresión?", "opts": ["20", "18", "19", "21"], "correct": 0, "expl": "Art. 20 CE recoge las libertades de expresión, información y creación.", "block": "CE"}, {"q": "El derecho de sufragio activo y pasivo se recoge en el artículo:", "opts": ["23", "22", "24", "25"], "correct": 0, "expl": "Art. 23 CE: Los ciudadanos tienen derecho a participar en los asuntos públicos.", "block": "CE"}, {"q": "¿En qué artículo se recoge la tutela judicial efectiva?", "opts": ["24", "23", "25", "26"], "correct": 0, "expl": "Art. 24 CE: 'Todas las personas tienen derecho a obtener la tutela efectiva de los jueces y tribunales'.", "block": "CE"}, {"q": "¿Cuántas Cámaras tiene Las Cortes Generales?", "opts": ["2", "1", "3", "4"], "correct": 0, "expl": "Art. 66 CE: Las Cortes Generales están formadas por el Congreso de los Diputados y el Senado.", "block": "CE"}, {"q": "¿Cuántos diputados tiene el Congreso?", "opts": ["350", "300", "400", "352"], "correct": 0, "expl": "La LOREG establece que el Congreso está formado por un mínimo de 300 y un máximo de 400 diputados; actualmente 350.", "block": "CE"}, {"q": "El Rey sanciona las leyes en un plazo de:", "opts": ["15 días", "30 días", "10 días", "20 días"], "correct": 0, "expl": "Art. 91 CE: El Rey sancionará en el plazo de 15 días las leyes aprobadas por las Cortes Generales.", "block": "CE"}, {"q": "¿Quién nombra al Presidente del Gobierno?", "opts": ["El Rey, a propuesta del Congreso", "El Congreso directamente", "El Senado", "El pueblo directamente"], "correct": 0, "expl": "Art. 62.d CE: Corresponde al Rey nombrar y separar a los miembros del Gobierno a propuesta de su Presidente.", "block": "CE"}, {"q": "¿Cuántos miembros tiene el Tribunal Constitucional?", "opts": ["12", "9", "15", "11"], "correct": 0, "expl": "Art. 159 CE: El Tribunal Constitucional se compone de 12 miembros.", "block": "CE"}, {"q": "¿Cuál es el periodo de mandato de los magistrados del TC?", "opts": ["9 años", "6 años", "12 años", "4 años"], "correct": 0, "expl": "Art. 159.3 CE: los miembros del TC serán designados por un período de nueve años.", "block": "CE"}, {"q": "El Defensor del Pueblo es elegido por:", "opts": ["Las Cortes Generales", "El Gobierno", "El Tribunal Supremo", "El Rey"], "correct": 0, "expl": "Art. 54 CE: designado por las Cortes Generales para defender los derechos del Título I.", "block": "CE"}, {"q": "¿Cuántos años dura el mandato del Defensor del Pueblo?", "opts": ["5", "4", "6", "3"], "correct": 0, "expl": "La LO 3/1981 establece un mandato de 5 años para el Defensor del Pueblo.", "block": "CE"}, {"q": "La iniciativa legislativa popular requiere como mínimo:", "opts": ["500.000 firmas", "250.000 firmas", "1.000.000 firmas", "100.000 firmas"], "correct": 0, "expl": "Art. 87.3 CE: se exigen no menos de 500.000 firmas acreditadas para la iniciativa legislativa popular.", "block": "CE"}, {"q": "¿Qué tipo de reforma requiere el artículo 168 CE?", "opts": ["Mayoría de 2/3 + referéndum", "Mayoría absoluta", "Mayoría simple", "Mayoría 3/5"], "correct": 0, "expl": "La reforma del art. 168 CE (reforma agravada) requiere 2/3 de cada cámara, disolución, ratificación y referéndum.", "block": "CE"}, {"q": "El Senado tiene principalmente carácter:", "opts": ["De representación territorial", "De representación proporcional", "Colegislador pleno", "Ejecutivo"], "correct": 0, "expl": "Art. 69.1 CE: 'El Senado es la Cámara de representación territorial'.", "block": "CE"}, {"q": "¿En qué artículo se reconoce el derecho a la educación?", "opts": ["27", "26", "28", "29"], "correct": 0, "expl": "Art. 27 CE reconoce el derecho a la educación y la libertad de enseñanza.", "block": "CE"}, {"q": "¿Cuántos meses como máximo puede regir un presupuesto prorrogado?", "opts": ["12 meses", "6 meses", "24 meses", "3 meses"], "correct": 0, "expl": "Art. 134.4 CE: si no se aprueba antes del 1 de enero, se prorrogará automáticamente hasta la aprobación de los nuevos.", "block": "CE"}, {"q": "La Corona es inviolable. ¿A quién corresponde refrendar los actos del Rey?", "opts": ["Al Presidente del Gobierno o ministros competentes", "Al Presidente del Congreso", "Al Presidente del TC", "Al Presidente del Senado"], "correct": 0, "expl": "Art. 64 CE: Los actos del Rey serán refrendados por el Pte. del Gobierno y, en su caso, por los Ministros competentes.", "block": "CE"}, {"q": "¿Qué artículo prohíbe expresamente la guerra?", "opts": ["63.3", "55", "96", "62"], "correct": 0, "expl": "Art. 63.3 CE: Al Rey corresponde declarar la guerra y hacer la paz, previa autorización de las Cortes; el art. 63 es sobre guerra.", "block": "CE"}, {"q": "La moción de censura en España es de tipo:", "opts": ["Constructiva", "Destructiva", "Simple", "Mixta"], "correct": 0, "expl": "España tiene moción de censura constructiva (art. 113 CE): debe incluir candidato alternativo a la Presidencia.", "block": "CE"}, {"q": "El Consejo de Estado es el supremo órgano:", "opts": ["Consultivo del Gobierno", "Jurisdiccional", "Ejecutivo", "Legislativo"], "correct": 0, "expl": "Art. 107 CE: 'El Consejo de Estado es el supremo órgano consultivo del Gobierno'.", "block": "CE"}, {"q": "¿Cuántas Comunidades Autónomas tiene España?", "opts": ["17", "16", "18", "19"], "correct": 0, "expl": "España tiene 17 Comunidades Autónomas y 2 Ciudades Autónomas (Ceuta y Melilla).", "block": "CE"}, {"q": "¿Qué artículo CE regula el estado de alarma, excepción y sitio?", "opts": ["116", "115", "117", "118"], "correct": 0, "expl": "Art. 116 CE regula los estados de alarma, excepción y sitio.", "block": "CE"}, {"q": "El Tribunal de Cuentas es el supremo órgano fiscalizador de:", "opts": ["Las cuentas del Estado", "La gestión económica del sector público", "Los delitos económicos", "Las comunidades autónomas"], "correct": 1, "expl": "Art. 136 CE: El TC es el supremo órgano fiscalizador de las cuentas y de la gestión económica del Estado y del sector público.", "block": "CE"}, {"q": "¿Cuál es la edad mínima para ser diputado en el Congreso?", "opts": ["18 años", "21 años", "25 años", "16 años"], "correct": 0, "expl": "Para ser diputado se requiere ser mayor de edad (18 años), según la LOREG.", "block": "CE"}, {"q": "El derecho de huelga se recoge en el artículo:", "opts": ["28", "27", "29", "30"], "correct": 0, "expl": "Art. 28.2 CE reconoce el derecho a la huelga de los trabajadores.", "block": "CE"}, {"q": "¿Qué principio rige el sistema tributario según el art. 31 CE?", "opts": ["Capacidad económica", "Igualdad absoluta", "Proporcionalidad", "Suficiencia"], "correct": 0, "expl": "Art. 31.1 CE: 'Todos contribuirán al sostenimiento de los gastos públicos de acuerdo con su capacidad económica'.", "block": "CE"}, {"q": "¿Cuál es el periodo de sesiones ordinarias de las Cortes?", "opts": ["Dos periodos: septiembre-diciembre y febrero-junio", "Un periodo anual continuo", "Tres periodos al año", "Solo uno de octubre a junio"], "correct": 0, "expl": "Art. 73 CE: Las cámaras se reunirán anualmente en dos periodos ordinarios de sesiones.", "block": "CE"}, {"q": "El artículo 9.3 CE garantiza entre otros principios:", "opts": ["La seguridad jurídica y la irretroactividad", "La separación de poderes", "La soberanía popular", "El pluralismo político"], "correct": 0, "expl": "Art. 9.3 CE garantiza legalidad, jerarquía normativa, publicidad, irretroactividad, seguridad jurídica, responsabilidad e interdicción de la arbitrariedad.", "block": "CE"}, {"q": "¿Cuántos miembros del TC designa el Gobierno?", "opts": ["2", "3", "4", "1"], "correct": 0, "expl": "De los 12 miembros del TC: 4 los propone el Congreso, 4 el Senado, 2 el Gobierno y 2 el CGPJ.", "block": "CE"}, {"q": "¿Quién es el jefe del Gobierno?", "opts": ["El Presidente del Gobierno", "El Rey", "El Presidente del Congreso", "El Presidente del Senado"], "correct": 0, "expl": "Art. 97 CE: El Gobierno dirige la política interior y exterior; el Presidente lo dirige.", "block": "ORG"}, {"q": "¿Cuántos ministerios existen actualmente en el Gobierno de España (aprox. 2024)?", "opts": ["22", "18", "25", "30"], "correct": 0, "expl": "En 2024 el Gobierno cuenta con aproximadamente 22 ministerios (puede variar por reorganización).", "block": "ORG"}, {"q": "¿Qué órgano coordina la actuación de los ministros?", "opts": ["El Consejo de Ministros", "El Congreso", "El Senado", "El Presidente del TC"], "correct": 0, "expl": "Art. 98 CE: El Gobierno se compone del Presidente, Vicepresidentes en su caso, Ministros y otros miembros.", "block": "ORG"}, {"q": "La Secretaría de Estado está por debajo de:", "opts": ["El Ministro", "El Director General", "El Subsecretario", "El Delegado del Gobierno"], "correct": 0, "expl": "La jerarquía es: Ministro > Secretario de Estado > Subsecretario/Secretario General > Director General.", "block": "ORG"}, {"q": "¿Qué órgano dirige la Administración General del Estado en cada CC.AA.?", "opts": ["La Delegación del Gobierno", "La Subdelegación del Gobierno", "La Dirección General Territorial", "El Ministerio competente"], "correct": 0, "expl": "La Delegación del Gobierno dirige la AGE en el territorio de cada CC.AA. (art. 154 CE).", "block": "ORG"}, {"q": "Los Delegados del Gobierno son nombrados y separados por:", "opts": ["El Consejo de Ministros a propuesta del Ministro de Política Territorial", "El Presidente del Gobierno directamente", "Las Cortes Generales", "El Presidente de la CC.AA."], "correct": 0, "expl": "Los Delegados del Gobierno son nombrados por Real Decreto del Consejo de Ministros.", "block": "ORG"}, {"q": "¿Qué es la Comisión Delegada del Gobierno?", "opts": ["Un órgano colegiado del Gobierno para coordinación sectorial", "El Parlamento reducido", "Una Comisión del Congreso", "El Pleno del Senado"], "correct": 0, "expl": "Las Comisiones Delegadas del Gobierno son órganos colegiados creados por RD para tratar asuntos de varios ministerios.", "block": "ORG"}, {"q": "¿Cuál es el órgano de gobierno del Poder Judicial?", "opts": ["El Consejo General del Poder Judicial (CGPJ)", "El Tribunal Supremo", "El Ministerio de Justicia", "El Tribunal Constitucional"], "correct": 0, "expl": "Art. 122.2 CE: El CGPJ es el órgano de gobierno del Poder Judicial.", "block": "ORG"}, {"q": "¿Cuántos miembros tiene el CGPJ?", "opts": ["20 + el Presidente", "12 + el Presidente", "15", "21"], "correct": 0, "expl": "El CGPJ está formado por 20 vocales más el Presidente del Tribunal Supremo que lo preside.", "block": "ORG"}, {"q": "El Tribunal Supremo tiene su sede en:", "opts": ["Madrid", "Barcelona", "Valencia", "Sevilla"], "correct": 0, "expl": "El Tribunal Supremo, con sede en Madrid, es el órgano jurisdiccional superior en todos los órdenes.", "block": "ORG"}, {"q": "¿Qué son los Órganos Constitucionales?", "opts": ["Aquellos creados y regulados directamente por la Constitución", "Los ministerios del Gobierno", "Los parlamentos autonómicos", "Los ayuntamientos"], "correct": 0, "expl": "Son órganos constitucionales: La Corona, Las Cortes, El Gobierno, TC, CGPJ, Tribunal de Cuentas, Defensor del Pueblo.", "block": "ORG"}, {"q": "¿Qué es la Administración Periférica del Estado?", "opts": ["La organización de la AGE en el territorio nacional", "Los entes locales", "Las administraciones autonómicas", "Los organismos autónomos"], "correct": 0, "expl": "La administración periférica comprende Delegaciones y Subdelegaciones del Gobierno.", "block": "ORG"}, {"q": "¿Cuál es el principio básico de organización administrativa según la LRJSP?", "opts": ["Jerarquía, descentralización, desconcentración y coordinación", "Autonomía e independencia", "Legalidad y eficacia", "Proporcionalidad y subsidiariedad"], "correct": 0, "expl": "El art. 3 LRJSP establece como principios la jerarquía, descentralización, desconcentración, coordinación, eficacia y eficiencia.", "block": "ORG"}, {"q": "¿Qué es un Organismo Autónomo?", "opts": ["Entidad de derecho público vinculada a un ministerio con personalidad jurídica propia", "Una empresa pública", "Una fundación del Estado", "Un órgano del Gobierno"], "correct": 0, "expl": "Los organismos autónomos son entidades de derecho público dependientes de la AGE con personalidad jurídica y patrimonio propio.", "block": "ORG"}, {"q": "¿Quién dirige la Subdelegación del Gobierno?", "opts": ["El Subdelegado del Gobierno", "El Delegado del Gobierno", "El Secretario de Estado", "El Gobernador Civil"], "correct": 0, "expl": "Las Subdelegaciones del Gobierno existen en provincias y son dirigidas por los Subdelegados del Gobierno.", "block": "ORG"}, {"q": "¿Qué es el Ministerio de Hacienda respecto a la AGE?", "opts": ["Un departamento ministerial con competencias sobre presupuestos y fiscalidad", "Un organismo autónomo", "Una agencia estatal", "Un ente público"], "correct": 0, "expl": "El Ministerio de Hacienda es un departamento ministerial responsable de la política presupuestaria y fiscal.", "block": "ORG"}, {"q": "¿Qué es la Agencia Estatal de Administración Tributaria (AEAT)?", "opts": ["Entidad de derecho público adscrita al Min. de Hacienda", "Organismo autónomo del MINHAC", "Empresa pública", "Entidad privada colaboradora"], "correct": 0, "expl": "La AEAT es una entidad de derecho público con personalidad jurídica propia adscrita al Ministerio de Hacienda.", "block": "ORG"}, {"q": "La iniciativa legislativa del Gobierno se llama:", "opts": ["Proyecto de ley", "Proposición de ley", "Decreto-ley", "Decreto legislativo"], "correct": 0, "expl": "Los proyectos de ley son iniciativas legislativas del Gobierno; las proposiciones de ley son de los parlamentarios.", "block": "ORG"}, {"q": "¿Cuál es la norma con rango de ley que puede dictar el Gobierno en casos de urgencia?", "opts": ["Decreto-ley", "Decreto legislativo", "Reglamento", "Orden ministerial"], "correct": 0, "expl": "Art. 86 CE: En caso de extraordinaria y urgente necesidad, el Gobierno puede dictar Decretos-leyes.", "block": "ORG"}, {"q": "¿Qué es el Decreto Legislativo?", "opts": ["Una norma con rango de ley dictada por el Gobierno con autorización de las Cortes", "Una ley del Parlamento", "Un reglamento ejecutivo", "Una orden ministerial urgente"], "correct": 0, "expl": "Art. 82-85 CE: Las Cortes pueden delegar en el Gobierno la potestad de dictar normas con rango de ley mediante Decretos Legislativos.", "block": "ORG"}, {"q": "¿Cuántos tipos de Decretos Legislativos existen?", "opts": ["2 (textos refundidos y textos articulados)", "3", "1", "4"], "correct": 0, "expl": "Las leyes de delegación pueden ser de bases (texto articulado) o de refundición (texto refundido).", "block": "ORG"}, {"q": "El Consejo Económico y Social (CES) es un órgano:", "opts": ["Consultivo en materia socioeconómica y laboral", "Ejecutivo del Gobierno", "Jurisdiccional", "Legislativo"], "correct": 0, "expl": "El CES es el órgano consultivo del Gobierno en materia socioeconómica, laboral y medioambiental.", "block": "ORG"}, {"q": "¿Qué Ministerio tiene competencias sobre la función pública?", "opts": ["Ministerio para la Transformación Digital y de la Función Pública (varía)", "Ministerio del Interior", "Ministerio de Economía", "Ministerio de Hacienda"], "correct": 0, "expl": "La función pública está adscrita al Ministerio competente en la materia, que cambia según el Gobierno.", "block": "ORG"}, {"q": "¿Cuál es la diferencia entre descentralización y desconcentración?", "opts": ["La descentralización transfiere a entes distintos; la desconcentración transfiere dentro del mismo ente", "Son sinónimos", "La desconcentración transfiere a entes distintos", "Ninguna diferencia práctica"], "correct": 0, "expl": "La descentralización supone transferir competencias a entes con personalidad jurídica distinta; la desconcentración, dentro del mismo ente.", "block": "ORG"}, {"q": "¿Qué ley regula la Administración General del Estado?", "opts": ["La Ley 40/2015 (LRJSP)", "La Ley 39/2015 (LPACAP)", "La Ley 7/1985 LBRL", "La Ley 9/1987"], "correct": 0, "expl": "La Ley 40/2015 de Régimen Jurídico del Sector Público regula la AGE y las relaciones interadministrativas.", "block": "ORG"}, {"q": "¿Cuál es el nombre completo de la Ley 39/2015?", "opts": ["Ley del Procedimiento Administrativo Común de las Administraciones Públicas", "Ley de Régimen Jurídico del Sector Público", "Ley de Bases de Régimen Local", "Ley de Contratos del Sector Público"], "correct": 0, "expl": "La Ley 39/2015 de 1 de octubre se denomina 'del Procedimiento Administrativo Común de las Administraciones Públicas'.", "block": "LEY39"}, {"q": "¿Cuál es el plazo general para resolver y notificar los procedimientos administrativos según la Ley 39/2015?", "opts": ["6 meses", "3 meses", "1 año", "2 meses"], "correct": 0, "expl": "Art. 21.3 LPACAP: El plazo máximo es de 6 meses salvo que la norma reguladora del procedimiento fije uno mayor.", "block": "LEY39"}, {"q": "¿Qué es el silencio administrativo positivo?", "opts": ["La estimación del acto solicitado por el transcurso del plazo sin resolución", "La denegación por falta de respuesta", "La nulidad del procedimiento", "La suspensión del expediente"], "correct": 0, "expl": "El silencio positivo implica que, transcurrido el plazo sin resolución expresa, la solicitud se entiende estimada.", "block": "LEY39"}, {"q": "¿Cuál es la regla general del silencio administrativo en procedimientos iniciados a solicitud del interesado?", "opts": ["Silencio positivo", "Silencio negativo", "Depende del tipo de acto", "No existe silencio"], "correct": 0, "expl": "Art. 24.1 LPACAP: El silencio es positivo salvo en los casos del apartado siguiente (seguridad, orden público, salud, etc.).", "block": "LEY39"}, {"q": "¿En qué plazo deben practicarse las notificaciones?", "opts": ["10 días desde la resolución", "5 días", "1 mes", "15 días"], "correct": 0, "expl": "Art. 40.2 LPACAP: Toda notificación deberá ser cursada dentro del plazo de 10 días a partir de la fecha en que el acto haya sido dictado.", "block": "LEY39"}, {"q": "¿Cuáles son los medios válidos de notificación según la Ley 39/2015?", "opts": ["Electrónica o en papel según el caso", "Solo electrónica", "Solo en papel", "Solo mediante notario"], "correct": 0, "expl": "La Ley 39/2015 establece la notificación electrónica como obligatoria para personas jurídicas y como opción para personas físicas.", "block": "LEY39"}, {"q": "¿Qué es la notificación por comparecencia espontánea?", "opts": ["Cuando el interesado accede al contenido del acto en sede electrónica", "Una notificación en persona en la oficina", "La notificación por edictos", "La notificación por correo certificado"], "correct": 0, "expl": "Art. 43 LPACAP: La notificación por comparecencia en la sede electrónica del organismo tiene plenos efectos.", "block": "LEY39"}, {"q": "¿Cuántos intentos de notificación fallida permiten acudir al BOE?", "opts": ["2", "1", "3", "4"], "correct": 0, "expl": "Art. 42.2 LPACAP: Cuando los dos intentos de notificación resulten infructuosos, se publicará en el BOE.", "block": "LEY39"}, {"q": "¿Qué es el Registro Electrónico General de Apoderamientos?", "opts": ["Un registro donde se inscriben los poderes de representación", "El registro de actos administrativos", "El archivo electrónico general", "El registro de contratos"], "correct": 0, "expl": "El REAGE permite acreditar la representación ante las AAPP de forma electrónica.", "block": "LEY39"}, {"q": "¿Cuál es el plazo para interponer un recurso de alzada?", "opts": ["1 mes si el acto es expreso; 3 meses si es presunto", "15 días", "6 meses", "2 meses"], "correct": 0, "expl": "Art. 122.1 LPACAP: El recurso de alzada se interpondrá en el plazo de un mes si el acto fuera expreso.", "block": "LEY39"}, {"q": "¿Ante quién se interpone el recurso de alzada?", "opts": ["El órgano superior jerárquico", "El mismo órgano que dictó el acto", "El Tribunal Administrativo", "El Defensor del Pueblo"], "correct": 0, "expl": "El recurso de alzada se interpone ante el órgano superior jerárquico del que dictó el acto impugnado.", "block": "LEY39"}, {"q": "¿Cuándo puede interponerse recurso de reposición?", "opts": ["Contra actos que no ponen fin a la vía administrativa, ante el mismo órgano", "Solo contra actos definitivos", "Antes del recurso de alzada", "Solo en vía jurisdiccional"], "correct": 1, "expl": "El recurso potestativo de reposición (art. 123) se interpone contra actos que pongan fin a la vía administrativa, ante el mismo órgano.", "block": "LEY39"}, {"q": "¿En qué plazo debe resolverse el recurso de reposición?", "opts": ["1 mes", "3 meses", "6 meses", "15 días"], "correct": 0, "expl": "Art. 124.2 LPACAP: El plazo máximo para dictar y notificar la resolución del recurso de reposición será de un mes.", "block": "LEY39"}, {"q": "¿Qué causa de nulidad de pleno derecho establece el artículo 47 LPACAP?", "opts": ["Lesión de derechos y libertades susceptibles de amparo constitucional", "Defecto de forma", "Incompetencia territorial", "Falta de motivación"], "correct": 0, "expl": "Art. 47.1.a LPACAP: Son nulos de pleno derecho los actos que lesionen los derechos y libertades susceptibles de amparo constitucional.", "block": "LEY39"}, {"q": "¿Cuál es la diferencia entre nulidad y anulabilidad?", "opts": ["La nulidad es insubsanable; la anulabilidad puede convalidarse", "Son sinónimos", "La anulabilidad es más grave", "La nulidad puede subsanarse"], "correct": 0, "expl": "La nulidad de pleno derecho (art. 47) es el vicio más grave e insubsanable; la anulabilidad (art. 48) puede convalidarse.", "block": "LEY39"}, {"q": "¿Qué es la revisión de oficio de actos nulos?", "opts": ["Un procedimiento para que la Administración anule sus propios actos nulos de pleno derecho", "Un recurso administrativo", "La revocación de actos favorables", "Un recurso judicial"], "correct": 0, "expl": "Art. 106 LPACAP: Las AAPP pueden revisar de oficio sus propios actos cuando incurran en nulidad de pleno derecho.", "block": "LEY39"}, {"q": "¿Cuántos días tiene el interesado para subsanar deficiencias en su solicitud?", "opts": ["10 días", "5 días", "15 días", "30 días"], "correct": 0, "expl": "Art. 68.1 LPACAP: Se otorgará un plazo de 10 días para subsanar deficiencias, con indicación de que si no se hace se tendrá por desistido.", "block": "LEY39"}, {"q": "¿Qué es el cómputo de plazos en días hábiles?", "opts": ["Los plazos excluyen sábados, domingos y festivos", "Los plazos incluyen todos los días", "Solo se excluyen festivos nacionales", "Solo se excluyen domingos"], "correct": 0, "expl": "En la LPACAP los plazos en días se entienden como días hábiles salvo que se indique expresamente días naturales.", "block": "LEY39"}, {"q": "¿Cuándo se entiende presentado un documento en registro electrónico?", "opts": ["En el momento de la transmisión", "Al día siguiente hábil", "A las 00:00 del día siguiente", "Cuando lo valide el funcionario"], "correct": 0, "expl": "Art. 31.3 LPACAP: Los registros electrónicos permitirán la presentación de documentos los 365 días del año durante las 24 horas.", "block": "LEY39"}, {"q": "¿Qué es la caducidad del procedimiento?", "opts": ["La terminación por inactividad del interesado", "La prescripción de la acción", "La nulidad por falta de resolución", "El archivo del expediente por resolución expresa"], "correct": 0, "expl": "Art. 95 LPACAP: La caducidad se produce cuando el procedimiento iniciado a solicitud del interesado se paraliza por causa imputable al mismo durante más de 3 meses.", "block": "LEY39"}, {"q": "¿Cuál es el plazo de caducidad del procedimiento iniciado de oficio?", "opts": ["3 meses", "6 meses", "1 año", "No existe plazo"], "correct": 0, "expl": "Art. 95.1: Si el procedimiento lo hubiera iniciado la Administración de oficio, se declara la caducidad si transcurren más de 3 meses de inactividad imputable a la Administración (con matices).", "block": "LEY39"}, {"q": "¿Cuándo puede la Administración iniciar un procedimiento de oficio?", "opts": ["Cuando lo exige el interés público", "Solo a solicitud de interesado", "Nunca, sin solicitud previa", "Solo en caso de urgencia"], "correct": 0, "expl": "Art. 58 LPACAP: Los procedimientos se iniciarán de oficio por acuerdo del órgano competente, bien por propia iniciativa o como consecuencia de orden superior.", "block": "LEY39"}, {"q": "¿Qué es el trámite de audiencia?", "opts": ["El derecho del interesado a conocer y alegar sobre el expediente antes de resolverse", "Una comparecencia obligatoria", "La vista oral del procedimiento", "La notificación de la resolución"], "correct": 0, "expl": "Art. 82 LPACAP: El instructor acordará la apertura del período de alegaciones donde el interesado podrá conocer y alegar sobre el expediente.", "block": "LEY39"}, {"q": "¿Qué organismos tienen la obligación de relacionarse electrónicamente con la Administración?", "opts": ["Las personas jurídicas", "Las personas físicas mayores de 65 años", "Solo los abogados", "Todos los ciudadanos sin excepción"], "correct": 0, "expl": "Art. 14.2 LPACAP: Están obligados a relacionarse electrónicamente las personas jurídicas, entidades sin personalidad jurídica, y quienes ejerzan actividad profesional con colegiación obligatoria.", "block": "LEY39"}, {"q": "¿Qué es la Sede Electrónica?", "opts": ["Dirección electrónica de referencia con responsabilidad de la Administración sobre su gestión", "Una página web informativa", "El correo electrónico oficial", "Un portal de acceso genérico"], "correct": 0, "expl": "Art. 38 LPACAP: La sede electrónica es aquella dirección electrónica de referencia cuya titularidad, gestión y administración corresponde a una Administración Pública.", "block": "LEY39"}, {"q": "¿Cuál es el nombre completo de la Ley 40/2015?", "opts": ["Ley de Régimen Jurídico del Sector Público", "Ley del Procedimiento Administrativo Común", "Ley de Contratos del Sector Público", "Ley de Organización y Funcionamiento de la AGE"], "correct": 0, "expl": "La Ley 40/2015 de 1 de octubre es la 'Ley de Régimen Jurídico del Sector Público' (LRJSP).", "block": "LEY40"}, {"q": "¿Qué principios recoge el artículo 3 LRJSP para las AAPP?", "opts": ["Eficacia, jerarquía, descentralización, desconcentración, coordinación", "Solo legalidad y eficiencia", "Autonomía, independencia y control", "Proporcionalidad y subsidiariedad"], "correct": 0, "expl": "Art. 3 LRJSP: Las AAPP sirven con objetividad a los intereses generales y actúan con eficacia, jerarquía, descentralización, desconcentración y coordinación.", "block": "LEY40"}, {"q": "¿Qué es un convenio administrativo?", "opts": ["Un acuerdo con efectos jurídicos entre AAPP o con entidades privadas", "Un contrato público", "Una ley negociada", "Un acto administrativo bilateral"], "correct": 0, "expl": "Art. 47 LRJSP: Las AAPP podrán celebrar convenios con otras AAPP y con entidades privadas, con efectos jurídicos vinculantes.", "block": "LEY40"}, {"q": "¿Cuál es la duración máxima de un convenio administrativo?", "opts": ["4 años prorrogables", "2 años improrrogables", "Indefinida", "1 año renovable"], "correct": 0, "expl": "Art. 49.g LRJSP: Los convenios deben incluir su plazo de vigencia; el máximo de prórroga es 4 años adicionales sobre el periodo inicial.", "block": "LEY40"}, {"q": "¿Qué son las relaciones interadministrativas?", "opts": ["Las relaciones entre distintas Administraciones Públicas", "Las relaciones entre órganos del mismo ministerio", "Las relaciones con los ciudadanos", "Las relaciones internacionales del Estado"], "correct": 0, "expl": "El Título III LRJSP regula las relaciones interadministrativas: cooperación, coordinación y control.", "block": "LEY40"}, {"q": "¿Qué es la Conferencia Sectorial?", "opts": ["Órgano de cooperación entre el Estado y las CC.AA. en una materia", "Un órgano del Senado", "Una reunión de alcaldes", "Un organismo consultivo"], "correct": 0, "expl": "Art. 148 LRJSP: Las Conferencias Sectoriales son órganos de cooperación entre el Estado y las CC.AA. en ámbitos sectoriales específicos.", "block": "LEY40"}, {"q": "¿Qué son los organismos públicos vinculados o dependientes de la AGE?", "opts": ["Los organismos autónomos, las entidades públicas empresariales y las agencias estatales", "Solo los ministerios", "Las empresas privadas colaboradoras", "Los entes locales"], "correct": 0, "expl": "Art. 84 LRJSP: El sector público institucional estatal comprende organismos autónomos, entidades públicas empresariales y agencias estatales entre otros.", "block": "LEY40"}, {"q": "¿Cuándo se puede usar el procedimiento abreviado en el ejercicio de la potestad sancionadora?", "opts": ["Cuando haya reconocimiento de responsabilidad por el infractor", "En todos los casos", "Solo en infracciones leves", "Nunca"], "correct": 0, "expl": "Art. 85 LRJSP: En caso de reconocimiento de la responsabilidad podrán adoptarse medidas provisionales con reducción de hasta el 20% de la sanción.", "block": "LEY40"}, {"q": "¿Qué principio exige que las sanciones sean proporcionales a la gravedad de la infracción?", "opts": ["Principio de proporcionalidad", "Principio de legalidad", "Principio de tipicidad", "Principio de non bis in idem"], "correct": 0, "expl": "El principio de proporcionalidad impone adecuación entre la gravedad de la infracción y la sanción impuesta.", "block": "LEY40"}, {"q": "¿Qué es el principio non bis in idem?", "opts": ["Nadie puede ser sancionado dos veces por los mismos hechos", "La doble instancia procesal", "El principio de igualdad ante la ley", "La prohibición de retroactividad"], "correct": 0, "expl": "Art. 31 LRJSP: El principio non bis in idem impide sancionar más de una vez los mismos hechos con el mismo fundamento.", "block": "LEY40"}, {"q": "¿Cuál es la diferencia entre potestad reglamentaria y potestad legislativa?", "opts": ["La reglamentaria la ejerce la Administración; la legislativa las Cortes", "Son equivalentes", "La reglamentaria tiene rango de ley", "La legislativa es más limitada"], "correct": 0, "expl": "La potestad legislativa la ostentan las Cortes Generales; la potestad reglamentaria corresponde al Gobierno (art. 97 CE).", "block": "LEY40"}, {"q": "¿Qué es el principio de jerarquía normativa?", "opts": ["Las normas de rango superior prevalecen sobre las de rango inferior", "Todas las normas tienen igual valor", "Las normas autonómicas prevalecen sobre las estatales", "Las costumbres prevalecen sobre las leyes"], "correct": 0, "expl": "El principio de jerarquía normativa (art. 9.3 CE) establece que las normas de rango superior prevalecen sobre las inferiores.", "block": "LEY40"}, {"q": "¿Quién tiene la responsabilidad patrimonial de las AAPP?", "opts": ["Las propias Administraciones Públicas", "Los funcionarios causantes", "El Estado con carácter exclusivo", "Los ciudadanos en todo caso"], "correct": 0, "expl": "Art. 32 LRJSP: Los particulares tendrán derecho a ser indemnizados por las AAPP de toda lesión que sufran en sus bienes y derechos, salvo en casos de fuerza mayor.", "block": "LEY40"}, {"q": "¿Cuáles son los requisitos para que exista responsabilidad patrimonial de la Administración?", "opts": ["Daño efectivo, relación de causalidad y antijuridicidad", "Solo daño efectivo", "Solo nexo causal", "Culpa del funcionario"], "correct": 0, "expl": "Para la responsabilidad patrimonial se requiere: daño real y efectivo, nexo causal entre la actuación administrativa y el daño, y que el daño sea antijurídico (no tenga obligación de soportarlo).", "block": "LEY40"}, {"q": "¿Cuál es el plazo de prescripción de la acción de responsabilidad patrimonial?", "opts": ["1 año", "6 meses", "4 años", "3 años"], "correct": 0, "expl": "Art. 67.1 LPACAP: Los interesados solo podrán solicitar el inicio del procedimiento de responsabilidad patrimonial dentro del año siguiente a producirse el hecho.", "block": "LEY40"}, {"q": "¿Qué son las encomiendas de gestión?", "opts": ["El encargo de actividades materiales a otro órgano sin cesión de competencias", "La delegación de competencias", "La avocación de competencias", "La sustitución de un órgano por otro"], "correct": 0, "expl": "Art. 11 LRJSP: La realización de actividades de carácter material, técnico o de servicios puede ser encomendada a otros órganos sin cesión de la titularidad de la competencia.", "block": "LEY40"}, {"q": "¿Qué es la delegación de competencias?", "opts": ["La transferencia del ejercicio de una competencia a un órgano inferior", "La cesión definitiva de una competencia", "La creación de un nuevo órgano", "La fusión de dos órganos"], "correct": 0, "expl": "Art. 9 LRJSP: Los órganos pueden delegar el ejercicio de competencias en órganos jerárquicamente dependientes.", "block": "LEY40"}, {"q": "¿Puede delegarse la competencia delegada?", "opts": ["No, salvo autorización expresa", "Sí, siempre", "Solo en casos urgentes", "Sí, mediante decreto"], "correct": 0, "expl": "Art. 9.5 LRJSP: Salvo autorización expresa de una ley, no podrán delegarse las competencias que se ejerzan por delegación.", "block": "LEY40"}, {"q": "¿Qué es la avocación?", "opts": ["El órgano superior asume la resolución de un asunto atribuido al inferior", "El inferior delega en el superior", "La inhibición del órgano competente", "Un recurso administrativo especial"], "correct": 0, "expl": "Art. 10 LRJSP: Los órganos superiores podrán avocar para sí el conocimiento de un asunto cuya resolución corresponda ordinariamente a los órganos administrativos dependientes.", "block": "LEY40"}, {"q": "¿Cuándo es posible la abstención de un funcionario?", "opts": ["Cuando concurra una causa de abstención prevista en el art. 23 LRJSP", "Nunca es posible", "Solo en procedimientos sancionadores", "Cuando el interesado lo solicite"], "correct": 0, "expl": "Art. 23 LRJSP: Las autoridades y el personal al servicio de las AAPP deben abstenerse de intervenir cuando concurran causas de abstención.", "block": "LEY40"}, {"q": "¿Quién puede plantear la recusación?", "opts": ["Los interesados en el procedimiento", "El propio funcionario", "El órgano superior", "Solo el Defensor del Pueblo"], "correct": 0, "expl": "Art. 24 LRJSP: Los interesados podrán promover la recusación cuando concurra alguna causa de abstención en el funcionario.", "block": "LEY40"}, {"q": "¿Qué es el sector público institucional?", "opts": ["Los organismos y entidades dependientes de las AAPP con personalidad jurídica propia", "Los ministerios y consejerías", "Solo las empresas públicas", "Los entes locales"], "correct": 0, "expl": "Art. 84 LRJSP: Integran el sector público institucional estatal los organismos autónomos, entidades públicas empresariales, autoridades administrativas independientes, etc.", "block": "LEY40"}, {"q": "¿Qué diferencia a una entidad pública empresarial de un organismo autónomo?", "opts": ["La entidad pública empresarial se rige por el derecho privado en sus actividades", "No hay diferencia", "El organismo autónomo tiene más autonomía", "La entidad pública empresarial no tiene personalidad jurídica"], "correct": 0, "expl": "Los organismos autónomos se rigen por el derecho público; las entidades públicas empresariales, principalmente por el derecho privado.", "block": "LEY40"}, {"q": "¿Qué es un sistema operativo?", "opts": ["Software que gestiona los recursos del hardware y proporciona servicios a los programas", "Un tipo de procesador", "Una red de ordenadores", "Un dispositivo de almacenamiento"], "correct": 0, "expl": "El sistema operativo (SO) es el software fundamental que gestiona el hardware y proporciona una interfaz para los programas de usuario.", "block": "INFORM"}, {"q": "¿Cuál es el sistema de ficheros más común en Windows?", "opts": ["NTFS", "FAT32", "ext4", "exFAT"], "correct": 0, "expl": "NTFS (New Technology File System) es el sistema de ficheros nativo de Windows desde Windows NT.", "block": "INFORM"}, {"q": "¿Qué significa CPU?", "opts": ["Central Processing Unit (Unidad Central de Proceso)", "Computer Processing Unit", "Control Program Unit", "Central Power Unit"], "correct": 0, "expl": "CPU es la Unidad Central de Proceso, el componente principal que ejecuta las instrucciones de los programas.", "block": "INFORM"}, {"q": "¿Cuál es la diferencia entre RAM y ROM?", "opts": ["La RAM es volátil y modificable; la ROM es permanente y no modificable", "Son equivalentes", "La ROM es más rápida", "La RAM es de solo lectura"], "correct": 0, "expl": "La RAM (Random Access Memory) pierde sus datos al apagar el equipo; la ROM (Read Only Memory) mantiene la información permanentemente.", "block": "INFORM"}, {"q": "¿Qué es una dirección IP?", "opts": ["Identificador numérico de un dispositivo en una red", "Un tipo de protocolo de seguridad", "Un nombre de dominio web", "Un algoritmo de cifrado"], "correct": 0, "expl": "La dirección IP es un identificador numérico único asignado a cada dispositivo en una red IP.", "block": "INFORM"}, {"q": "¿Cuántos bits tiene una dirección IPv4?", "opts": ["32", "64", "128", "16"], "correct": 0, "expl": "IPv4 utiliza direcciones de 32 bits, expresadas normalmente en cuatro grupos de 8 bits (octetos).", "block": "INFORM"}, {"q": "¿Cuántos bits tiene una dirección IPv6?", "opts": ["128", "32", "64", "256"], "correct": 0, "expl": "IPv6 utiliza direcciones de 128 bits para disponer de un mayor espacio de direcciones que IPv4.", "block": "INFORM"}, {"q": "¿Qué es el protocolo HTTP?", "opts": ["Protocolo de transferencia de hipertexto para la web", "Un protocolo de correo electrónico", "Un protocolo de seguridad", "Un protocolo de enrutamiento"], "correct": 0, "expl": "HTTP (HyperText Transfer Protocol) es el protocolo usado para transferir páginas web entre servidores y navegadores.", "block": "INFORM"}, {"q": "¿Qué diferencia HTTPS de HTTP?", "opts": ["HTTPS cifra la comunicación mediante SSL/TLS", "HTTPS es más lento", "HTTPS no usa puertos estándar", "HTTPS no requiere servidor"], "correct": 0, "expl": "HTTPS añade una capa de seguridad SSL/TLS sobre HTTP para cifrar la comunicación cliente-servidor.", "block": "INFORM"}, {"q": "¿En qué puerto trabaja por defecto HTTPS?", "opts": ["443", "80", "21", "25"], "correct": 0, "expl": "HTTPS trabaja en el puerto 443 por defecto; HTTP trabaja en el puerto 80.", "block": "INFORM"}, {"q": "¿Qué es el DNS?", "opts": ["Sistema de nombres de dominio que traduce nombres a direcciones IP", "Un protocolo de seguridad", "Un tipo de servidor web", "Un lenguaje de programación"], "correct": 0, "expl": "DNS (Domain Name System) es el sistema que traduce nombres de dominio legibles por humanos a direcciones IP.", "block": "INFORM"}, {"q": "¿Qué es el phishing?", "opts": ["Un ataque de suplantación de identidad para obtener información confidencial", "Un virus informático", "Un tipo de cortafuegos", "Un protocolo de seguridad"], "correct": 0, "expl": "El phishing es una técnica de ingeniería social en la que el atacante suplanta a una entidad de confianza para obtener datos personales o credenciales.", "block": "INFORM"}, {"q": "¿Qué es el ransomware?", "opts": ["Malware que cifra los datos y pide rescate para recuperarlos", "Un virus que borra archivos", "Un programa espía", "Un ataque de denegación de servicio"], "correct": 0, "expl": "El ransomware es un tipo de malware que cifra los archivos de la víctima y exige un rescate (ransom) para proporcionar la clave de descifrado.", "block": "INFORM"}, {"q": "¿Qué es una VPN?", "opts": ["Red privada virtual que cifra y encapsula el tráfico de red", "Un antivirus", "Un tipo de servidor", "Un protocolo de correo"], "correct": 0, "expl": "VPN (Virtual Private Network) crea un túnel cifrado entre el usuario y un servidor para proteger la privacidad y el tráfico de red.", "block": "INFORM"}, {"q": "¿Qué es el modelo OSI?", "opts": ["Un modelo de referencia de 7 capas para redes de comunicaciones", "Un sistema operativo", "Un protocolo de internet", "Un tipo de red inalámbrica"], "correct": 0, "expl": "El modelo OSI (Open Systems Interconnection) define 7 capas: Física, Enlace, Red, Transporte, Sesión, Presentación y Aplicación.", "block": "INFORM"}, {"q": "¿Qué capa del modelo OSI se encarga del enrutamiento?", "opts": ["Capa de Red (capa 3)", "Capa Física (capa 1)", "Capa de Transporte (capa 4)", "Capa de Enlace (capa 2)"], "correct": 0, "expl": "La capa de Red (capa 3) es responsable del enrutamiento de paquetes entre redes distintas, usando protocolos como IP.", "block": "INFORM"}, {"q": "¿Qué significa SaaS en computación en la nube?", "opts": ["Software como Servicio", "Sistema como Servicio", "Seguridad como Servicio", "Servidor como Servicio"], "correct": 0, "expl": "SaaS (Software as a Service) es un modelo de distribución de software donde las aplicaciones se alojan en la nube y se accede a través de internet.", "block": "INFORM"}, {"q": "¿Qué es IaaS?", "opts": ["Infraestructura como Servicio (servidores, almacenamiento, red en la nube)", "Información como Servicio", "Integración como Servicio", "Internet como Servicio"], "correct": 0, "expl": "IaaS (Infrastructure as a Service) proporciona recursos de infraestructura (servidores, almacenamiento, redes) como servicio en la nube.", "block": "INFORM"}, {"q": "¿Qué es PaaS?", "opts": ["Plataforma como Servicio (entorno de desarrollo en la nube)", "Pago como Servicio", "Privacidad como Servicio", "Protocolo como Servicio"], "correct": 0, "expl": "PaaS (Platform as a Service) proporciona un entorno de desarrollo y despliegue de aplicaciones en la nube.", "block": "INFORM"}, {"q": "¿Qué es el protocolo FTP?", "opts": ["Protocolo de transferencia de archivos", "Protocolo de correo electrónico", "Protocolo de seguridad", "Protocolo de enrutamiento"], "correct": 0, "expl": "FTP (File Transfer Protocol) es un protocolo estándar para la transferencia de archivos entre un cliente y un servidor en una red.", "block": "INFORM"}, {"q": "¿Qué es la firma digital?", "opts": ["Un mecanismo criptográfico que garantiza autenticidad e integridad de documentos electrónicos", "Una imagen de la firma manuscrita", "Un sello de tiempo", "Un certificado digital"], "correct": 0, "expl": "La firma digital usa criptografía asimétrica para garantizar que un documento no ha sido alterado y que fue firmado por el titular.", "block": "INFORM"}, {"q": "¿Qué es el certificado digital?", "opts": ["Un documento electrónico que vincula una clave pública con la identidad de su titular", "Un antivirus", "Una contraseña segura", "Un protocolo de seguridad"], "correct": 0, "expl": "El certificado digital es emitido por una Autoridad de Certificación y vincula la identidad del titular con su clave pública.", "block": "INFORM"}, {"q": "¿Cuál es la diferencia entre criptografía simétrica y asimétrica?", "opts": ["La simétrica usa una clave; la asimétrica usa un par de claves (pública y privada)", "Son equivalentes", "La asimétrica es menos segura", "La simétrica usa más claves"], "correct": 0, "expl": "La criptografía simétrica (AES, DES) usa la misma clave para cifrar y descifrar; la asimétrica (RSA) usa clave pública y privada.", "block": "INFORM"}, {"q": "¿Qué es el backup según la regla 3-2-1?", "opts": ["3 copias, en 2 soportes distintos, 1 fuera del sitio principal", "3 copias en el mismo soporte", "2 copias en 1 soporte", "1 copia en 3 lugares"], "correct": 0, "expl": "La regla 3-2-1 establece: 3 copias de los datos, en al menos 2 tipos de soporte distintos, con al menos 1 copia en ubicación diferente.", "block": "INFORM"}, {"q": "¿Qué es una hoja de cálculo?", "opts": ["Programa para organizar y calcular datos en celdas dispuestas en filas y columnas", "Un procesador de textos", "Un sistema de gestión de bases de datos", "Un programa de presentaciones"], "correct": 0, "expl": "Las hojas de cálculo (Excel, Calc) permiten organizar datos en celdas, aplicar fórmulas y crear gráficos.", "block": "INFORM"}, {"q": "¿Qué es Word/Writer en el contexto ofimático?", "opts": ["Un procesador de textos", "Una hoja de cálculo", "Un gestor de correo", "Un programa de presentaciones"], "correct": 0, "expl": "Word (Microsoft) y Writer (LibreOffice) son procesadores de texto para crear y editar documentos.", "block": "INFORM"}, {"q": "¿Qué es SQL?", "opts": ["Lenguaje de consulta estructurado para bases de datos relacionales", "Un protocolo de red", "Un sistema operativo", "Un tipo de hardware"], "correct": 0, "expl": "SQL (Structured Query Language) es el lenguaje estándar para gestionar bases de datos relacionales.", "block": "INFORM"}, {"q": "¿Qué es un firewall o cortafuegos?", "opts": ["Sistema de seguridad que filtra el tráfico de red entrante y saliente", "Un antivirus", "Un tipo de cable de red", "Un protocolo de comunicación"], "correct": 0, "expl": "Un firewall controla el tráfico de red en función de reglas de seguridad predefinidas, bloqueando accesos no autorizados.", "block": "INFORM"}, {"q": "¿Qué es la autenticación de dos factores (2FA)?", "opts": ["Verificar la identidad con dos elementos distintos (contraseña + código)", "Una contraseña doble", "Un tipo de cifrado", "Un protocolo de red"], "correct": 0, "expl": "2FA (Two-Factor Authentication) añade una capa de seguridad requiriendo dos elementos: algo que sabes (contraseña) + algo que tienes (código) o eres (biometría).", "block": "INFORM"}, {"q": "¿Qué significa RGPD?", "opts": ["Reglamento General de Protección de Datos de la UE", "Registro General de Procedimientos Digitales", "Reglamento de Gestión de Programas Digitales", "Red General de Protección de Datos"], "correct": 0, "expl": "El RGPD (Reglamento UE 2016/679) es el marco legal europeo de protección de datos personales, aplicable desde mayo de 2018.", "block": "INFORM"}, {"q": "¿Cuál es el marco legal principal de los Presupuestos Generales del Estado?", "opts": ["El artículo 134 de la Constitución Española", "La Ley General Tributaria", "La Ley de Contratos del Sector Público", "El Estatuto de Autonomía"], "correct": 0, "expl": "El art. 134 CE establece las bases del sistema presupuestario: elaboración por el Gobierno, presentación antes del 1 de octubre, aprobación por las Cortes.", "block": "HACIENDA"}, {"q": "¿Quién elabora los Presupuestos Generales del Estado?", "opts": ["El Gobierno", "El Congreso de los Diputados", "El Senado", "El Ministerio de Hacienda por iniciativa propia"], "correct": 0, "expl": "Art. 134.1 CE: Corresponde al Gobierno la elaboración de los Presupuestos Generales del Estado.", "block": "HACIENDA"}, {"q": "¿Antes de qué fecha deben presentarse los PGE al Congreso?", "opts": ["1 de octubre de cada año", "31 de diciembre", "1 de septiembre", "15 de noviembre"], "correct": 0, "expl": "Art. 134.3 CE: El Gobierno deberá presentar ante el Congreso los PGE al menos tres meses antes de la expiración de los del año anterior.", "block": "HACIENDA"}, {"q": "¿Qué ocurre si no se aprueban los PGE antes del 1 de enero?", "opts": ["Se prorrogarán automáticamente los del ejercicio anterior", "El Gobierno dimite", "Se disuelven las Cortes", "No existe presupuesto"], "correct": 0, "expl": "Art. 134.4 CE: Si la Ley de Presupuestos no se aprobara antes del primer día del ejercicio económico correspondiente, se considerarán automáticamente prorrogados los PGE del ejercicio anterior.", "block": "HACIENDA"}, {"q": "¿Qué es el principio de anualidad presupuestaria?", "opts": ["Los presupuestos se aprueban y ejecutan por periodos anuales", "Los presupuestos son plurianuales", "Los presupuestos no tienen límite temporal", "Los presupuestos se renuevan automáticamente cada mes"], "correct": 0, "expl": "El principio de anualidad establece que los presupuestos se elaboran, aprueban y ejecutan para un ejercicio anual (1 enero - 31 diciembre).", "block": "HACIENDA"}, {"q": "¿Qué es el IRPF?", "opts": ["Impuesto sobre la Renta de las Personas Físicas", "Impuesto sobre el Rendimiento de las Propiedades Físicas", "Impuesto sobre la Renta de las Pequeñas Fuentes", "Índice de Renta de las Personas Físicas"], "correct": 0, "expl": "El IRPF es un impuesto directo, personal y progresivo que grava la renta obtenida por las personas físicas.", "block": "HACIENDA"}, {"q": "¿Qué es el IVA?", "opts": ["Impuesto sobre el Valor Añadido, impuesto indirecto sobre el consumo", "Impuesto sobre la Vivienda y el Arrendamiento", "Impuesto al Valor de los Activos", "Impuesto sobre los Valores Añadidos de empresas"], "correct": 0, "expl": "El IVA es un impuesto indirecto que grava el consumo de bienes y servicios, repercutido en cada fase de la cadena de producción.", "block": "HACIENDA"}, {"q": "¿Cuántos tipos impositivos tiene el IVA en España?", "opts": ["3 (general 21%, reducido 10%, superreducido 4%)", "2", "4", "1"], "correct": 0, "expl": "En España el IVA tiene tres tipos: general (21%), reducido (10%) para alimentos básicos procesados, hostelería, etc., y superreducido (4%) para artículos de primera necesidad.", "block": "HACIENDA"}, {"q": "¿Qué es el Impuesto de Sociedades?", "opts": ["Impuesto que grava los beneficios de las personas jurídicas", "Un impuesto sobre el consumo", "Un impuesto sobre la importación", "Un impuesto local"], "correct": 0, "expl": "El Impuesto sobre Sociedades (IS) grava la renta de las personas jurídicas y entidades asimiladas con carácter general al tipo del 25%.", "block": "HACIENDA"}, {"q": "¿Qué es la Intervención General del Estado (IGAE)?", "opts": ["El centro directivo que ejerce el control interno de la ejecución del gasto público", "El Tribunal de Cuentas", "El Ministerio de Hacienda", "La Agencia Tributaria"], "correct": 0, "expl": "La IGAE es el órgano del Ministerio de Hacienda encargado del control interno de la gestión económico-financiera del sector público estatal.", "block": "HACIENDA"}, {"q": "¿Qué diferencia hay entre impuestos directos e indirectos?", "opts": ["Los directos gravan la renta o patrimonio; los indirectos gravan el consumo o tráfico", "Son equivalentes", "Los directos son más recaudatorios", "Los indirectos gravan la renta"], "correct": 0, "expl": "Impuestos directos (IRPF, IS, IP) gravan la capacidad económica; los indirectos (IVA, ITPAJD) gravan el consumo o las transacciones.", "block": "HACIENDA"}, {"q": "¿Qué es la deuda pública?", "opts": ["El conjunto de deudas que tiene el Estado con sus acreedores", "El gasto público total", "El déficit presupuestario", "El presupuesto aprobado"], "correct": 0, "expl": "La deuda pública es la deuda total que acumula el sector público de un país, financiada mediante la emisión de bonos, obligaciones y otros instrumentos.", "block": "HACIENDA"}, {"q": "¿Qué es el déficit presupuestario?", "opts": ["Cuando los gastos superan a los ingresos en el presupuesto", "Cuando los ingresos superan los gastos", "El equilibrio presupuestario", "La reserva de fondos"], "correct": 0, "expl": "El déficit presupuestario se produce cuando el gasto público supera los ingresos públicos en un ejercicio.", "block": "HACIENDA"}, {"q": "¿Qué es la Ley General Presupuestaria?", "opts": ["La norma que regula la actividad financiera del sector público estatal", "La ley anual de presupuestos", "La CE en materia fiscal", "El Tratado de Maastricht"], "correct": 0, "expl": "La Ley General Presupuestaria (LGP) regula el régimen presupuestario, económico-financiero, de contabilidad, intervención y control financiero del sector público estatal.", "block": "HACIENDA"}, {"q": "¿Qué es el control externo del gasto público?", "opts": ["El ejercido por el Tribunal de Cuentas", "El ejercido por la IGAE", "El ejercido por el Ministerio de Hacienda", "El ejercido por el Banco de España"], "correct": 0, "expl": "El Tribunal de Cuentas ejerce el control externo de las cuentas del Estado y del sector público; la IGAE ejerce el control interno.", "block": "HACIENDA"}, {"q": "¿Qué es el Fondo de Garantía Salarial (FOGASA)?", "opts": ["Organismo que garantiza a los trabajadores el pago de salarios en caso de insolvencia empresarial", "Un fondo de pensiones del Estado", "El fondo de desempleo", "Una entidad bancaria pública"], "correct": 0, "expl": "El FOGASA es un organismo autónomo adscrito al Ministerio de Trabajo que abona a los trabajadores los salarios pendientes cuando la empresa es insolvente.", "block": "HACIENDA"}, {"q": "Si A>B y B>C, ¿cuál es la relación entre A y C?", "opts": ["A>C", "A<C", "A=C", "No se puede determinar"], "correct": 0, "expl": "Por transitividad: si A>B y B>C, entonces A>C.", "block": "PSICO"}, {"q": "¿Cuál es el siguiente término en la serie: 2, 4, 8, 16, __?", "opts": ["32", "24", "20", "28"], "correct": 0, "expl": "La serie multiplica por 2 cada término: 2×2=4, 4×2=8, 8×2=16, 16×2=32.", "block": "PSICO"}, {"q": "¿Cuál es el siguiente término: 1, 1, 2, 3, 5, 8, 13, __?", "opts": ["21", "18", "20", "24"], "correct": 0, "expl": "Serie de Fibonacci: cada término es la suma de los dos anteriores. 8+13=21.", "block": "PSICO"}, {"q": "Si un tren recorre 120 km en 2 horas, ¿cuál es su velocidad media?", "opts": ["60 km/h", "240 km/h", "30 km/h", "180 km/h"], "correct": 0, "expl": "Velocidad = Distancia/Tiempo = 120km/2h = 60 km/h.", "block": "PSICO"}, {"q": "¿Qué número sigue en la serie: 5, 10, 20, 40, __?", "opts": ["80", "60", "100", "70"], "correct": 0, "expl": "La serie multiplica por 2: 5×2=10, 10×2=20, 20×2=40, 40×2=80.", "block": "PSICO"}, {"q": "Si el 30% de un número es 60, ¿cuál es el número?", "opts": ["200", "180", "600", "20"], "correct": 0, "expl": "Si 0.3 × N = 60, entonces N = 60/0.3 = 200.", "block": "PSICO"}, {"q": "¿Cuánto es el 15% de 400?", "opts": ["60", "40", "80", "100"], "correct": 0, "expl": "15% de 400 = 0.15 × 400 = 60.", "block": "PSICO"}, {"q": "En un grupo de 40 personas, el 25% son hombres. ¿Cuántas mujeres hay?", "opts": ["30", "10", "20", "15"], "correct": 0, "expl": "Hombres = 25% × 40 = 10. Mujeres = 40 - 10 = 30.", "block": "PSICO"}, {"q": "¿Cuál es el siguiente en la serie: 100, 90, 81, 73, 66, __?", "opts": ["60", "55", "65", "70"], "correct": 0, "expl": "Las diferencias son: -10, -9, -8, -7, -6. Siguiente: 66-6=60.", "block": "PSICO"}, {"q": "Si A es hermano de B, y B es hijo de C, ¿qué es A respecto de C?", "opts": ["Hijo", "Nieto", "Sobrino", "Primo"], "correct": 0, "expl": "A es hermano de B; B es hijo de C. Por tanto, A también es hijo de C.", "block": "PSICO"}, {"q": "¿Cuánto es la mitad de un cuarto de 200?", "opts": ["25", "50", "100", "12.5"], "correct": 0, "expl": "Un cuarto de 200 = 50. La mitad de 50 = 25.", "block": "PSICO"}, {"q": "Una mercancía costaba 80€ y sube un 25%. ¿Cuánto cuesta ahora?", "opts": ["100€", "105€", "95€", "110€"], "correct": 0, "expl": "Aumento = 25% × 80 = 20. Precio nuevo = 80+20 = 100€.", "block": "PSICO"}, {"q": "¿Qué número falta en la serie: 3, 6, __, 24, 48?", "opts": ["12", "9", "15", "18"], "correct": 0, "expl": "La serie multiplica por 2: 3×2=6, 6×2=12, 12×2=24, 24×2=48.", "block": "PSICO"}, {"q": "Si hoy es martes, ¿qué día será dentro de 10 días?", "opts": ["Viernes", "Jueves", "Sábado", "Miércoles"], "correct": 0, "expl": "Martes + 7 días = martes. Martes + 10 días = martes + 3 = viernes.", "block": "PSICO"}, {"q": "¿Cuál es el perímetro de un cuadrado de lado 7 cm?", "opts": ["28 cm", "14 cm", "49 cm", "21 cm"], "correct": 0, "expl": "Perímetro cuadrado = 4 × lado = 4 × 7 = 28 cm.", "block": "PSICO"}, {"q": "¿Cuánto es 3/4 de 120?", "opts": ["90", "30", "40", "60"], "correct": 0, "expl": "3/4 × 120 = 360/4 = 90.", "block": "PSICO"}, {"q": "En la serie: A, C, E, G, ¿cuál es el siguiente?", "opts": ["I", "H", "J", "K"], "correct": 0, "expl": "Las letras aumentan de 2 en 2 (saltan una letra): A, C, E, G, I.", "block": "PSICO"}, {"q": "Si el precio de un artículo baja un 20% y luego sube un 20%, ¿qué ocurre?", "opts": ["Queda por debajo del precio inicial", "Queda igual", "Queda por encima", "Varía según el precio"], "correct": 0, "expl": "Si P = 100: baja 20% = 80; sube 20% sobre 80 = 96. Queda en 96, por debajo del original.", "block": "PSICO"}, {"q": "¿Cuántos segundos hay en una hora?", "opts": ["3.600", "600", "360", "7.200"], "correct": 0, "expl": "1 hora = 60 minutos × 60 segundos = 3.600 segundos.", "block": "PSICO"}, {"q": "Un depósito tiene 150 litros y se vacía a razón de 5 litros/min. ¿En cuánto tiempo queda vacío?", "opts": ["30 minutos", "25 minutos", "15 minutos", "35 minutos"], "correct": 0, "expl": "Tiempo = Volumen/Caudal = 150/5 = 30 minutos.", "block": "PSICO"}, {"q": "¿Cuál es el número impar mayor que 10 y menor que 14?", "opts": ["13", "11", "12", "15"], "correct": 0, "expl": "Los números entre 10 y 14 son: 11, 12, 13. Los impares: 11 y 13. El mayor es 13.", "block": "PSICO"}, {"q": "Si 5 obreros tardan 12 días en hacer una obra, ¿cuánto tardarán 10 obreros?", "opts": ["6 días", "24 días", "2.4 días", "10 días"], "correct": 0, "expl": "Trabajo total = 5 × 12 = 60 días-obrero. Con 10 obreros: 60/10 = 6 días.", "block": "PSICO"}, {"q": "¿Cuál es el área de un rectángulo de 8 cm × 5 cm?", "opts": ["40 cm²", "26 cm²", "13 cm²", "80 cm²"], "correct": 0, "expl": "Área rectángulo = base × altura = 8 × 5 = 40 cm².", "block": "PSICO"}, {"q": "En la serie: 1, 4, 9, 16, 25, ¿cuál es el siguiente?", "opts": ["36", "30", "35", "49"], "correct": 0, "expl": "Son los cuadrados perfectos: 1², 2², 3², 4², 5², 6² = 36.", "block": "PSICO"}, {"q": "¿Cuántos meses tienen 31 días?", "opts": ["7", "6", "8", "5"], "correct": 0, "expl": "Los meses con 31 días son: enero, marzo, mayo, julio, agosto, octubre y diciembre = 7 meses.", "block": "PSICO"}];
+let simQs=[], simAnswers=[], simCurrent=0, simTimer=null, simSeconds=2700, answered={};
+
+function showSection(id){
+  document.querySelectorAll('.tab-content').forEach(el=>el.style.display='none');
+  document.getElementById('tab_'+id).style.display='block';
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
+}
+function checkAnswer(btn,idx,correct,qid){
+  if(answered[qid]) return;
+  answered[qid]=true;
+  const parent=btn.closest('.qcard');
+  parent.querySelectorAll('.opt-btn').forEach((b,i)=>{
+    b.disabled=true;
+    if(i===correct) b.classList.add('correct');
+    else if(i===idx) b.classList.add('wrong');
+  });
+  const expl=document.createElement('div');
+  const q=ALL.find(q=>q.q===parent.querySelector('.qtxt').textContent.trim());
+  expl.className='expl';
+  expl.textContent=q?q.expl:'';
+  parent.appendChild(expl);
+}
+function shuffle(arr){let a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function startExam(){
+  simQs=shuffle(ALL).slice(0,50);
+  simAnswers=new Array(50).fill(-1);
+  simCurrent=0; simSeconds=2700;
+  document.getElementById('simOverlay').classList.add('active');
+  renderSimQ();
+  clearInterval(simTimer);
+  simTimer=setInterval(()=>{
+    simSeconds--;
+    const m=Math.floor(simSeconds/60),s=simSeconds%60;
+    document.getElementById('simTimer').textContent=m+':'+(s<10?'0':'')+s;
+    if(simSeconds<=0){clearInterval(simTimer);submitExam();}
+  },1000);
+}
+function renderSimQ(){
+  const q=simQs[simCurrent];
+  document.getElementById('simProgress').textContent=(simCurrent+1)+' / 50';
+  document.getElementById('simPrev').disabled=simCurrent===0;
+  document.getElementById('simNext').style.display=simCurrent<49?'':'none';
+  document.getElementById('simSubmit').style.display=simCurrent===49?'':'none';
+  const body=document.getElementById('simBody');
+  body.innerHTML=`<div class="sim-qcard">
+    <p class="sim-qnum">Pregunta ${simCurrent+1} de 50</p>
+    <p class="sim-qtxt">${q.q}</p>
+    <div class="sim-opts">${q.opts.map((o,i)=>`<button class="sim-opt ${simAnswers[simCurrent]===i?'selected':''}" onclick="simAnswer(${i})">${String.fromCharCode(65+i)} ${o}</button>`).join('')}</div>
+  </div>`;
+  if(simAnswers[simCurrent]>=0) body.querySelector(`.sim-opt:nth-child(${simAnswers[simCurrent]+1})`).style.borderColor='var(--gold)';
+}
+function simAnswer(idx){
+  simAnswers[simCurrent]=idx;
+  document.querySelectorAll('.sim-opt').forEach((b,i)=>b.style.borderColor=i===idx?'var(--gold)':'rgba(255,255,255,.2)');
+}
+function simNav(d){simCurrent+=d;renderSimQ();}
+function endExam(){clearInterval(simTimer);document.getElementById('simOverlay').classList.remove('active');}
+function submitExam(){
+  clearInterval(simTimer);
+  let score=simQs.filter((q,i)=>simAnswers[i]===q.correct).length;
+  const body=document.getElementById('simBody');
+  body.innerHTML=`<div class="sim-result"><h2>${score}/50</h2><p>Has respondido correctamente ${score} de 50 preguntas (${(score/50*100).toFixed(1)}%)</p><p style="margin-top:8px;opacity:.7">${score>=35?'✅ Aprobado (≥70%)':'❌ Repasa los bloques donde has fallado'}</p></div>`+
+  simQs.map((q,i)=>{
+    const ok=simAnswers[i]===q.correct;
+    return `<div class="sim-qcard" style="border-color:${ok?'var(--green)':'var(--red)'}">
+      <p class="sim-qnum" style="color:${ok?'#86efac':'#fca5a5'}">${ok?'✓ CORRECTO':'✗ INCORRECTO'}</p>
+      <p class="sim-qtxt">${q.q}</p>
+      <p style="color:#86efac;font-size:.88rem;margin-top:8px">✓ ${q.opts[q.correct]}</p>
+      ${!ok&&simAnswers[i]>=0?`<p style="color:#fca5a5;font-size:.88rem">✗ Tu respuesta: ${q.opts[simAnswers[i]]}</p>`:''}
+      <p style="color:#fbbf24;font-size:.83rem;margin-top:8px;font-style:italic">${q.expl}</p>
+    </div>`;
+  }).join('');
+  document.getElementById('simNext').style.display='none';
+  document.getElementById('simPrev').style.display='none';
+  document.getElementById('simSubmit').style.display='none';
+}
+</script>
+</body>
+</html>

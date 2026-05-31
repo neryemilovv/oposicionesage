@@ -1,0 +1,329 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OpositoresAGE — Packs de Oposiciones del Estado</title>
+<meta name="description" content="Material completo para Policía Nacional, Correos y Administrativo del Estado. Preguntas reales, simulacros y temario. Sin academia. Sin módulos.">
+<link rel="canonical" href="https://opositoresage.es/">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#f8f7f5;--red:#c8102e;--red-d:#a50d25;--mute:#71717a;--line:#e4e4e7}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;padding-top:60px}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}
+
+/* HERO */
+.hp-hero{min-height:640px;height:90vh;position:relative;overflow:hidden;display:flex;align-items:flex-end;background:#0a0a0a}
+.hp-hero-bg{position:absolute;inset:0;filter:brightness(.3) saturate(1.1)}
+.hp-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,.92) 0%,rgba(10,10,10,.05) 70%)}
+.hp-hero-body{position:relative;padding:0 6% 72px;color:#fff;max-width:900px;width:100%}
+.hp-hero-eyebrow{display:block;font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:20px}
+.hp-hero-h1{font-size:clamp(2rem,5vw,4rem);font-weight:900;line-height:1.08;letter-spacing:-.03em;color:#fff;margin-bottom:24px;overflow-wrap:break-word;hyphens:auto}
+.hp-hero-h1 em{color:#e5e5e5;font-style:normal}
+.hp-hero-sub{font-size:1.05rem;color:#c4c4c4;max-width:500px;line-height:1.75;margin-bottom:44px}
+.hp-hero-cta{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--ink);font-size:.9rem;font-weight:700;padding:16px 32px;border-radius:3px;transition:transform .2s,box-shadow .2s}
+.hp-hero-cta:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(0,0,0,.4)}
+.hp-hero-cta svg{width:16px;height:16px}
+
+/* PACKS */
+.packs{padding:96px 5%;background:var(--paper)}
+.packs-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;flex-wrap:wrap;gap:16px}
+.packs-tag{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:12px;display:block}
+.packs-title{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;letter-spacing:-.04em;line-height:1.1;max-width:440px}
+.packs-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.pack-card{position:relative;overflow:hidden;height:480px;display:flex;align-items:flex-end;cursor:pointer}
+.pack-card:first-child{grid-row:span 1}
+.pack-photo{position:absolute;inset:0;transition:transform .6s ease}
+.pack-photo img{filter:brightness(.42) saturate(1.2)}
+.pack-card:hover .pack-photo{transform:scale(1.04)}
+.pack-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,.85) 0%,transparent 60%)}
+.pack-body{position:relative;padding:32px 28px;color:#fff}
+.pack-eyebrow{font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--red);margin-bottom:10px;display:block}
+.pack-name{font-size:1.4rem;font-weight:900;letter-spacing:-.03em;color:#fff;margin-bottom:8px;line-height:1.2}
+.pack-price{font-size:.9rem;color:#a1a1aa;margin-bottom:20px}
+.pack-btn{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:10px 20px;border-radius:3px;transition:background .15s}
+.pack-btn:hover{background:var(--red-d)}
+.pack-btn svg{width:14px;height:14px}
+@media(max-width:700px){.packs-grid{grid-template-columns:1fr}.pack-card{height:380px}}
+
+/* FREE RESOURCES */
+.free{background:var(--ink);padding:80px 5%}
+.free-inner{max-width:1000px;margin:0 auto}
+.free-tag{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#3f3f46;margin-bottom:14px;display:block}
+.free-title{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:900;letter-spacing:-.04em;color:#fff;margin-bottom:48px}
+.free-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#1a1a1a}
+.free-item{background:#111;padding:28px 24px;transition:background .15s}
+.free-item:hover{background:#161616}
+.free-label{font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:10px;display:block}
+.free-name{font-size:.95rem;font-weight:700;color:#fff;margin-bottom:6px}
+.free-desc{font-size:.78rem;color:#52525b;line-height:1.5;margin-bottom:16px}
+.free-link{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#c8102e}
+.free-link:hover{color:#e02030}
+@media(max-width:700px){.free-grid{grid-template-columns:1fr}}
+
+/* FOOTER */
+.hp-footer{background:#050505;padding:32px 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.hp-footer-logo{font-size:.85rem;font-weight:900;color:#3f3f46}
+.hp-footer-logo em{color:var(--red);font-style:normal}
+.hp-footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.hp-footer-links a{font-size:.72rem;color:#3f3f46;transition:color .15s}
+.hp-footer-links a:hover{color:#71717a}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+/* SITE NAV */
+.site-nav{position:fixed;top:0;left:0;right:0;z-index:9999;height:60px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 5%;border-bottom:1px solid #e5e5e5;font-family:'Inter',system-ui,sans-serif}
+.site-nav-logo{font-size:.95rem;font-weight:900;color:#0a0a0a;letter-spacing:-.02em;text-decoration:none;white-space:nowrap}
+.site-nav-logo em{color:#c8102e;font-style:normal}
+.site-nav-links{display:flex;gap:0;list-style:none;align-items:stretch;height:100%;margin:0;padding:0}
+.site-nav-links>li{display:flex;align-items:center}
+.site-nav-links>li>a{font-size:.82rem;font-weight:600;color:#0a0a0a;transition:color .15s;text-decoration:none;display:flex;align-items:center;gap:4px;white-space:nowrap;padding:0 14px;height:100%}
+.site-nav-links>li>a:hover{color:#c8102e}
+.site-nav-links>li>a.snl-on{color:#c8102e;font-weight:700}
+.snd-arrow{width:8px;height:5px;flex-shrink:0;opacity:.4;margin-left:2px}
+.has-drop{position:relative;align-self:stretch;display:flex;align-items:center}
+.snd-drop{display:none;position:absolute;top:100%;left:0;background:#fff;border:1px solid #e5e5e5;min-width:220px;padding:6px 0;box-shadow:0 6px 20px rgba(0,0,0,.1)}
+.has-drop:hover .snd-drop{display:block}
+.snd-drop-label{display:block;padding:8px 14px 5px;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#aaa;border-bottom:1px solid #f0f0f0;margin-bottom:4px}
+.snd-drop a{display:block;padding:9px 14px;font-size:.82rem;font-weight:500;color:#0a0a0a;text-decoration:none;transition:all .15s}
+.snd-drop a:hover{color:#c8102e;background:#fafafa}
+.site-nav-cta{font-size:.82rem;font-weight:700;color:#fff!important;background:#c8102e;padding:9px 18px;white-space:nowrap;text-decoration:none;transition:background .15s;margin-left:12px}
+.site-nav-cta:hover{background:#a50d25;color:#fff!important}
+@media(max-width:900px){.site-nav-links{display:none}}
+
+/* TRUST BAR */
+.trustbar{background:#0a0a0a;border-top:1px solid #1a1a1a;padding:0 5%}
+.trustbar-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.tb-item{padding:30px 18px;text-align:center;border-right:1px solid #1a1a1a}
+.tb-item:last-child{border-right:none}
+.tb-num{display:block;font-size:1.9rem;font-weight:900;letter-spacing:-.03em;color:#fff;line-height:1}
+.tb-num em{color:var(--red);font-style:normal;font-size:1.3rem}
+.tb-label{display:block;font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#71717a;margin-top:8px}
+@media(max-width:700px){.trustbar-inner{grid-template-columns:1fr 1fr}.tb-item:nth-child(2){border-right:none}.tb-item:nth-child(1),.tb-item:nth-child(2){border-bottom:1px solid #1a1a1a}}
+
+/* WHY US */
+.why{background:var(--paper);padding:96px 5%}
+.why-inner{max-width:1000px;margin:0 auto}
+.why-tag{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:12px;display:block;text-align:center}
+.why-title{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:900;letter-spacing:-.04em;line-height:1.1;text-align:center;margin-bottom:14px}
+.why-sub{text-align:center;color:var(--mute);max-width:520px;margin:0 auto 52px;font-size:1rem}
+.why-cols{display:grid;grid-template-columns:1fr 1fr;gap:2px;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.why-col{padding:36px 32px}
+.why-col-them{background:#fff}
+.why-col-us{background:var(--ink);color:#fff}
+.why-col h3{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:24px}
+.why-col-them h3{color:var(--mute)}
+.why-col-us h3{color:var(--red)}
+.why-row{display:flex;gap:12px;align-items:flex-start;padding:11px 0;font-size:.92rem;line-height:1.5}
+.why-col-them .why-row{color:#a1a1aa;border-bottom:1px solid #f0f0f0}
+.why-col-us .why-row{color:#e4e4e7;border-bottom:1px solid #1f1f1f}
+.why-row:last-child{border-bottom:none}
+.why-ico{flex-shrink:0;font-weight:900;width:18px}
+.why-col-them .why-ico{color:#d4d4d8}
+.why-col-us .why-ico{color:var(--red)}
+.why-price{margin-top:22px;font-size:1.05rem;font-weight:800}
+.why-col-them .why-price{color:#a1a1aa;text-decoration:line-through}
+.why-col-us .why-price{color:#fff}
+@media(max-width:700px){.why-cols{grid-template-columns:1fr}}
+
+/* TESTIMONIALS */
+.tst{background:var(--ink);padding:96px 5%}
+.tst-inner{max-width:1100px;margin:0 auto}
+.tst-tag{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:12px;display:block}
+.tst-title{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:900;letter-spacing:-.04em;color:#fff;margin-bottom:48px;max-width:520px;line-height:1.1}
+.tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tst-card{background:#111;border:1px solid #1f1f1f;border-radius:8px;padding:30px 26px;display:flex;flex-direction:column}
+.tst-stars{color:var(--red);font-size:.95rem;letter-spacing:2px;margin-bottom:16px}
+.tst-text{font-size:.92rem;color:#d4d4d8;line-height:1.65;margin-bottom:22px;flex:1}
+.tst-who{display:flex;align-items:center;gap:12px}
+.tst-av{width:42px;height:42px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;width:42px}
+.tst-name{font-size:.85rem;font-weight:700;color:#fff}
+.tst-meta{font-size:.74rem;color:#71717a}
+.tst-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(200,16,46,.14);color:#f87171;font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:50px;margin-top:10px}
+@media(max-width:900px){.tst-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="site-nav"><a href="/" class="site-nav-logo">Opositor<em>ES</em>AGE</a><ul class="site-nav-links"><li class="has-drop"><a href="/policia-nacional/">Policía Nacional <svg class="snd-arrow" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></a><div class="snd-drop"><span class="snd-drop-label">Recursos gratuitos</span><a href="/policia-nacional/acceso/">Test de Constitución Española</a></div></li><li class="has-drop"><a href="/oposiciones-correos/">Correos <svg class="snd-arrow" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></a><div class="snd-drop"><span class="snd-drop-label">Recursos gratuitos</span><a href="/oposiciones-correos/">Test Correos — gratis</a></div></li><li class="has-drop"><a href="/administrativo-estado/">Administrativo <svg class="snd-arrow" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></a><div class="snd-drop"><span class="snd-drop-label">Recursos gratuitos</span><a href="/administrativo-estado/acceso/">Test Informática — gratis</a></div></li><li class="has-drop"><a href="/informatica-age/">Informática AGE <svg class="snd-arrow" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></a><div class="snd-drop"><span class="snd-drop-label">Todo gratis</span><a href="/informatica-age/acceso/">Aula completa — gratis</a><a href="/tema1-gratis/">Tema 1 — Word</a><a href="/tema2-gratis/">Tema 2 — Windows</a><a href="/tema3-gratis/">Tema 3 — Word avanzado</a><a href="/tema4-gratis/">Tema 4 — Excel</a><a href="/tema5-gratis/">Tema 5 — Redes</a><a href="/tema6-gratis/">Tema 6 — Seguridad</a></div></li></ul><a href="#packs" class="site-nav-cta">Ver packs</a></nav>
+
+<section class="hp-hero">
+  <img class="hp-hero-bg" src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1600&h=900&auto=format&fit=crop&q=85" alt="" loading="eager">
+  <div class="hp-hero-overlay"></div>
+  <div class="hp-hero-body">
+    <span class="hp-hero-eyebrow">Oposiciones del Estado · España 2025</span>
+    <h1 class="hp-hero-h1">El material que el<br><em>examen real</em> pide.<br>Sin pagar a una academia.</h1>
+    <p class="hp-hero-sub">Preguntas reales de examen, simulacros cronometrados y temario actualizado. Lo mismo que cobran las academias por 600€ — por una fracción, en un solo pago y para siempre.</p>
+    <a href="#packs" class="hp-hero-cta">Ver todos los packs <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v10M4 9l4 4 4-4"/></svg></a>
+  </div>
+</section>
+
+<section class="trustbar">
+  <div class="trustbar-inner">
+    <div class="tb-item"><span class="tb-num">1.180+</span><span class="tb-label">Opositores preparados</span></div>
+    <div class="tb-item"><span class="tb-num">4.9<em>★</em></span><span class="tb-label">Valoración media</span></div>
+    <div class="tb-item"><span class="tb-num">2.000+</span><span class="tb-label">Preguntas reales</span></div>
+    <div class="tb-item"><span class="tb-num">30 días</span><span class="tb-label">Garantía o reembolso</span></div>
+  </div>
+</section>
+
+<section class="packs" id="packs">
+  <div class="packs-head">
+    <div>
+      <span class="packs-tag">Packs disponibles</span>
+      <h2 class="packs-title">Elige tu oposición</h2>
+    </div>
+  </div>
+  <div class="packs-grid"><a class="pack-card" href="/policia-nacional/">
+  <div class="pack-photo"><img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=900&h=700&auto=format&fit=crop&q=80" alt="Pack Policía Nacional" loading="lazy"></div>
+  <div class="pack-overlay"></div>
+  <div class="pack-body">
+    <span class="pack-eyebrow">Policía Nacional · Escala Básica</span>
+    <div class="pack-name">Pack Policía Nacional</div>
+    <div class="pack-price">70€ · pago único</div>
+    <span class="pack-btn">Ver pack <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+  </div>
+</a><a class="pack-card" href="/oposiciones-correos/">
+  <div class="pack-photo"><img src="https://images.unsplash.com/photo-1586769852044-692d6e3703f0?w=900&h=700&auto=format&fit=crop&q=80" alt="Pack Correos" loading="lazy"></div>
+  <div class="pack-overlay"></div>
+  <div class="pack-body">
+    <span class="pack-eyebrow">Oposiciones Correos 2025</span>
+    <div class="pack-name">Pack Correos</div>
+    <div class="pack-price">49€ · pago único</div>
+    <span class="pack-btn">Ver pack <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+  </div>
+</a><a class="pack-card" href="/administrativo-estado/">
+  <div class="pack-photo"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&h=700&auto=format&fit=crop&q=80" alt="Pack Administrativo del Estado" loading="lazy"></div>
+  <div class="pack-overlay"></div>
+  <div class="pack-body">
+    <span class="pack-eyebrow">Cuerpo General Administrativo</span>
+    <div class="pack-name">Pack Administrativo del Estado</div>
+    <div class="pack-price">59€ · pago único</div>
+    <span class="pack-btn">Ver pack <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+  </div>
+</a><a class="pack-card" href="/informatica-age/">
+  <div class="pack-photo"><img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=900&h=700&auto=format&fit=crop&q=80" alt="Informática AGE gratis" loading="lazy"></div>
+  <div class="pack-overlay"></div>
+  <div class="pack-body">
+    <span class="pack-eyebrow">Informática AGE · Auxiliar</span>
+    <div class="pack-name">Informática AGE</div>
+    <div class="pack-price" style="color:#fff;font-weight:700">GRATIS · temario + test + simulacro</div>
+    <span class="pack-btn">Entrar gratis <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+  </div>
+</a></div>
+</section>
+
+<section class="free">
+  <div class="free-inner">
+    <span class="free-tag">Sin registro · Sin tarjeta</span>
+    <h2 class="free-title">Prueba antes de comprar</h2>
+    <div class="free-grid"><a class="free-item" href="/policia-nacional/acceso/">
+  <span class="free-label">Policía Nacional</span>
+  <div class="free-name">Test de Constitución Española</div>
+  <div class="free-desc">694 preguntas · gratis</div>
+  <span class="free-link">Empezar gratis →</span>
+</a><a class="free-item" href="/oposiciones-correos/">
+  <span class="free-label">Correos</span>
+  <div class="free-name">Test Correos</div>
+  <div class="free-desc">304 preguntas · gratis</div>
+  <span class="free-link">Empezar gratis →</span>
+</a><a class="free-item" href="/administrativo-estado/acceso/">
+  <span class="free-label">Administrativo</span>
+  <div class="free-name">Test Informática AGE</div>
+  <div class="free-desc">184 preguntas · gratis</div>
+  <span class="free-link">Empezar gratis →</span>
+</a><a class="free-item" href="/tema1-gratis/">
+  <span class="free-label">Informática AGE</span>
+  <div class="free-name">Tema 1 — Word</div>
+  <div class="free-desc">50 preguntas · gratis</div>
+  <span class="free-link">Empezar gratis →</span>
+</a><a class="free-item" href="/tema2-gratis/">
+  <span class="free-label">Informática AGE</span>
+  <div class="free-name">Tema 2 — Windows</div>
+  <div class="free-desc">20 preguntas · gratis</div>
+  <span class="free-link">Empezar gratis →</span>
+</a><a class="free-item" href="/tema3-gratis/">
+  <span class="free-label">Informática AGE</span>
+  <div class="free-name">Tema 3 — Word avanzado</div>
+  <div class="free-desc">20 preguntas · gratis</div>
+  <span class="free-link">Empezar gratis →</span>
+</a></div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="why-inner">
+    <span class="why-tag">La diferencia</span>
+    <h2 class="why-title">Lo mismo que la academia. Sin pagar lo de la academia.</h2>
+    <p class="why-sub">La preparación que cuesta cientos de euros en módulos sueltos, en un único pack que es tuyo para siempre.</p>
+    <div class="why-cols">
+      <div class="why-col why-col-them">
+        <h3>Academia tradicional</h3>
+        <div class="why-row"><span class="why-ico">✕</span>Pagas por módulos sueltos, mes a mes</div>
+        <div class="why-row"><span class="why-ico">✕</span>El acceso caduca cuando dejas de pagar</div>
+        <div class="why-row"><span class="why-ico">✕</span>Horarios fijos, listas de espera</div>
+        <div class="why-row"><span class="why-ico">✕</span>Material en papel que no puedes repasar en el móvil</div>
+        <div class="why-row"><span class="why-ico">✕</span>Sin garantía si no te sirve</div>
+        <div class="why-price">600€ y subiendo</div>
+      </div>
+      <div class="why-col why-col-us">
+        <h3>OpositorESAGE</h3>
+        <div class="why-row"><span class="why-ico">✓</span>Todo el material en un solo pack completo</div>
+        <div class="why-row"><span class="why-ico">✓</span>Acceso permanente — pagas una vez, es tuyo</div>
+        <div class="why-row"><span class="why-ico">✓</span>Estudias cuando y donde quieras, también en el móvil</div>
+        <div class="why-row"><span class="why-ico">✓</span>Preguntas reales con corrección y explicación al instante</div>
+        <div class="why-row"><span class="why-ico">✓</span>30 días de garantía: o te sirve, o te devolvemos el dinero</div>
+        <div class="why-price">Desde 47€ · pago único</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tst">
+  <div class="tst-inner">
+    <span class="tst-tag">Resultados reales</span>
+    <h2 class="tst-title">Más de 1.180 opositores ya se prepararon con nosotros</h2>
+    <div class="tst-grid">
+      <div class="tst-card">
+        <div class="tst-stars">★★★★★</div>
+        <p class="tst-text">"Llevaba meses con apuntes sueltos sin rumbo. En cuanto empecé con los test reales y los simulacros cronometrados todo cambió. Llegué al examen sabiendo exactamente a qué me enfrentaba."</p>
+        <div class="tst-who"><div class="tst-av">D</div><div><div class="tst-name">David M.</div><div class="tst-meta">Policía Nacional · Madrid</div><span class="tst-badge">✓ Aprobó la teórica</span></div></div>
+      </div>
+      <div class="tst-card">
+        <div class="tst-stars">★★★★★</div>
+        <p class="tst-text">"Me ahorré más de 500€ de academia. El material es serio, está actualizado y las explicaciones de cada pregunta valen oro. Para mí fue la mejor inversión de toda la preparación."</p>
+        <div class="tst-who"><div class="tst-av">L</div><div><div class="tst-name">Lucía R.</div><div class="tst-meta">Correos 2024 · Granada</div><span class="tst-badge">✓ Plaza conseguida</span></div></div>
+      </div>
+      <div class="tst-card">
+        <div class="tst-stars">★★★★★</div>
+        <p class="tst-text">"Estudiaba a la vez que trabajaba. Poder hacer test desde el móvil en cualquier hueco fue lo que me salvó. Acabé haciendo miles de preguntas sin darme cuenta. Lo recomiendo cerrado."</p>
+        <div class="tst-who"><div class="tst-av">S</div><div><div class="tst-name">Sergio P.</div><div class="tst-meta">Administrativo C1 · Zaragoza</div><span class="tst-badge">✓ Apto en prácticas</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="hp-footer">
+  <span class="hp-footer-logo">Opositor<em>ES</em>AGE</span>
+  <nav class="hp-footer-links">
+    <a href="/policia-nacional/">Policía Nacional</a>
+    <a href="/oposiciones-correos/">Correos</a>
+    <a href="/administrativo-estado/">Administrativo</a>
+    <a href="/tema1-gratis/">Informática AGE</a>
+  </nav>
+</footer>
+
+<footer style="background:#0a0a0a;color:#71717a;padding:32px 5%;font-family:'Inter',system-ui,sans-serif;font-size:.8rem;border-top:1px solid #1a1a1a;margin-top:0">
+  <div style="max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between">
+    <span style="color:#3f3f46">© 2025 OpositoresAGE — Todos los derechos reservados</span>
+    <nav style="display:flex;gap:20px;flex-wrap:wrap">
+      <a href="/contacto/" style="color:#71717a;text-decoration:none;transition:color .15s" onmouseover="this.style.color='#c8102e'" onmouseout="this.style.color='#71717a'">Contacto</a>
+      <a href="/politica-privacidad/" style="color:#71717a;text-decoration:none" onmouseover="this.style.color='#c8102e'" onmouseout="this.style.color='#71717a'">Política de privacidad</a>
+      <a href="/aviso-legal/" style="color:#71717a;text-decoration:none" onmouseover="this.style.color='#c8102e'" onmouseout="this.style.color='#71717a'">Aviso legal</a>
+      <a href="/politica-cookies/" style="color:#71717a;text-decoration:none" onmouseover="this.style.color='#c8102e'" onmouseout="this.style.color='#71717a'">Cookies</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tema 5: Redes e Internet para Oposiciones AGE | OpositoresAGE</title>
+<meta name="description" content="Temario completo de Redes e Internet para las oposiciones del Cuerpo General Auxiliar del Estado. TCP/IP, DNS, HTTP, VPN, firewall. Test 20 preguntas. Gratis.">
+<link rel="canonical" href="https://opositoresage.es/tema5-gratis/">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="redes internet oposiciones AGE, tema 5 informatica auxiliar administrativo, TCP IP DNS oposiciones, test redes oposiciones gratis">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3270549137164495" crossorigin="anonymous"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--red:#e63946;--dark:#0d1b2a;--navy:#1b2a3b;--blue:#1d3557;--accent:#f4a261;--text:#1a1a2e;--muted:#6b7280;--green:#22c55e}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:var(--text);background:#fff;line-height:1.6}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(13,27,42,.97);backdrop-filter:blur(8px);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 20px rgba(0,0,0,.3)}
+.nav-logo{color:#fff;font-size:1.1rem;font-weight:800;letter-spacing:-.5px;text-decoration:none}.nav-logo span{color:var(--red)}
+.nav-links{display:flex;gap:20px;align-items:center}.nav-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.88rem;font-weight:500}.nav-links a:hover{color:#fff}
+.nav-cta{background:var(--red);color:#fff;padding:10px 22px;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;transition:all .2s;white-space:nowrap}.nav-cta:hover{background:#c62535}
+@media(max-width:640px){.nav-links{display:none}}
+.hero{padding:120px 24px 60px;background:linear-gradient(135deg,#f0f9ff 0%,#fff 60%);border-bottom:1px solid #e5e7eb}
+.hero-inner{max-width:860px;margin:0 auto;text-align:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(14,165,233,.08);border:1px solid rgba(14,165,233,.25);color:#0284c7;padding:8px 18px;border-radius:50px;font-size:.85rem;font-weight:600;margin-bottom:24px}
+.hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--dark);line-height:1.15;margin-bottom:16px;letter-spacing:-1px}
+.hero h1 em{color:var(--red);font-style:normal}
+.hero-sub{font-size:1.05rem;color:var(--muted);max-width:600px;margin:0 auto;line-height:1.7}
+.breadcrumb{font-size:.83rem;color:var(--muted);margin-bottom:16px}.breadcrumb a{color:var(--muted);text-decoration:none}.breadcrumb a:hover{color:var(--red)}
+.content{max-width:860px;margin:0 auto;padding:60px 24px}
+.section-title{font-size:1.6rem;font-weight:800;color:var(--dark);margin-bottom:8px;letter-spacing:-.5px}
+.section-subtitle{color:var(--muted);margin-bottom:32px;font-size:.95rem}
+.temario{display:grid;gap:24px;margin-bottom:60px}
+.tema-block{border:2px solid #e5e7eb;border-radius:16px;overflow:hidden}.tema-block:hover{border-color:#0284c7}
+.tema-block-header{background:linear-gradient(135deg,#f0f9ff,#fff);padding:20px 24px;display:flex;align-items:center;gap:16px;cursor:pointer}
+.tema-block-icon{font-size:1.8rem;flex-shrink:0}
+.tema-block-title{font-weight:700;color:var(--dark);font-size:1rem}.tema-block-desc{font-size:.85rem;color:var(--muted)}
+.tema-block-body{padding:0 24px;max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}.tema-block.open .tema-block-body{max-height:900px;padding:20px 24px}
+.tema-point{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:.92rem;color:var(--text)}.tema-point::before{content:'▸';color:#0284c7;font-weight:700;flex-shrink:0;margin-top:2px}
+.concept-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.88rem}
+.concept-table th{background:#0d1b2a;color:#fff;padding:8px 12px;text-align:left}
+.concept-table td{padding:8px 12px;border-bottom:1px solid #e5e7eb}
+.concept-table tr:nth-child(even){background:#f8f9fa}
+.test-section{background:linear-gradient(135deg,#0d1b2a,#1d3557);border-radius:24px;padding:40px;color:#fff;margin-bottom:60px}
+.test-section h2,.test-section p{text-align:center}.test-section h2{font-size:1.6rem;font-weight:800;margin-bottom:8px}.test-section p{color:rgba(255,255,255,.7);margin-bottom:32px;font-size:.95rem}
+.test-progress{height:8px;background:rgba(255,255,255,.1);border-radius:4px;margin-bottom:28px}
+.test-progress-bar{height:100%;background:linear-gradient(90deg,var(--red),#f4a261);border-radius:4px;transition:width .4s ease}
+.test-meta{display:flex;justify-content:space-between;margin-bottom:20px;font-size:.85rem;color:rgba(255,255,255,.6)}
+.test-q-num{font-size:.78rem;font-weight:700;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.test-q{font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:20px;line-height:1.5}
+.test-opts{display:grid;gap:10px;margin-bottom:20px}
+.test-opt{background:rgba(255,255,255,.07);border:2px solid rgba(255,255,255,.1);border-radius:10px;padding:12px 16px;cursor:pointer;color:rgba(255,255,255,.85);transition:all .2s;font-size:.92rem;text-align:left;display:flex;align-items:center;gap:12px}
+.test-opt:hover:not(:disabled){background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.3)}
+.test-opt.correct{background:rgba(34,197,94,.2);border-color:#22c55e;color:#fff}
+.test-opt.wrong{background:rgba(230,57,70,.2);border-color:var(--red);color:#fff}
+.test-opt:disabled{cursor:default}
+.opt-letter{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.82rem;flex-shrink:0}
+.test-explanation{background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);border-radius:10px;padding:12px 16px;font-size:.88rem;color:rgba(255,255,255,.85);margin-bottom:16px;display:none}.test-explanation.show{display:block}
+.test-actions{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.btn-next{background:var(--red);color:#fff;border:none;padding:12px 28px;border-radius:10px;font-weight:700;font-size:.95rem;cursor:pointer}.btn-next:hover{background:#c62535}.btn-next:disabled{opacity:.5;cursor:default}
+.test-result{display:none;text-align:center;padding:20px 0}.test-result.show{display:block}
+.result-circle{width:120px;height:120px;border-radius:50%;background:var(--red);margin:0 auto 20px;display:flex;align-items:center;justify-content:center;flex-direction:column;font-size:2rem;font-weight:900;color:#fff}.result-circle small{font-size:.7rem;font-weight:400;opacity:.8}
+.result-title{font-size:1.4rem;font-weight:800;margin-bottom:8px}.result-sub{color:rgba(255,255,255,.7);margin-bottom:24px}
+.btn-retry{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);color:#fff;padding:12px 28px;border-radius:10px;font-weight:700;cursor:pointer;font-size:.95rem;margin-right:12px}
+.cta-section{background:linear-gradient(135deg,#fff5f5,#fff);border:2px solid rgba(230,57,70,.2);border-radius:24px;padding:48px 40px;text-align:center;margin-bottom:60px}
+.cta-section h2{font-size:1.6rem;font-weight:800;color:var(--dark);margin-bottom:12px}.cta-section p{color:var(--muted);margin-bottom:28px;font-size:.95rem}
+.cta-list{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:28px}
+.cta-item{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:8px 16px;font-size:.85rem;color:var(--text);display:flex;align-items:center;gap:6px}.cta-item::before{content:'✓';color:var(--green);font-weight:700}
+.btn-cta{background:var(--red);color:#fff;padding:18px 40px;border-radius:12px;text-decoration:none;font-weight:800;font-size:1.1rem;display:inline-flex;align-items:center;gap:10px;box-shadow:0 8px 30px rgba(230,57,70,.4);transition:all .25s}.btn-cta:hover{transform:translateY(-3px)}
+.nav-topics{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:60px}
+.nav-topic{background:#f0f4f8;border:1px solid #e5e7eb;border-radius:8px;padding:8px 16px;text-decoration:none;font-size:.85rem;color:var(--text);font-weight:600;transition:all .2s}.nav-topic:hover{background:var(--red);color:#fff;border-color:var(--red)}.nav-topic.current{background:#0284c7;color:#fff;border-color:#0284c7}
+footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:40px 24px;font-size:.85rem}
+footer a{color:rgba(255,255,255,.5);text-decoration:none;margin:0 8px}.footer a:hover{color:#fff}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Opositor<span>ES</span>AGE</a>
+  <div class="nav-links"><a href="/">Inicio</a><a href="/tema2-gratis/">Temario</a><a href="/">Acceso</a></div>
+  <a href="https://pay.hotmart.com/Y105866800D" class="nav-cta">Comprar Pack · 47€</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <p class="breadcrumb"><a href="/">Inicio</a> › <a href="/tema2-gratis/">Temario Gratis</a> › Tema 5</p>
+    <div class="hero-badge">🌐 Tema 5 — Gratis completo</div>
+    <h1>Redes e Internet para<br><em>Oposiciones AGE</em></h1>
+    <p class="hero-sub">TCP/IP, DNS, HTTP/HTTPS, VPN, firewall y todo lo que entra en el examen. Test de 20 preguntas tipo examen real AGE incluido.</p>
+  </div>
+</div>
+
+<div class="content">
+  <div class="nav-topics">
+    <a href="/tema2-gratis/" class="nav-topic">T2 · Windows</a>
+    <a href="/tema3-gratis/" class="nav-topic">T3 · Word</a>
+    <a href="/tema4-gratis/" class="nav-topic">T4 · Excel</a>
+    <a href="/tema5-gratis/" class="nav-topic current">T5 · Redes</a>
+    <a href="/tema6-gratis/" class="nav-topic">T6 · Seguridad</a>
+  </div>
+
+  <div class="section-title">Temario: Redes e Internet</div>
+  <p class="section-subtitle">Despliega cada bloque para estudiar. Después practica con el test de 20 preguntas reales AGE.</p>
+
+  <div class="temario">
+    <div class="tema-block" onclick="toggleBloque(this)">
+      <div class="tema-block-header"><span class="tema-block-icon">🔗</span><div><div class="tema-block-title">5.1 Tipos de redes</div><div class="tema-block-desc">LAN, MAN, WAN, PAN — clasificación por extensión geográfica</div></div></div>
+      <div class="tema-block-body">
+        <table class="concept-table">
+          <tr><th>Tipo</th><th>Significado</th><th>Extensión</th><th>Ejemplo</th></tr>
+          <tr><td><strong>PAN</strong></td><td>Personal Area Network</td><td>Pocos metros</td><td>Bluetooth entre móvil y auriculares</td></tr>
+          <tr><td><strong>LAN</strong></td><td>Local Area Network</td><td>Edificio/campus</td><td>Red de una oficina</td></tr>
+          <tr><td><strong>MAN</strong></td><td>Metropolitan Area Network</td><td>Ciudad</td><td>Red universitaria de una ciudad</td></tr>
+          <tr><td><strong>WAN</strong></td><td>Wide Area Network</td><td>País/continente/mundo</td><td>Internet</td></tr>
+        </table>
+        <div class="tema-point"><strong>Topología de red</strong>: la forma en que se conectan los dispositivos. Principales: bus (un cable central), estrella (todos conectados a un switch central — la más común en LAN), anillo, malla.</div>
+        <div class="tema-point">La topología <strong>estrella</strong> es la más usada en redes locales modernas. Si el switch central falla, toda la red cae; pero si falla un equipo, el resto sigue funcionando.</div>
+        <div class="tema-point"><strong>WLAN</strong> (Wireless LAN): red local inalámbrica. La tecnología estándar es <strong>Wi-Fi</strong> (IEEE 802.11). Las versiones más recientes son Wi-Fi 6 (802.11ax) y Wi-Fi 7 (802.11be).</div>
+      </div>
+    </div>
+
+    <div class="tema-block" onclick="toggleBloque(this)">
+      <div class="tema-block-header"><span class="tema-block-icon">📡</span><div><div class="tema-block-title">5.2 Protocolos TCP/IP e IP</div><div class="tema-block-desc">Dirección IP, máscara de subred, puertos</div></div></div>
+      <div class="tema-block-body">
+        <div class="tema-point">El protocolo <strong>TCP/IP</strong> es la base de Internet. TCP (Transmission Control Protocol) garantiza la entrega de los datos. IP (Internet Protocol) se encarga del direccionamiento.</div>
+        <div class="tema-point">Una <strong>dirección IP</strong> es un identificador único para cada dispositivo en la red. IPv4: 4 números del 0-255 separados por puntos (ej. 192.168.1.100). IPv6: 128 bits en hexadecimal.</div>
+        <div class="tema-point">La <strong>máscara de subred</strong> divide la dirección IP en parte de red y parte de host. Ejemplo: 255.255.255.0 o /24 (notación CIDR).</div>
+        <div class="tema-point"><strong>Tipos de IP</strong>: pública (visible en Internet, única globalmente) y privada (solo válida en redes locales). Rangos privados: 192.168.x.x, 10.x.x.x, 172.16-31.x.x.</div>
+        <div class="tema-point"><strong>IP estática</strong>: asignada manualmente, siempre la misma. <strong>IP dinámica</strong>: asignada automáticamente por un servidor DHCP cada vez que el dispositivo se conecta.</div>
+        <div class="tema-point"><strong>Puertos</strong>: identifican el servicio específico. Ejemplos: HTTP = 80, HTTPS = 443, FTP = 21, SSH = 22, SMTP = 25, DNS = 53. Los puertos van del 0 al 65.535.</div>
+      </div>
+    </div>
+
+    <div class="tema-block" onclick="toggleBloque(this)">
+      <div class="tema-block-header"><span class="tema-block-icon">🔍</span><div><div class="tema-block-title">5.3 DNS y servicios de Internet</div><div class="tema-block-desc">DNS, DHCP, HTTP, FTP, correo electrónico</div></div></div>
+      <div class="tema-block-body">
+        <div class="tema-point">El <strong>DNS</strong> (Domain Name System) traduce los nombres de dominio (www.google.com) a direcciones IP numéricas. Sin DNS, habría que memorizar las IPs de cada web.</div>
+        <div class="tema-point">El <strong>DHCP</strong> (Dynamic Host Configuration Protocol) asigna automáticamente direcciones IP, máscara de subred, puerta de enlace y DNS a los dispositivos cuando se conectan a la red.</div>
+        <div class="tema-point"><strong>HTTP</strong> (HyperText Transfer Protocol): protocolo para la web. Puerto 80. Sin cifrado — los datos viajan en texto plano. <strong>HTTPS</strong>: versión segura con SSL/TLS. Puerto 443.</div>
+        <div class="tema-point"><strong>FTP</strong> (File Transfer Protocol): transferencia de archivos. Puerto 21 (control) y 20 (datos). <strong>SFTP/FTPS</strong>: versiones seguras cifradas.</div>
+        <div class="tema-point"><strong>Correo electrónico</strong>: protocolos de envío: SMTP (puerto 25/587). Protocolos de recepción: POP3 (puerto 110, descarga el correo) e IMAP (puerto 143, sincroniza sin descargar).</div>
+        <div class="tema-point">Una <strong>URL</strong> (Uniform Resource Locator) tiene la estructura: protocolo://dominio:puerto/ruta?parámetros. Ejemplo: https://www.ejemplo.com:443/pagina?id=1</div>
+      </div>
+    </div>
+
+    <div class="tema-block" onclick="toggleBloque(this)">
+      <div class="tema-block-header"><span class="tema-block-icon">🌐</span><div><div class="tema-block-title">5.4 Navegadores web</div><div class="tema-block-desc">Principales navegadores, caché, cookies, marcadores</div></div></div>
+      <div class="tema-block-body">
+        <div class="tema-point"><strong>Navegadores principales</strong>: Google Chrome (más usado mundialmente), Mozilla Firefox (código abierto), Microsoft Edge (integrado en Windows), Safari (Apple), Opera.</div>
+        <div class="tema-point">La <strong>caché del navegador</strong> almacena copias de páginas web visitadas para cargarlas más rápido. Se puede borrar desde la configuración del navegador (Ctrl+Mayús+Supr en la mayoría).</div>
+        <div class="tema-point">Las <strong>cookies</strong> son pequeños archivos que los sitios web guardan en el navegador para recordar preferencias, sesiones iniciadas y datos de navegación.</div>
+        <div class="tema-point">El <strong>modo incógnito/privado</strong> no guarda historial, cookies ni datos de formularios. Pero NO te hace anónimo frente a tu ISP, la red o los sitios visitados.</div>
+        <div class="tema-point">Los <strong>marcadores/favoritos</strong> guardan accesos directos a páginas web. Se pueden organizar en carpetas y sincronizar entre dispositivos con la cuenta del navegador.</div>
+        <div class="tema-point"><strong>Extensiones/complementos</strong>: pequeños programas que añaden funcionalidades al navegador. Pueden ser bloqueadores de anuncios, gestores de contraseñas, traductores, etc.</div>
+      </div>
+    </div>
+
+    <div class="tema-block" onclick="toggleBloque(this)">
+      <div class="tema-block-header"><span class="tema-block-icon">🛡️</span><div><div class="tema-block-title">5.5 Seguridad en redes: VPN y Firewall</div><div class="tema-block-desc">VPN, firewall, proxy y redes seguras</div></div></div>
+      <div class="tema-block-body">
+        <div class="tema-point">Una <strong>VPN</strong> (Virtual Private Network) crea un túnel cifrado entre el dispositivo y un servidor remoto. Cifra el tráfico y oculta la IP real. Usada por empresas para acceso remoto seguro y por usuarios para privacidad.</div>
+        <div class="tema-point">Un <strong>firewall</strong> (cortafuegos) filtra el tráfico de red entrante y saliente según reglas definidas. Puede ser software (Windows Firewall) o hardware (dispositivo físico dedicado).</div>
+        <div class="tema-point">Un <strong>proxy</strong> actúa como intermediario entre el cliente y el servidor web. Puede cachear contenido (proxy caché), filtrar accesos (proxy de contenido) o proporcionar anonimato.</div>
+        <div class="tema-point"><strong>WPA3</strong> es el estándar de seguridad Wi-Fi más actual. Versiones anteriores: WEP (obsoleto, inseguro), WPA, WPA2. Para redes domésticas se recomienda WPA2 o WPA3.</div>
+        <div class="tema-point"><strong>HTTPS</strong> usa certificados SSL/TLS para cifrar la comunicación entre el navegador y el servidor web. El candado verde/gris en la barra del navegador indica conexión HTTPS.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="test-section" id="test">
+    <h2>Test · Tema 5: Redes e Internet</h2>
+    <p>20 preguntas tipo examen real AGE · Respuesta inmediata con explicación</p>
+    <div id="test-container">
+      <div class="test-progress"><div class="test-progress-bar" id="progress-bar" style="width:5%"></div></div>
+      <div class="test-meta"><span id="q-counter">Pregunta 1 de 20</span><span id="score-live">Correctas: 0</span></div>
+      <div class="test-q-num" id="q-topic"></div>
+      <div class="test-q" id="q-text"></div>
+      <div class="test-opts" id="opts-container"></div>
+      <div class="test-explanation" id="explanation"></div>
+      <div class="test-actions"><span id="result-hint" style="font-size:.88rem;color:rgba(255,255,255,.5)"></span><button class="btn-next" id="btn-next" onclick="nextQuestion()" disabled>Siguiente →</button></div>
+    </div>
+    <div class="test-result" id="test-result">
+      <div class="result-circle" id="result-circle"><span id="result-score">0</span><small>/ 20</small></div>
+      <div class="result-title" id="result-title"></div><div class="result-sub" id="result-sub"></div>
+      <button class="btn-retry" onclick="resetTest()">Reintentar</button>
+      <a href="https://pay.hotmart.com/Y105866800D" class="btn-next" style="text-decoration:none;display:inline-flex;align-items:center">Pack 300 Test · 47€</a>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <h2>¿Quieres los 300 test completos?</h2>
+    <p>El Pack Completo incluye todo para superar el examen de informática AGE.</p>
+    <div class="cta-list">
+      <div class="cta-item">300 preguntas test con explicaciones</div>
+      <div class="cta-item">Simulacro oficial cronometrado</div>
+      <div class="cta-item">Los 6 temas completos</div>
+      <div class="cta-item">Chuleta de atajos imprimible</div>
+      <div class="cta-item">Acceso de por vida</div>
+    </div>
+    <a href="https://pay.hotmart.com/Y105866800D" class="btn-cta">Comprar Pack Completo · 47€ →</a>
+  </div>
+</div>
+
+<footer>
+  <div style="margin-bottom:12px"><a href="/">Inicio</a><a href="/sobre-nosotros/">Sobre nosotros</a><a href="/contacto/">Contacto</a></div>
+  <p>© 2025 OpositoresAGE · Preparación oposiciones Cuerpo General Auxiliar del Estado</p>
+</footer>
+
+<script>
+const preguntas=[
+  {t:"Tipos de red",q:"¿Qué tipo de red cubre el ámbito de un edificio u oficina?",o:["WAN","MAN","LAN","PAN"],c:2,e:"LAN (Local Area Network) es la red de área local que cubre un edificio u oficina. WAN es de área amplia (Internet). MAN es metropolitana (ciudad). PAN es personal (bluetooth entre dispositivos cercanos)."},
+  {t:"Tipos de red",q:"¿Qué significa WAN?",o:["Wireless Area Network","Wide Area Network","Web Access Network","Windows Area Network"],c:1,e:"WAN significa Wide Area Network (red de área amplia). Es el tipo de red que cubre grandes distancias geográficas, como países o continentes. Internet es el ejemplo más conocido de WAN."},
+  {t:"Topología",q:"¿Cuál es la topología de red más utilizada en las redes locales (LAN) actuales?",o:["Bus","Anillo","Malla","Estrella"],c:3,e:"La topología en estrella es la más usada en LAN modernas. Todos los dispositivos se conectan a un switch central. Si falla un dispositivo, el resto sigue funcionando. Si falla el switch, la red completa cae."},
+  {t:"IP",q:"¿Cuántos bytes tiene una dirección IPv4?",o:["2 bytes (16 bits)","4 bytes (32 bits)","6 bytes (48 bits)","16 bytes (128 bits)"],c:1,e:"Una dirección IPv4 tiene 4 bytes (32 bits), representados como 4 números del 0 al 255 separados por puntos (ej. 192.168.1.1). IPv6 usa 16 bytes (128 bits) para superar la escasez de IPv4."},
+  {t:"IP",q:"¿Qué rango de direcciones IP se usa para redes privadas (no enrutables en Internet)?",o:["100.0.0.0 - 100.255.255.255","172.0.0.0 - 172.255.255.255","192.168.0.0 - 192.168.255.255","Todas las IPs que acaben en .0"],c:2,e:"El rango 192.168.0.0/16 es el más común en redes domésticas y de pequeña empresa. Otros rangos privados son 10.0.0.0/8 y 172.16.0.0/12. Estos rangos no son enrutables en Internet."},
+  {t:"DHCP",q:"¿Qué protocolo asigna automáticamente direcciones IP a los dispositivos de la red?",o:["DNS","HTTP","DHCP","FTP"],c:2,e:"DHCP (Dynamic Host Configuration Protocol) asigna automáticamente dirección IP, máscara de subred, puerta de enlace predeterminada y servidores DNS a los dispositivos cuando se conectan a la red."},
+  {t:"DNS",q:"¿Cuál es la función principal del DNS?",o:["Asignar direcciones IP a los dispositivos","Traducir nombres de dominio a direcciones IP","Cifrar la comunicación en Internet","Controlar el acceso a páginas web no permitidas"],c:1,e:"DNS (Domain Name System) actúa como la 'agenda telefónica' de Internet: traduce los nombres de dominio legibles (www.google.com) en direcciones IP numéricas (142.250.184.46) que los ordenadores pueden utilizar."},
+  {t:"Protocolos",q:"¿En qué puerto opera el protocolo HTTPS?",o:["Puerto 21","Puerto 80","Puerto 443","Puerto 8080"],c:2,e:"HTTPS opera en el puerto 443. HTTP (sin cifrado) opera en el puerto 80. HTTPS = HTTP + TLS/SSL, que cifra la comunicación. El candado en la barra del navegador indica que se usa HTTPS."},
+  {t:"Protocolos",q:"¿Qué protocolo se usa para transferir archivos entre un cliente y un servidor FTP?",o:["HTTP","SMTP","FTP","POP3"],c:2,e:"FTP (File Transfer Protocol) es el protocolo estándar para transferir archivos entre cliente y servidor. Usa el puerto 21 para control y 20 para datos. SFTP es su versión segura (sobre SSH)."},
+  {t:"Correo",q:"¿Qué protocolo se usa para ENVIAR correo electrónico?",o:["POP3","IMAP","SMTP","HTTP"],c:2,e:"SMTP (Simple Mail Transfer Protocol) es el protocolo para enviar correo electrónico. Puerto 25 (servidor a servidor) o 587 (cliente a servidor). Para recibir: POP3 (puerto 110) o IMAP (puerto 143)."},
+  {t:"Correo",q:"¿Cuál es la diferencia entre POP3 e IMAP para recibir correo?",o:["POP3 es más seguro que IMAP","IMAP sincroniza el correo en el servidor (varios dispositivos); POP3 lo descarga y borra del servidor","POP3 usa cifrado y IMAP no","Solo POP3 permite leer adjuntos"],c:1,e:"IMAP mantiene los correos en el servidor y los sincroniza en todos los dispositivos (ideal si usas móvil y PC). POP3 descarga los correos al dispositivo y los borra del servidor (no sincroniza entre dispositivos)."},
+  {t:"Navegadores",q:"¿Qué son las cookies en el contexto de la navegación web?",o:["Archivos de virus descargados al navegar","Pequeños archivos que los sitios guardan en el navegador para recordar preferencias y sesiones","Copias de las páginas web guardadas en el disco","Las contraseñas guardadas en el navegador"],c:1,e:"Las cookies son pequeños archivos de texto que los sitios web guardan en el navegador del usuario para recordar: el estado de sesión iniciada, preferencias de idioma/configuración, datos del carrito de compra, y para el seguimiento del comportamiento del usuario."},
+  {t:"Navegadores",q:"¿El modo incógnito/privado del navegador oculta tu actividad a...?",o:["Tu proveedor de Internet (ISP)","Los sitios web que visitas","Tu empresa o administrador de red","Solo evita que se guarde el historial en ese dispositivo"],c:3,e:"El modo incógnito solo evita que el navegador guarde el historial, cookies y datos de formularios en ese dispositivo. Tu ISP, la empresa, los sitios web y los administradores de red SIGUEN pudiendo ver tu actividad."},
+  {t:"VPN",q:"¿Cuál es la principal función de una VPN?",o:["Acelerar la conexión a Internet","Crear un túnel cifrado para proteger el tráfico y ocultar la IP real","Bloquear el acceso a sitios web maliciosos","Asignar automáticamente una dirección IP"],c:1,e:"Una VPN (Virtual Private Network) crea un túnel cifrado entre el dispositivo y un servidor VPN. Esto cifra todo el tráfico y sustituye la IP real por la del servidor VPN. Usada por empresas para acceso remoto seguro y por usuarios para privacidad."},
+  {t:"Firewall",q:"¿Qué es un firewall o cortafuegos?",o:["Un programa antivirus","Un sistema que filtra el tráfico de red según reglas de seguridad","Un protocolo para transferir archivos","Un servidor DNS alternativo"],c:1,e:"Un firewall filtra el tráfico de red entrante y saliente según reglas predefinidas. Bloquea conexiones no autorizadas. Puede ser software (Windows Defender Firewall) o hardware (dispositivo físico). Es la primera línea de defensa de la red."},
+  {t:"Wi-Fi",q:"¿Cuál es el estándar de seguridad Wi-Fi más moderno y recomendado actualmente?",o:["WEP","WPA","WPA2","WPA3"],c:3,e:"WPA3 es el estándar más moderno (2018), más seguro que WPA2. WEP (1997) está completamente obsoleto y no debe usarse. WPA2 sigue siendo aceptable para redes domésticas si WPA3 no está disponible."},
+  {t:"Puertos",q:"¿En qué puerto trabaja el protocolo HTTP (sin cifrado)?",o:["Puerto 21","Puerto 25","Puerto 80","Puerto 443"],c:2,e:"HTTP trabaja en el puerto 80. HTTPS (seguro) en el 443. FTP en el 21. SMTP (correo saliente) en el 25. Conocer los puertos principales es importante para las oposiciones AGE."},
+  {t:"Conceptos",q:"¿Qué significa la sigla URL?",o:["Universal Resource Link","Uniform Resource Locator","Universal Reference Location","Unified Remote Link"],c:1,e:"URL significa Uniform Resource Locator (Localizador Uniforme de Recursos). Es la dirección completa de un recurso en Internet. Estructura: protocolo://dominio:puerto/ruta. Ejemplo: https://www.ejemplo.com/pagina"},
+  {t:"IP",q:"¿Qué versión del protocolo IP se está adoptando para reemplazar a IPv4 por la escasez de direcciones?",o:["IPv5","IPv6","IPv8","IPX"],c:1,e:"IPv6 usa 128 bits (frente a los 32 de IPv4), lo que permite aproximadamente 3,4×10^38 direcciones. Esto soluciona el agotamiento de direcciones IPv4. Se representa en hexadecimal separado por dos puntos."},
+  {t:"General",q:"¿Qué dispositivo de red distribuye los paquetes de datos al dispositivo correcto dentro de una red LAN?",o:["Módem","Hub","Router","Switch"],c:3,e:"El switch (conmutador) distribuye los paquetes de datos solo al dispositivo destinatario dentro de la LAN, usando las direcciones MAC. El hub (obsoleto) enviaba los datos a TODOS los dispositivos. El router conecta redes distintas (LAN con Internet)."}
+];
+
+let current=0,score=0,answered=false;
+function renderQuestion(){const p=preguntas[current];document.getElementById('progress-bar').style.width=((current+1)/preguntas.length*100)+'%';document.getElementById('q-counter').textContent='Pregunta '+(current+1)+' de '+preguntas.length;document.getElementById('score-live').textContent='Correctas: '+score;document.getElementById('q-topic').textContent=p.t.toUpperCase();document.getElementById('q-text').textContent=p.q;document.getElementById('explanation').className='test-explanation';document.getElementById('explanation').textContent='';document.getElementById('result-hint').textContent='';document.getElementById('btn-next').disabled=true;answered=false;const opts=document.getElementById('opts-container');opts.innerHTML='';const letters=['A','B','C','D'];p.o.forEach((o,i)=>{const btn=document.createElement('button');btn.className='test-opt';btn.innerHTML='<span class="opt-letter">'+letters[i]+'</span>'+o;btn.onclick=()=>selectAnswer(i,btn);opts.appendChild(btn);});}
+function selectAnswer(idx,btn){if(answered)return;answered=true;const p=preguntas[current];const allOpts=document.querySelectorAll('.test-opt');allOpts.forEach(b=>b.disabled=true);if(idx===p.c){btn.classList.add('correct');score++;document.getElementById('result-hint').textContent='✓ ¡Correcto!';}else{btn.classList.add('wrong');allOpts[p.c].classList.add('correct');document.getElementById('result-hint').textContent='✗ Incorrecto';}const exp=document.getElementById('explanation');exp.textContent='💡 '+p.e;exp.classList.add('show');document.getElementById('btn-next').disabled=false;document.getElementById('score-live').textContent='Correctas: '+score;}
+function nextQuestion(){current++;if(current>=preguntas.length){showResult();}else{renderQuestion();}}
+function showResult(){document.getElementById('test-container').style.display='none';const res=document.getElementById('test-result');res.classList.add('show');document.getElementById('result-score').textContent=score;const pct=Math.round(score/preguntas.length*100);const circle=document.getElementById('result-circle');circle.style.background=pct>=70?'#22c55e':pct>=50?'#f59e0b':'#e63946';document.getElementById('result-title').textContent=pct>=70?'¡Excelente resultado!':pct>=50?'Buen progreso, sigue practicando':'Necesitas repasar el temario';document.getElementById('result-sub').textContent='Has acertado '+score+' de '+preguntas.length+' preguntas ('+pct+'%). En el examen real necesitas superar el 50%.';}
+function resetTest(){current=0;score=0;answered=false;document.getElementById('test-container').style.display='block';document.getElementById('test-result').classList.remove('show');renderQuestion();}
+function toggleBloque(el){el.classList.toggle('open');}
+renderQuestion();
+</script>
+</body>
+</html>

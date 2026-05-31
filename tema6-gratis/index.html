@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tema 6: Seguridad Informática para Oposiciones AGE | OpositoresAGE</title>
+<meta name="description" content="Temario completo de Seguridad Informática para oposiciones AGE. Malware, phishing, cifrado, firma digital, RGPD. Test 20 preguntas. Gratis.">
+<link rel="canonical" href="https://opositoresage.es/tema6-gratis/">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="seguridad informatica oposiciones AGE, tema 6 informatica auxiliar administrativo, RGPD oposiciones, virus ransomware oposiciones, test seguridad gratis">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3270549137164495" crossorigin="anonymous"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--red:#e63946;--dark:#0d1b2a;--navy:#1b2a3b;--blue:#1d3557;--accent:#f4a261;--text:#1a1a2e;--muted:#6b7280;--green:#22c55e}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:var(--text);background:#fff;line-height:1.6}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(13,27,42,.97);backdrop-filter:blur(8px);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 20px rgba(0,0,0,.3)}
+.nav-logo{color:#fff;font-size:1.1rem;font-weight:800;letter-spacing:-.5px;text-decoration:none}.nav-logo span{color:var(--red)}
+.nav-links{display:flex;gap:20px;align-items:center}.nav-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.88rem;font-weight:500}.nav-links a:hover{color:#fff}
+.nav-cta{background:var(--red);color:#fff;padding:10px 22px;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;white-space:nowrap}.nav-cta:hover{background:#c62535}
+@media(max-width:640px){.nav-links{display:none}}
+.hero{padding:120px 24px 60px;background:linear-gradient(135deg,#fff5f5 0%,#fff 60%);border-bottom:1px solid #e5e7eb}
+.hero-inner{max-width:860px;margin:0 auto;text-align:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(230,57,70,.08);border:1px solid rgba(230,57,70,.25);color:var(--red);padding:8px 18px;border-radius:50px;font-size:.85rem;font-weight:600;margin-bottom:24px}
+.hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--dark);line-height:1.15;margin-bottom:16px;letter-spacing:-1px}
+.hero h1 em{color:var(--red);font-style:normal}
+.hero-sub{font-size:1.05rem;color:var(--muted);max-width:600px;margin:0 auto;line-height:1.7}
+.breadcrumb{font-size:.83rem;color:var(--muted);margin-bottom:16px}.breadcrumb a{color:var(--muted);text-decoration:none}.breadcrumb a:hover{color:var(--red)}
+.content{max-width:860px;margin:0 auto;padding:60px 24px}
+.section-title{font-size:1.6rem;font-weight:800;color:var(--dark);margin-bottom:8px;letter-spacing:-.5px}
+.section-subtitle{color:var(--muted);margin-bottom:32px;font-size:.95rem}
+.temario{display:grid;gap:24px;margin-bottom:60px}
+.tema-block{border:2px solid #e5e7eb;border-radius:16px;overflow:hidden}.tema-block:hover{border-color:var(--red)}
+.tema-block-header{background:linear-gradient(135deg,#fff5f5,#fff);padding:20px 24px;display:flex;align-items:center;gap:16px;cursor:pointer}
+.tema-block-icon{font-size:1.8rem;flex-shrink:0}
+.tema-block-title{font-weight:700;color:var(--dark);font-size:1rem}.tema-block-desc{font-size:.85rem;color:var(--muted)}
+.tema-block-body{padding:0 24px;max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}.tema-block.open .tema-block-body{max-height:900px;padding:20px 24px}
+.tema-point{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:.92rem;color:var(--text)}.tema-point::before{content:'▸';color:var(--red);font-weight:700;flex-shrink:0;margin-top:2px}
+.malware-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:12px 0}
+.malware-item{background:#fff5f5;border:1px solid rgba(230,57,70,.2);border-radius:10px;padding:12px;font-size:.85rem}
+.malware-item strong{color:var(--red);display:block;margin-bottom:4px}
+.test-section{background:linear-gradient(135deg,#0d1b2a,#1d3557);border-radius:24px;padding:40px;color:#fff;margin-bottom:60px}
+.test-section h2,.test-section p{text-align:center}.test-section h2{font-size:1.6rem;font-weight:800;margin-bottom:8px}.test-section p{color:rgba(255,255,255,.7);margin-bottom:32px;font-size:.95rem}
+.test-progress{height:8px;background:rgba(255,255,255,.1);border-radius:4px;margin-bottom:28px}
+.test-progress-bar{height:100%;background:linear-gradient(90deg,var(--red),#f4a261);border-radius:4px;transition:width .4s ease}
+.test-meta{display:flex;justify-content:space-between;margin-bottom:20px;font-size:.85rem;color:rgba(255,255,255,.6)}
+.test-q-num{font-size:.78rem;font-weight:700;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.test-q{font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:20px;line-height:1.5}
+.test-opts{display:grid;gap:10px;margin-bottom:20px}
+.test-opt{background:rgba(255,255,255,.07);border:2px solid rgba(255,255,255,.1);border-radius:10px;padding:12px 16px;cursor:pointer;color:rgba(255,255,255,.85);transition:all .2s;font-size:.92rem;text-align:left;display:flex;align-items:center;gap:12px}
+.test-opt:hover:not(:disabled){background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.3)}
+.test-opt.correct{background:rgba(34,197,94,.2);border-color:#22c55e;color:#fff}
+.test-opt.wrong{background:rgba(230,57,70,.2);border-color:var(--red);color:#fff}
+.test-opt:disabled{cursor:default}
+.opt-letter{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.82rem;flex-shrink:0}
+.test-explanation{background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);border-radius:10px;padding:12px 16px;font-size:.88rem;color:rgba(255,255,255,.85);margin-bottom:16px;display:none}.test-explanation.show{display:block}
+.test-actions{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.btn-next{background:var(--red);color:#fff;border:none;padding:12px 28px;border-radius:10px;font-weight:700;font-size:.95rem;cursor:pointer}.btn-next:hover{background:#c62535}.btn-next:disabled{opacity:.5;cursor:default}
+.test-result{display:none;text-align:center;padding:20px 0}.test-result.show{display:block}
+.result-circle{width:120px;height:120px;border-radius:50%;background:var(--red);margin:0 auto 20px;display:flex;align-items:center;justify-content:center;flex-direction:column;font-size:2rem;font-weight:900;color:#fff}.result-circle small{font-size:.7rem;font-weight:400;opacity:.8}
+.result-title{font-size:1.4rem;font-weight:800;margin-bottom:8px}.result-sub{color:rgba(255,255,255,.7);margin-bottom:24px}
+.btn-retry{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);color:#fff;padding:12px 28px;border-radius:10px;font-weight:700;cursor:pointer;font-size:.95rem;margin-right:12px}
+.cta-section{background:linear-gradient(135deg,#fff5f5,#fff);border:2px solid rgba(230,57,70,.2);border-radius:24px;padding:48px 40px;text-align:center;margin-bottom:60px}
+.cta-section h2{font-size:1.6rem;font-weight:800;color:var(--dark);margin-bottom:12px}.cta-section p{color:var(--muted);margin-bottom:28px;font-size:.95rem}
+.cta-list{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:28px}
+.cta-item{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:8px 16px;font-size:.85rem;color:var(--text);display:flex;align-items:center;gap:6px}.cta-item::before{content:'✓';color:var(--green);font-weight:700}
+.btn-cta{background:var(--red);color:#fff;padding:18px 40px;border-radius:12px;text-decoration:none;font-weight:800;font-size:1.1rem;display:inline-flex;align-items:center;gap:10px;box-shadow:0 8px 30px rgba(230,57,70,.4);transition:all .25s}.btn-cta:hover{transform:translateY(-3px)}
+.nav-topics{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:60px}
+.nav-topic{background:#f0f4f8;border:1px solid #e5e7eb;border-radius:8px;padding:8px 16px;text-decoration:none;font-size:.85rem;color:var(--text);font-weight:600;transition:all .2s}.nav-topic:hover{background:var(--red);color:#fff;border-color:var(--red)}.nav-topic.current{background:var(--red);color:#fff;border-color:var(--red)}
+footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:40px 24px;font-size:.85rem}
+footer a{color:rgba(255,255,255,.5);text-decoration:none;margin:0 8px}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Opositor<span>ES</span>AGE</a>
+  <div class="nav-links"><a href="/">Inicio</a><a href="/tema2-gratis/">Temario</a><a href="/">Acceso</a></div>
+  <a href="https://pay.hotmart.com/Y105866800D" class="nav-cta">Comprar Pack · 47€</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <p class="breadcrumb"><a href="/">Inicio</a> › <a href="/tema2-gratis/">Temario Gratis</a> › Tema 6</p>
+    <div class="hero-badge">🔐 Tema 6 — Gratis completo</div>
+    <h1>Seguridad Informática para<br><em>Oposiciones AGE</em></h1>
+    <p class="hero-sub">Malware, phishing, cifrado, firma digital, certificado digital y RGPD. Todo lo que entra en el examen con test de 20 preguntas reales.</p>
+  </div>
+</div>
+
+<div class="content">
+  <div class="nav-topics">
+    <a href="/tema2-gratis/" class="nav-topic">T2 · Windows</a>
+    <a href="/tema3-gratis/" class="nav-topic">T3 · Word</a>
+    <a href="/tema4-gratis/" class="nav-topic">T4 · Excel</a>
+    <a href="/tema5-gratis/" class="nav-topic">T5 · Redes</a>
+    <a href="/tema6-gratis/" class="nav-topic current">T6 · Seguridad</a>
+  </div>
+
+  <div class="section-title">Temario: Seguridad Informática</div>
+  <p class="section-subtitle">Despliega cada bloque para estudiar. Después practica con el test de 20 preguntas reales AGE.</p>
+
+  <div class="temario">
+    <div class="tema-block" onclick="toggleBloque(this)">
+      <div class="tema-block-header"><span class="tema-block-icon">🦠</span><div><div class="tema-block-title">6.1 Tipos de malware</div><div class="tema-block-desc">Virus, troyano, ransomware, spyware, adware, gusano...</div></div></div>
+      <div class="tema-block-body">
+        <div class="malware-grid">
+          <div class="malware-item"><strong>Virus</strong>Se adjunta a archivos y se propaga al ejecutarlos. Necesita acción del usuario.</div>
+          <div class="malware-item"><strong>Gusano (Worm)</strong>Se propaga solo por la red sin necesitar archivos huésped ni acción del usuario.</div>
+          <div class="malware-item"><strong>Troyano</strong>Se camufla como software legítimo. Abre puertas traseras. No se replica solo.</div>
+          <div class="malware-item"><strong>Ransomware</strong>Cifra los archivos y pide rescate (dinero) para descifrarlos. Muy peligroso.</div>
+          <div class="malware-item"><strong>Spyware</strong>Espía al usuario y roba información (contraseñas, datos bancarios) sin su conocimiento.</div>
+          <div class="malware-item"><strong>Adware</strong>Muestra publicidad no deseada. Generalmente molesto pero no siempre dañino.</div>
+          <div class="malware-item"><strong>Rootkit</strong>Oculta su presencia y la de otros malware en el sistema. Muy difícil de detectar.</div>
+          <div class="malware-item"><strong>Keylogger</strong>Registra todas las pulsaciones del teclado para capturar contraseñas y datos.</div>
+        </div>
+        <div class="tema-point"><strong>Botnet</strong>: red de equipos infectados (zombies) controlados remotamente. Se usa para enviar spam, ataques DDoS o minar criptomonedas sin que el usuario lo sepa.</div>
+        <div class="tema-point"><strong>DDoS</strong> (Distributed Denial of Service): ataque que satura un servidor con millones de peticiones hasta dejarlo inaccesible. Lanzado desde una botnet.</div>
+      </div>
+    </div>
+
+    <div class="tema-block" onclick="toggleBloque(this)">
+      <div class="tema-block-header"><span class="tema-block-icon">🎣</span><div><div class="tema-block-title">6.2 Ingeniería social y phishing</div><div class="tema-block-desc">Phishing, smishing, vishing, spear phishing</div></div></div>
+      <div class="tema-block-body">
+        <div class="tema-point">La <strong>ingeniería social</strong> son técnicas que manipulan psicológicamente a las personas para obtener información confidencial o que realicen acciones inseguras.</div>
+        <div class="tema-point"><strong>Phishing</strong>: correos fraudulentos que suplantan a bancos, empresas o administraciones para robar credenciales. El enlace lleva a una página falsa idéntica a la original.</div>
+        <div class="tema-point"><strong>Smishing</strong>: phishing por SMS. Mensaje con enlace malicioso o número de teléfono fraudulento. Muy usado para suplantar a empresas de paquetería o bancos.</div>
+        <div class="tema-point"><strong>Vishing</strong>: phishing por voz (llamada telefónica). El atacante finge ser del banco o soporte técnico para obtener datos.</div>
+        <div class="tema-point"><strong>Spear phishing</strong>: phishing dirigido a una persona o empresa específica, muy personalizado. Más difícil de detectar que el phishing masivo.</div>
+        <div class="tema-point"><strong>Cómo detectar phishing</strong>: remitente extraño, errores ortográficos, urgencia inusual, enlace que no coincide con el dominio oficial, solicitud de datos personales o contraseñas.</div>
+      </div>
+    </div>
+
+    <div class="tema-block" onclick="toggleBloque(this)">
+      <div class="tema-block-header"><span class="tema-block-icon">🔑</span><div><div class="tema-block-title">6.3 Contraseñas seguras y autenticación</div><div class="tema-block-desc">Criterios de seguridad, 2FA, gestores de contraseñas</div></div></div>
+      <div class="tema-block-body">
+        <div class="tema-point"><strong>Contraseña segura</strong>: mínimo 12 caracteres, combinación de mayúsculas, minúsculas, números y símbolos especiales. No usar palabras del diccionario, fechas de nacimiento ni el mismo nombre de usuario.</div>
+        <div class="tema-point"><strong>Autenticación de dos factores (2FA / MFA)</strong>: añade una segunda capa de verificación además de la contraseña. El segundo factor puede ser: SMS, app autenticadora (Google Authenticator), llave física (YubiKey), biometría.</div>
+        <div class="tema-point"><strong>Gestor de contraseñas</strong>: aplicación que almacena y genera contraseñas únicas y complejas para cada servicio. Solo hay que recordar una contraseña maestra. Ejemplos: Bitwarden, 1Password, KeePass.</div>
+        <div class="tema-point"><strong>No reutilizar contraseñas</strong>: si una web sufre una brecha, los atacantes prueban esas credenciales en otros servicios (credential stuffing). Cada cuenta debe tener una contraseña única.</div>
+        <div class="tema-point"><strong>CAPTCHA</strong>: prueba de que el usuario es humano (y no un bot). Puede ser un reto visual (seleccionar imágenes), un checkbox o una prueba de comportamiento.</div>
+      </div>
+    </div>
+
+    <div class="tema-block" onclick="toggleBloque(this)">
+      <div class="tema-block-header"><span class="tema-block-icon">🔒</span><div><div class="tema-block-title">6.4 Cifrado y copia de seguridad</div><div class="tema-block-desc">Cifrado simétrico/asimétrico, regla 3-2-1</div></div></div>
+      <div class="tema-block-body">
+        <div class="tema-point">El <strong>cifrado</strong> transforma datos legibles en datos ilegibles para quien no tiene la clave. Es fundamental para proteger la confidencialidad de la información.</div>
+        <div class="tema-point"><strong>Cifrado simétrico</strong>: usa la misma clave para cifrar y descifrar. Más rápido. El problema: cómo compartir la clave de forma segura. Ejemplo: AES (Advanced Encryption Standard).</div>
+        <div class="tema-point"><strong>Cifrado asimétrico</strong>: usa un par de claves: pública (para cifrar, se comparte libremente) y privada (para descifrar, solo la conoce el destinatario). Ejemplo: RSA. Base de HTTPS y la firma digital.</div>
+        <div class="tema-point"><strong>Regla de copia de seguridad 3-2-1</strong>: mantener 3 copias de los datos, en 2 tipos de soporte distintos, con 1 copia en ubicación externa (off-site). Protege contra fallos de hardware, incendios, robos y ransomware.</div>
+        <div class="tema-point"><strong>Cifrado de disco completo</strong>: protege todos los datos del disco. En Windows: BitLocker. En macOS: FileVault. Si el disco es robado, los datos son ilegibles sin la clave de recuperación.</div>
+      </div>
+    </div>
+
+    <div class="tema-block" onclick="toggleBloque(this)">
+      <div class="tema-block-header"><span class="tema-block-icon">✍️</span><div><div class="tema-block-title">6.5 Firma digital y certificado digital</div><div class="tema-block-desc">DNI electrónico, certificado FNMT, Cl@ve</div></div></div>
+      <div class="tema-block-body">
+        <div class="tema-point">La <strong>firma digital</strong> es el equivalente electrónico de la firma manuscrita. Garantiza: autenticidad (quién firmó), integridad (el documento no fue modificado) y no repudio (el firmante no puede negar haberlo firmado).</div>
+        <div class="tema-point">La firma digital usa criptografía asimétrica: el firmante usa su <strong>clave privada</strong> para firmar; cualquiera puede verificar la firma con su <strong>clave pública</strong>.</div>
+        <div class="tema-point">Un <strong>certificado digital</strong> es un documento electrónico emitido por una Autoridad de Certificación (AC) que vincula la identidad de una persona con su clave pública. En España: FNMT (Fábrica Nacional de Moneda y Timbre).</div>
+        <div class="tema-point">El <strong>DNI electrónico (DNIe)</strong> incorpora un chip con el certificado digital del ciudadano. Permite identificarse y firmar documentos en la Administración electrónica.</div>
+        <div class="tema-point"><strong>Cl@ve</strong>: sistema de identificación y firma electrónica de la Administración General del Estado. Incluye Cl@ve PIN (temporal) y Cl@ve Permanente (contraseña fija). Permite acceder a servicios de la AEAT, SEPE, Seguridad Social, etc.</div>
+        <div class="tema-point"><strong>SSL/TLS</strong>: protocolo de cifrado usado en HTTPS. Los certificados SSL autentican al servidor web y cifran la comunicación. El candado en el navegador indica que la conexión usa HTTPS/TLS.</div>
+      </div>
+    </div>
+
+    <div class="tema-block" onclick="toggleBloque(this)">
+      <div class="tema-block-header"><span class="tema-block-icon">⚖️</span><div><div class="tema-block-title">6.6 RGPD y LOPD — Protección de datos</div><div class="tema-block-desc">Derechos ARCO-POL, principios, sanciones</div></div></div>
+      <div class="tema-block-body">
+        <div class="tema-point">El <strong>RGPD</strong> (Reglamento General de Protección de Datos, UE 2016/679) es el reglamento europeo de protección de datos. En España se complementa con la <strong>LOPDGDD</strong> (Ley Orgánica 3/2018).</div>
+        <div class="tema-point"><strong>Principios del RGPD</strong>: licitud, lealtad y transparencia; limitación de la finalidad; minimización de datos; exactitud; limitación del plazo de conservación; integridad y confidencialidad; responsabilidad proactiva.</div>
+        <div class="tema-point"><strong>Derechos ARCO-POL</strong>: Acceso (obtener copia de tus datos), Rectificación (corregir datos erróneos), Cancelación/Supresión (derecho al olvido), Oposición (oponerse al tratamiento), Portabilidad, Limitación del tratamiento.</div>
+        <div class="tema-point"><strong>Consentimiento</strong>: debe ser libre, específico, informado e inequívoco. Las casillas premarcadas no son válidas. El consentimiento puede retirarse en cualquier momento.</div>
+        <div class="tema-point"><strong>DPO</strong> (Data Protection Officer / Delegado de Protección de Datos): figura obligatoria en ciertas organizaciones. Asesora y supervisa el cumplimiento del RGPD.</div>
+        <div class="tema-point"><strong>Sanciones RGPD</strong>: hasta 20 millones de euros o el 4% de la facturación global anual (la cantidad que sea mayor) para las infracciones más graves. La AEPD (Agencia Española de Protección de Datos) es el organismo de control en España.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="test-section" id="test">
+    <h2>Test · Tema 6: Seguridad Informática</h2>
+    <p>20 preguntas tipo examen real AGE · Respuesta inmediata con explicación</p>
+    <div id="test-container">
+      <div class="test-progress"><div class="test-progress-bar" id="progress-bar" style="width:5%"></div></div>
+      <div class="test-meta"><span id="q-counter">Pregunta 1 de 20</span><span id="score-live">Correctas: 0</span></div>
+      <div class="test-q-num" id="q-topic"></div>
+      <div class="test-q" id="q-text"></div>
+      <div class="test-opts" id="opts-container"></div>
+      <div class="test-explanation" id="explanation"></div>
+      <div class="test-actions"><span id="result-hint" style="font-size:.88rem;color:rgba(255,255,255,.5)"></span><button class="btn-next" id="btn-next" onclick="nextQuestion()" disabled>Siguiente →</button></div>
+    </div>
+    <div class="test-result" id="test-result">
+      <div class="result-circle" id="result-circle"><span id="result-score">0</span><small>/ 20</small></div>
+      <div class="result-title" id="result-title"></div><div class="result-sub" id="result-sub"></div>
+      <button class="btn-retry" onclick="resetTest()">Reintentar</button>
+      <a href="https://pay.hotmart.com/Y105866800D" class="btn-next" style="text-decoration:none;display:inline-flex;align-items:center">Pack 300 Test · 47€</a>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <h2>¿Quieres los 300 test completos?</h2>
+    <p>El Pack Completo incluye todo para superar el examen de informática AGE.</p>
+    <div class="cta-list">
+      <div class="cta-item">300 preguntas test con explicaciones</div>
+      <div class="cta-item">Simulacro oficial cronometrado</div>
+      <div class="cta-item">Los 6 temas completos</div>
+      <div class="cta-item">Chuleta de atajos imprimible</div>
+      <div class="cta-item">Acceso de por vida</div>
+    </div>
+    <a href="https://pay.hotmart.com/Y105866800D" class="btn-cta">Comprar Pack Completo · 47€ →</a>
+  </div>
+</div>
+
+<footer>
+  <div style="margin-bottom:12px"><a href="/">Inicio</a><a href="/sobre-nosotros/">Sobre nosotros</a><a href="/contacto/">Contacto</a></div>
+  <p>© 2025 OpositoresAGE · Preparación oposiciones Cuerpo General Auxiliar del Estado</p>
+</footer>
+
+<script>
+const preguntas=[
+  {t:"Malware",q:"¿Qué tipo de malware cifra los archivos del usuario y pide un rescate económico para recuperarlos?",o:["Virus","Spyware","Ransomware","Adware"],c:2,e:"El ransomware cifra los archivos de la víctima haciéndolos inaccesibles, y exige el pago de un rescate (generalmente en criptomonedas) para proporcionar la clave de descifrado. Es uno de los tipos de malware más dañinos."},
+  {t:"Malware",q:"¿Cuál es la diferencia principal entre un virus y un gusano informático?",o:["Los virus cifran archivos; los gusanos los borran","Los gusanos se propagan solos por la red sin necesitar archivos huésped; los virus necesitan acción del usuario","Los virus son más peligrosos que los gusanos","Los gusanos solo afectan a dispositivos móviles"],c:1,e:"Los gusanos (worms) se propagan automáticamente por la red sin necesitar que el usuario ejecute nada, mientras que los virus necesitan adjuntarse a un archivo huésped y ser ejecutados por el usuario para propagarse."},
+  {t:"Malware",q:"¿Qué hace un troyano informático?",o:["Se replica solo por la red a gran velocidad","Se camufla como software legítimo para introducirse en el sistema y abrir acceso remoto","Cifra todos los archivos del disco duro","Solo muestra publicidad no deseada"],c:1,e:"Un troyano (Trojan Horse) aparenta ser un programa útil y legítimo, pero en realidad ejecuta acciones maliciosas en segundo plano: abrir puertas traseras, robar información, descargar más malware. No se replica por sí solo."},
+  {t:"Malware",q:"¿Qué es un keylogger?",o:["Un programa que bloquea el teclado","Software que registra las pulsaciones del teclado para capturar contraseñas y datos","Un tipo de ransomware que cifra el teclado virtual","Un dispositivo que bloquea puertos USB"],c:1,e:"Un keylogger registra todas las teclas que pulsa el usuario y envía esa información al atacante. Permite capturar contraseñas, números de tarjeta, mensajes privados y cualquier dato tecleado sin que la víctima lo sepa."},
+  {t:"Phishing",q:"¿Qué es el phishing?",o:["Un ataque que satura un servidor con millones de peticiones","Un correo o mensaje que suplanta a una entidad legítima para robar credenciales","Un virus que se propaga por red local","Un programa espía que captura la pantalla"],c:1,e:"El phishing son correos, mensajes o páginas web fraudulentas que simulan ser de una entidad legítima (banco, correos, AEAT) para engañar al usuario y que introduzca sus credenciales o datos bancarios en una página falsa."},
+  {t:"Phishing",q:"¿Cómo se llama el phishing que se realiza a través de SMS?",o:["Vishing","Spear phishing","Smishing","Pharming"],c:2,e:"Smishing es la variante de phishing que usa SMS o mensajes de texto. Muy usado para suplantar a empresas de paquetería (DHL, Correos), bancos o la AEAT. El mensaje incluye un enlace malicioso o un número de teléfono fraudulento."},
+  {t:"Contraseñas",q:"¿Cuál de las siguientes es una contraseña más segura?",o:["123456","password","Mi nombre de usuario","x9#Km2$pLq8!"],c:3,e:"Una contraseña segura debe tener al menos 12 caracteres y combinar mayúsculas, minúsculas, números y símbolos especiales. '123456' y 'password' son las contraseñas más usadas y las primeras que prueban los atacantes."},
+  {t:"2FA",q:"¿Qué es la autenticación de dos factores (2FA)?",o:["Usar dos contraseñas diferentes","Verificar la identidad mediante algo que sabes (contraseña) más algo que tienes o eres (código, biometría)","Cambiar la contraseña cada dos meses","Compartir la contraseña con un segundo usuario de confianza"],c:1,e:"La autenticación de dos factores añade una segunda capa de seguridad: además de la contraseña (algo que sabes), requiere un segundo factor como un código OTP (algo que tienes en el móvil) o huella dactilar (algo que eres)."},
+  {t:"Cifrado",q:"En el cifrado asimétrico, ¿qué clave se usa para CIFRAR el mensaje que se envía a alguien?",o:["La clave privada del emisor","La clave privada del receptor","La clave pública del receptor","La clave pública del emisor"],c:2,e:"En el cifrado asimétrico, se cifra con la clave PÚBLICA del destinatario (que está disponible libremente) y solo se puede descifrar con la clave PRIVADA del destinatario (que solo él conoce). Esto garantiza confidencialidad."},
+  {t:"Cifrado",q:"¿Qué norma de copias de seguridad recomienda tener 3 copias en 2 soportes distintos con 1 copia fuera de las instalaciones?",o:["Norma ISO 27001","Regla 3-2-1","Directiva NIS2","Política de retención RGPD"],c:1,e:"La regla 3-2-1 de copias de seguridad establece: 3 copias de los datos, en 2 tipos de soporte distintos (ej. disco duro + nube), con 1 copia en ubicación externa (off-site). Protege contra fallos, desastres y ransomware."},
+  {t:"Firma digital",q:"¿Qué garantiza la firma digital?",o:["Solo la confidencialidad del documento","Autenticidad del firmante, integridad del documento y no repudio","Que el documento es un original en papel","Que el archivo no contiene virus"],c:1,e:"La firma digital garantiza tres propiedades: autenticidad (quién firmó el documento), integridad (el documento no fue alterado tras firmar) y no repudio (el firmante no puede negar haberlo firmado). Equivale legalmente a la firma manuscrita."},
+  {t:"Firma digital",q:"¿Qué organismo emite los certificados digitales para ciudadanos en España?",o:["La AEPD","La AEAT","La FNMT (Fábrica Nacional de Moneda y Timbre)","El Ministerio del Interior"],c:2,e:"La FNMT-RCM (Fábrica Nacional de Moneda y Timbre) emite los certificados digitales para ciudadanos y empresas en España. El certificado se puede obtener online o en las oficinas de la AEAT. El DNIe también incorpora un certificado."},
+  {t:"Certificado",q:"¿Qué es el sistema Cl@ve de la Administración General del Estado?",o:["Un sistema antivirus oficial del gobierno","Un sistema de identificación y firma electrónica para acceder a servicios públicos online","Un certificado digital emitido por el Ministerio de Hacienda","El sistema de correo electrónico seguro de la AGE"],c:1,e:"Cl@ve es el sistema de identificación, autenticación y firma electrónica de la AGE. Permite a los ciudadanos acceder a servicios online de la Administración (AEAT, SEPE, SS) con Cl@ve PIN (temporal) o Cl@ve Permanente (fija)."},
+  {t:"RGPD",q:"¿En qué año entró en vigor el Reglamento General de Protección de Datos (RGPD) en la Unión Europea?",o:["2013","2016","2018","2020"],c:2,e:"El RGPD (Reglamento UE 2016/679) fue aprobado en 2016 y entró en aplicación el 25 de mayo de 2018, siendo directamente aplicable en todos los estados miembros de la UE sin necesidad de transposición nacional."},
+  {t:"RGPD",q:"¿Qué significa el derecho de supresión en el RGPD (también llamado 'derecho al olvido')?",o:["El derecho a que te olviden como cliente","El derecho a solicitar que se eliminen tus datos personales cuando ya no son necesarios o se retira el consentimiento","El derecho a obtener una copia de tus datos","El derecho a corregir datos incorrectos"],c:1,e:"El derecho de supresión (artículo 17 RGPD) permite solicitar la eliminación de los datos personales cuando: ya no son necesarios para la finalidad para la que se recogieron, se retira el consentimiento, o se trataron ilícitamente."},
+  {t:"RGPD",q:"¿Cuál es la sanción máxima prevista en el RGPD para las infracciones más graves?",o:["1 millón de euros","10 millones de euros o el 2% de la facturación anual global","20 millones de euros o el 4% de la facturación anual global","Sin límite — depende del juez"],c:2,e:"El RGPD establece dos niveles de sanciones. Para infracciones muy graves (artículo 83.5): hasta 20 millones de euros o el 4% de la facturación anual global (la cifra mayor). Para infracciones graves (art. 83.4): hasta 10M€ o el 2%."},
+  {t:"RGPD",q:"¿Qué organismo es la autoridad de control del RGPD en España?",o:["El Ministerio de Justicia","La Agencia Española de Protección de Datos (AEPD)","El Instituto Nacional de Ciberseguridad (INCIBE)","El Centro Criptológico Nacional (CCN)"],c:1,e:"La AEPD (Agencia Española de Protección de Datos) es la autoridad de control independiente que supervisa el cumplimiento del RGPD en España. Recibe denuncias, investiga y puede imponer sanciones."},
+  {t:"Seguridad",q:"¿Qué es un ataque DDoS?",o:["Un tipo de ransomware que cifra bases de datos","Un ataque de suplantación de identidad por email","Un ataque que satura un servidor con millones de peticiones para dejarlo inaccesible","Un virus que se propaga por Bluetooth"],c:2,e:"DDoS (Distributed Denial of Service) es un ataque que envía millones de solicitudes simultáneas a un servidor desde muchos equipos (botnet), saturando sus recursos y haciéndolo inaccesible a usuarios legítimos. Diferente del DoS (desde un solo equipo)."},
+  {t:"Seguridad",q:"¿Qué es una botnet?",o:["Una red Wi-Fi especialmente rápida","Un conjunto de robots (bots) de atención al cliente","Una red de equipos infectados controlados remotamente por un atacante","Un tipo de firewall de siguiente generación"],c:2,e:"Una botnet es una red de ordenadores infectados con malware (denominados 'zombies') que son controlados de forma remota por el atacante (bot-herder). Se usan para enviar spam, lanzar ataques DDoS o minar criptomonedas."},
+  {t:"General",q:"¿Cuál es la diferencia entre cifrado simétrico y asimétrico?",o:["El simétrico es más seguro; el asimétrico más rápido","El simétrico usa la misma clave para cifrar y descifrar; el asimétrico usa un par de claves pública y privada","El simétrico es solo para texto; el asimétrico para archivos","No hay diferencia práctica entre ambos"],c:1,e:"Cifrado simétrico: misma clave para cifrar y descifrar (más rápido, problema: cómo compartir la clave). Ejemplo: AES. Cifrado asimétrico: par de claves pública/privada (más lento, no hay problema de distribución de clave). Ejemplo: RSA. HTTPS usa ambos: asimétrico para intercambiar clave y simétrico para el tráfico."}
+];
+
+let current=0,score=0,answered=false;
+function renderQuestion(){const p=preguntas[current];document.getElementById('progress-bar').style.width=((current+1)/preguntas.length*100)+'%';document.getElementById('q-counter').textContent='Pregunta '+(current+1)+' de '+preguntas.length;document.getElementById('score-live').textContent='Correctas: '+score;document.getElementById('q-topic').textContent=p.t.toUpperCase();document.getElementById('q-text').textContent=p.q;document.getElementById('explanation').className='test-explanation';document.getElementById('explanation').textContent='';document.getElementById('result-hint').textContent='';document.getElementById('btn-next').disabled=true;answered=false;const opts=document.getElementById('opts-container');opts.innerHTML='';const letters=['A','B','C','D'];p.o.forEach((o,i)=>{const btn=document.createElement('button');btn.className='test-opt';btn.innerHTML='<span class="opt-letter">'+letters[i]+'</span>'+o;btn.onclick=()=>selectAnswer(i,btn);opts.appendChild(btn);});}
+function selectAnswer(idx,btn){if(answered)return;answered=true;const p=preguntas[current];const allOpts=document.querySelectorAll('.test-opt');allOpts.forEach(b=>b.disabled=true);if(idx===p.c){btn.classList.add('correct');score++;document.getElementById('result-hint').textContent='✓ ¡Correcto!';}else{btn.classList.add('wrong');allOpts[p.c].classList.add('correct');document.getElementById('result-hint').textContent='✗ Incorrecto';}const exp=document.getElementById('explanation');exp.textContent='💡 '+p.e;exp.classList.add('show');document.getElementById('btn-next').disabled=false;document.getElementById('score-live').textContent='Correctas: '+score;}
+function nextQuestion(){current++;if(current>=preguntas.length){showResult();}else{renderQuestion();}}
+function showResult(){document.getElementById('test-container').style.display='none';const res=document.getElementById('test-result');res.classList.add('show');document.getElementById('result-score').textContent=score;const pct=Math.round(score/preguntas.length*100);const circle=document.getElementById('result-circle');circle.style.background=pct>=70?'#22c55e':pct>=50?'#f59e0b':'#e63946';document.getElementById('result-title').textContent=pct>=70?'¡Excelente resultado!':pct>=50?'Buen progreso, sigue practicando':'Necesitas repasar el temario';document.getElementById('result-sub').textContent='Has acertado '+score+' de '+preguntas.length+' preguntas ('+pct+'%). En el examen real necesitas superar el 50%.';}
+function resetTest(){current=0;score=0;answered=false;document.getElementById('test-container').style.display='block';document.getElementById('test-result').classList.remove('show');renderQuestion();}
+function toggleBloque(el){el.classList.toggle('open');}
+renderQuestion();
+</script>
+</body>
+</html>
