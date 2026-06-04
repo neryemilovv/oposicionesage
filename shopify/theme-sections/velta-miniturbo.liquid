@@ -1,0 +1,762 @@
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+.shopify-section-group-header-group,.section-header,#shopify-section-announcement-bar,.announcement-bar,.utility-bar,header.header,.header-wrapper,#shopify-section-header{display:none!important}
+body{padding-top:0!important}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--teal:#1a6b5e;--teal-d:#0d4a41;--teal-l:#e8f5f2;--gold:#c9922a;--dark:#0f172a;--gray:#64748b;--light:#f8fafc;--border:#e2e8f0;--red:#ef4444;--green:#22c55e;--white:#fff}
+body{font-family:'Inter',sans-serif;color:var(--dark);background:#fff;overflow-x:hidden}
+.ann{background:#0a0a0a;color:rgba(255,255,255,.9);text-align:center;padding:8px 16px;font-size:12px;font-weight:500;border-bottom:1px solid #1a1a1a}
+.ann strong{color:#ffd700}
+header{position:sticky;top:0;z-index:999;background:#0a0a0a;padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:20px;font-weight:700;color:#fff;letter-spacing:0;text-decoration:none}.logo span{color:#c8a96e}
+nav a{font-size:14px;color:rgba(255,255,255,.85);text-decoration:none;font-weight:500;margin-left:24px;transition:color .2s}
+nav a:hover{color:#c8a96e}
+.h-right{display:flex;align-items:center;gap:16px;font-size:13px;color:rgba(255,255,255,.7)}
+@media(max-width:768px){nav,.h-right{display:none}}
+.mob-cart-icon{display:none;background:none;border:none;cursor:pointer;font-size:22px;padding:4px 8px;position:relative;margin-left:auto}
+@media(max-width:768px){.mob-cart-icon{display:flex;align-items:center}}
+.product-wrap{max-width:1200px;margin:0 auto;padding:24px 24px 60px;display:grid;grid-template-columns:1fr 460px;gap:56px;align-items:start}
+@media(max-width:960px){.product-wrap{grid-template-columns:1fr;gap:32px}}
+.gallery{position:sticky;top:76px}
+@media(max-width:960px){.gallery{position:static}}
+.slider{border-radius:20px;overflow:hidden;background:var(--light);aspect-ratio:1;position:relative}
+.slider-track{display:flex;transition:transform .4s cubic-bezier(.4,0,.2,1)}
+.slide{min-width:100%;aspect-ratio:1}
+.slide img{width:100%;height:100%;object-fit:cover}
+.slider-dots{display:flex;justify-content:center;gap:8px;margin-top:12px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--border);cursor:pointer;transition:all .2s}
+.dot.on{background:var(--teal);width:24px;border-radius:4px}
+.slider-prev,.slider-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.9);border:none;width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:18px;color:var(--dark);box-shadow:0 2px 12px rgba(0,0,0,.12);transition:all .2s;z-index:2}
+.slider-prev{left:12px}.slider-next{right:12px}
+.slider-prev:hover,.slider-next:hover{background:#fff;box-shadow:0 4px 20px rgba(0,0,0,.2)}
+.p-info{display:flex;flex-direction:column;gap:20px}
+.p-badge{display:inline-flex;align-items:center;gap:6px;background:var(--teal-l);color:var(--teal);font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:5px 12px;border-radius:20px;width:fit-content}
+.p-title{font-size:30px;font-weight:900;line-height:1.15;color:var(--dark);margin-top:6px}
+.p-sub{font-size:14px;color:var(--gray);margin-top:6px;line-height:1.6}
+.stars-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.stars{color:#f59e0b;font-size:17px}
+.review-count{font-size:13px;color:var(--gray);text-decoration:underline;cursor:pointer}
+.sold-badge{background:#fef3c7;color:#92400e;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px}
+.price-row{display:flex;align-items:baseline;gap:10px;padding:16px 0;border-top:1px solid var(--border)}
+.price-now{font-size:38px;font-weight:900;color:var(--teal)}
+.price-was{font-size:18px;color:var(--gray);text-decoration:line-through}
+.price-off{font-size:14px;color:var(--red);font-weight:700;background:#fef2f2;padding:3px 8px;border-radius:6px}
+.stock-note{font-size:12px;color:var(--red);font-weight:600;margin-top:4px;display:flex;align-items:center;gap:6px}
+.bundle-title{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:var(--dark);margin-bottom:10px}
+.bundles{display:flex;flex-direction:column;gap:10px}
+.b-card{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border:2px solid var(--border);border-radius:14px;cursor:pointer;transition:all .2s;position:relative}
+.b-card.sel{border-color:var(--teal);background:var(--teal-l)}
+.b-card:hover{border-color:var(--teal)}
+.b-left{display:flex;align-items:center;gap:12px}
+.b-radio{width:20px;height:20px;border-radius:50%;border:2px solid #cbd5e1;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.b-card.sel .b-radio{border-color:var(--teal);background:var(--teal)}
+.b-card.sel .b-radio::after{content:'';width:8px;height:8px;border-radius:50%;background:#fff}
+.b-qty{font-weight:800;font-size:15px}.b-desc{font-size:12px;color:var(--gray);margin-top:2px}
+.b-right{text-align:right}.b-price{font-weight:900;font-size:17px}.b-per{font-size:11px;color:var(--gray)}
+.b-tag{position:absolute;top:-10px;right:14px;font-size:10px;font-weight:800;letter-spacing:.5px;padding:2px 9px;border-radius:20px;color:#fff}
+.opt-title{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px}
+.opt-title span{color:var(--teal);font-weight:900}
+.colors{display:flex;gap:10px}
+.c-swatch{display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer}
+.c-circle{width:42px;height:42px;border-radius:50%;border:3px solid transparent;box-shadow:0 2px 8px rgba(0,0,0,.15);transition:border-color .2s}
+.c-swatch.sel .c-circle,.c-swatch:hover .c-circle{border-color:var(--teal)}
+.c-label{font-size:11px;color:var(--gray);font-weight:500}
+.btns{display:flex;flex-direction:column;gap:10px}
+.btn-cart{width:100%;padding:18px;background:var(--teal);color:#fff;font-size:17px;font-weight:800;border:none;border-radius:14px;cursor:pointer;transition:all .2s;letter-spacing:.2px}
+.btn-cart:hover{background:var(--teal-d);transform:translateY(-1px);box-shadow:0 8px 24px rgba(26,107,94,.3)}
+.btn-cart:active{transform:translateY(0)}
+.btn-now{width:100%;padding:16px;background:#000;color:#fff;font-size:16px;font-weight:700;border:none;border-radius:14px;cursor:pointer;transition:all .2s}
+.btn-now:hover{opacity:.85}
+.bullets{border-top:1px solid var(--border);padding-top:20px;display:flex;flex-direction:column;gap:12px}
+.bull{display:flex;align-items:flex-start;gap:12px}
+.bull-icon{width:36px;height:36px;border-radius:10px;background:var(--teal-l);color:var(--teal);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.bull-t{font-weight:700;font-size:14px}.bull-d{font-size:12px;color:var(--gray);margin-top:2px}
+.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;border-top:1px solid var(--border);padding-top:20px}
+.trust-item{display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px}
+.trust-item .icon{font-size:22px}.trust-item .t{font-size:11px;font-weight:700}.trust-item .s{font-size:10px;color:var(--gray)}
+.pay-icons{text-align:center;font-size:12px;color:var(--gray);padding-top:4px}
+.proof-bar{background:var(--dark);padding:16px 24px;overflow:hidden}
+.proof-track{display:flex;gap:48px;animation:scroll 20s linear infinite;width:max-content}
+.proof-track span{color:rgba(255,255,255,.7);font-size:13px;font-weight:500;white-space:nowrap}
+.proof-track strong{color:#fff}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.features{background:#fff;padding:80px 24px}
+.feat-inner{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:80px}
+.feat-row{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.feat-row.rev{direction:rtl}.feat-row.rev>*{direction:ltr}
+@media(max-width:768px){.feat-row,.feat-row.rev{grid-template-columns:1fr;direction:ltr}.feat-row.rev>*{direction:ltr}}
+.feat-img{border-radius:20px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.12)}
+.feat-img img{width:100%;display:block}
+.feat-content{display:flex;flex-direction:column;gap:18px}
+.feat-tag{display:inline-block;background:var(--teal-l);color:var(--teal);font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 12px;border-radius:20px;width:fit-content}
+.feat-h{font-size:34px;font-weight:900;line-height:1.15}
+.feat-h em{color:var(--teal);font-style:normal}
+.feat-p{font-size:15px;color:var(--gray);line-height:1.8}
+.feat-bullets{display:flex;flex-direction:column;gap:10px}
+.feat-bull{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600}
+.feat-bull::before{content:'✓';color:var(--green);font-weight:900;font-size:16px;flex-shrink:0}
+.sec-hd{text-align:center;max-width:640px;margin:0 auto 50px}
+.sec-hd h2{font-size:38px;font-weight:900;line-height:1.15}
+.sec-hd h2 em{color:var(--teal);font-style:normal}
+.sec-hd p{font-size:16px;color:var(--gray);margin-top:10px;line-height:1.7}
+.vidtest-sec{padding:80px 24px;background:var(--dark)}
+.vidtest-inner{max-width:1100px;margin:0 auto}
+.vidtest-inner .sec-hd h2{color:#fff}
+.vidtest-inner .sec-hd p{color:rgba(255,255,255,.6)}
+.vid-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:768px){.vid-row{grid-template-columns:1fr}}
+.vid-phone{border-radius:24px;overflow:hidden;background:#111;aspect-ratio:9/16;position:relative;cursor:pointer;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.vid-phone video{width:100%;height:100%;object-fit:cover;display:block}
+.vid-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.3);transition:opacity .3s}
+.vid-overlay.hide{opacity:0;pointer-events:none}
+.play-btn{width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;font-size:28px;color:var(--teal);transition:transform .2s}
+.play-btn:hover{transform:scale(1.1)}
+.vid-info{padding:16px;background:rgba(255,255,255,.06);border-top:1px solid rgba(255,255,255,.1)}
+.vid-stars{color:#ffd700;font-size:13px;margin-bottom:4px}
+.vid-quote{color:rgba(255,255,255,.85);font-size:13px;font-style:italic;line-height:1.6;margin-bottom:8px}
+.vid-author{font-size:12px;color:rgba(255,255,255,.5);font-weight:600}
+.vid-views{display:inline-flex;align-items:center;gap:4px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.5);font-size:11px;padding:2px 8px;border-radius:20px;margin-top:4px}
+.test-sec{padding:80px 24px;background:var(--teal)}
+.test-inner{max-width:1100px;margin:0 auto}
+.test-inner .sec-hd h2{color:#fff}
+.test-inner .sec-hd p{color:rgba(255,255,255,.7)}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:768px){.test-grid{grid-template-columns:1fr}}
+.test-card{background:rgba(255,255,255,.1);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:28px 24px}
+.t-stars{color:#ffd700;font-size:16px;margin-bottom:12px}
+.t-text{font-size:15px;color:rgba(255,255,255,.9);line-height:1.75;margin-bottom:20px;font-style:italic}
+.t-author{display:flex;align-items:center;gap:12px}
+.t-avatar{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;color:#fff}
+.t-name{font-weight:700;color:#fff;font-size:14px}
+.t-meta{font-size:11px;color:rgba(255,255,255,.6)}
+.verified{color:#4ade80;font-size:10px;font-weight:700}
+.rb-wrap{max-width:480px;margin:48px auto 0}
+.rb-number{text-align:center;color:#fff;font-size:52px;font-weight:900}
+.rb-stars-big{text-align:center;color:#ffd700;font-size:26px;margin-bottom:20px}
+.rb-row{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.8);font-size:13px;margin-bottom:8px}
+.rb-bar{flex:1;height:8px;background:rgba(255,255,255,.2);border-radius:4px;overflow:hidden}
+.rb-fill{height:100%;background:#ffd700;border-radius:4px}
+.rb-label{width:40px;font-size:11px}
+.rb-note{text-align:center;color:rgba(255,255,255,.5);font-size:12px;margin-top:12px}
+.specs-sec{padding:80px 24px;background:#fff}
+.specs-inner{max-width:700px;margin:0 auto}
+.spec-table{width:100%;border-collapse:collapse;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.spec-table thead{background:var(--teal);color:#fff}
+.spec-table th{padding:16px 20px;font-size:13px;font-weight:700;text-align:left}
+.spec-table td{padding:13px 20px;font-size:13px;border-bottom:1px solid var(--border)}
+.spec-table tr:nth-child(even) td{background:var(--light)}
+.spec-table tr:last-child td{border:none}
+.sn{font-weight:700}.sv{color:var(--gray)}
+.faq-sec{padding:80px 24px;background:var(--light)}
+.faq-inner{max-width:700px;margin:0 auto}
+.faq-list{display:flex;flex-direction:column;gap:12px}
+.faq-item{border:1px solid var(--border);border-radius:14px;overflow:hidden;background:#fff}
+.faq-q{width:100%;padding:18px 20px;background:#fff;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:600;text-align:left;transition:background .2s}
+.faq-q:hover{background:var(--light)}
+.faq-arr{font-size:22px;color:var(--teal);transition:transform .3s;line-height:1}
+.faq-item.open .faq-arr{transform:rotate(45deg)}
+.faq-a{display:none;padding:0 20px 18px;font-size:14px;color:var(--gray);line-height:1.75}
+.faq-item.open .faq-a{display:block}
+.also-sec{padding:80px 24px;background:#fff}
+.also-inner{max-width:900px;margin:0 auto}
+.also-card{background:var(--light);border-radius:20px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.08);display:grid;grid-template-columns:1fr 1fr;align-items:center}
+@media(max-width:600px){.also-card{grid-template-columns:1fr}}
+.also-img{background:#e8f5f2;min-height:300px;display:flex;align-items:center;justify-content:center;font-size:80px}
+.also-info{padding:40px 36px}
+.also-tag{font-size:11px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px}
+.also-title{font-size:24px;font-weight:900;margin-bottom:12px;line-height:1.2}
+.also-desc{font-size:14px;color:var(--gray);line-height:1.7;margin-bottom:24px}
+.also-price{font-size:28px;font-weight:900;color:var(--teal);margin-bottom:20px}
+.btn-also{display:inline-block;padding:14px 28px;background:var(--teal);color:#fff;font-size:15px;font-weight:700;border-radius:12px;text-decoration:none;transition:all .2s}
+.btn-also:hover{background:var(--teal-d);transform:translateY(-1px)}
+.cta-sec{background:linear-gradient(135deg,var(--teal-d),var(--teal));padding:80px 24px;text-align:center}
+.cta-sec h2{font-size:42px;font-weight:900;color:#fff;margin-bottom:12px}
+.cta-sec p{font-size:18px;color:rgba(255,255,255,.8);margin-bottom:36px}
+.cta-btn{display:inline-block;padding:20px 48px;background:#fff;color:var(--teal);font-size:18px;font-weight:900;border:none;border-radius:14px;cursor:pointer;text-decoration:none;transition:all .2s}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,.2)}
+.cta-trust{display:flex;justify-content:center;gap:36px;margin-top:24px;flex-wrap:wrap}
+.cta-trust span{color:rgba(255,255,255,.7);font-size:13px;display:flex;align-items:center;gap:6px}
+footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;padding:28px 24px;font-size:13px}
+footer strong{color:rgba(255,255,255,.9)}
+footer a{color:rgba(255,255,255,.3);text-decoration:none;margin:0 8px}
+.sticky-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:2px solid var(--border);box-shadow:0 -4px 20px rgba(0,0,0,.15);padding:14px 20px;padding-bottom:max(18px,env(safe-area-inset-bottom,18px));z-index:500;transition:transform .3s}
+.sticky-bar.hidden{transform:translateY(100%)}
+@media(max-width:960px){.sticky-bar{display:block}}
+.sticky-row{display:flex;align-items:center;gap:14px}
+.sticky-price{font-size:20px;font-weight:900;color:var(--teal);flex-shrink:0}
+.sticky-bar .btn-cart{flex:1;padding:14px;font-size:15px}
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--teal);color:#fff;padding:14px 24px;border-radius:12px;font-size:15px;font-weight:600;opacity:0;transition:all .3s;z-index:1000;white-space:nowrap;box-shadow:0 8px 30px rgba(0,0,0,.2)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.cd-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:9998;opacity:0;pointer-events:none;transition:opacity .3s}
+.cd-overlay.open{opacity:1;pointer-events:all}
+.cd-drawer{position:fixed;right:0;top:0;bottom:0;width:420px;max-width:96vw;background:#fff;z-index:9999;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:-4px 0 40px rgba(0,0,0,.18)}
+.cd-drawer.open{transform:translateX(0)}
+.cd-head{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--border)}
+.cd-head h3{font-size:18px;font-weight:800;color:var(--dark)}
+.cd-head-close{background:none;border:none;font-size:22px;cursor:pointer;color:var(--gray);line-height:1;padding:4px}
+.cd-body{flex:1;overflow-y:auto;padding:0 24px}
+.cd-empty{text-align:center;padding:60px 0;color:var(--gray);font-size:15px}
+.cd-item{display:flex;gap:14px;padding:18px 0;border-bottom:1px solid var(--border)}
+.cd-item-img{width:80px;height:80px;border-radius:10px;object-fit:cover;background:var(--light);flex-shrink:0}
+.cd-item-info{flex:1;display:flex;flex-direction:column;gap:6px}
+.cd-item-name{font-weight:700;font-size:14px;color:var(--dark);line-height:1.3}
+.cd-item-var{font-size:12px;color:var(--gray)}
+.cd-item-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:4px}
+.cd-qty-ctrl{display:flex;align-items:center;border:1.5px solid var(--border);border-radius:8px;overflow:hidden}
+.cd-qty-ctrl button{width:32px;height:32px;background:none;border:none;cursor:pointer;font-size:17px;font-weight:700;color:var(--dark);transition:background .15s}
+.cd-qty-ctrl button:hover{background:var(--light)}
+.cd-qty-ctrl span{min-width:32px;text-align:center;font-weight:700;font-size:14px}
+.cd-item-remove{background:none;border:none;font-size:12px;color:var(--gray);cursor:pointer;text-decoration:underline;padding:0;margin-top:2px;align-self:flex-start}
+.cd-item-price{font-weight:900;font-size:16px;color:var(--dark);white-space:nowrap}
+.cd-foot{padding:20px 24px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:12px;background:#fff}
+.cd-total-row{display:flex;justify-content:space-between;align-items:center}
+.cd-total-label{font-size:15px;font-weight:600;color:var(--gray)}
+.cd-total-val{font-size:22px;font-weight:900;color:var(--dark)}
+.cd-shipping-note{font-size:12px;color:var(--green);text-align:center;font-weight:600}
+.cd-checkout-btn{display:block;text-align:center;background:var(--teal);color:#fff;padding:17px;border-radius:13px;font-size:16px;font-weight:800;text-decoration:none;transition:background .2s;border:none;cursor:pointer;width:100%}
+.cd-checkout-btn:hover{background:var(--teal-d);color:#fff}
+.cd-continue-btn{background:none;border:1.5px solid var(--border);color:var(--gray);padding:12px;border-radius:10px;font-size:14px;cursor:pointer;font-weight:500;width:100%;transition:all .2s}
+.cd-continue-btn:hover{border-color:var(--teal);color:var(--teal)}
+.cd-pay-badges{text-align:center;font-size:12px;color:var(--gray)}
+.gift-banner{background:linear-gradient(135deg,#00695c,#004d40);border-radius:16px;padding:16px 18px;margin:8px 0 4px;display:flex;align-items:center;gap:14px}
+/* CONVERSION BOOST */
+.cd-timer{background:linear-gradient(135deg,#e53935,#b71c1c);color:#fff;border-radius:14px;padding:14px 18px;text-align:center;margin:4px 0}
+.cd-timer .lbl{font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;opacity:.95}
+.cd-timer .clock{font-size:26px;font-weight:900;letter-spacing:1px;margin-top:4px;font-variant-numeric:tabular-nums}
+.live-view{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--red);font-weight:700;margin-top:4px}
+.live-dot{width:9px;height:9px;border-radius:50%;background:var(--red);animation:pulse 1.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(239,68,68,.6)}70%{box-shadow:0 0 0 8px rgba(239,68,68,0)}100%{box-shadow:0 0 0 0 rgba(239,68,68,0)}}
+.guarantee-box{background:linear-gradient(135deg,#1a6b5e,#0d4a41);border-radius:18px;padding:26px 22px;text-align:center;color:#fff;margin:8px 0}
+.guarantee-box .g-ico{font-size:40px}
+.guarantee-box .g-t{font-size:20px;font-weight:900;margin-top:6px}
+.guarantee-box .g-d{font-size:13px;opacity:.85;margin-top:6px;line-height:1.5}
+.buy-notif{position:fixed;bottom:20px;left:20px;background:#fff;border-radius:14px;box-shadow:0 8px 40px rgba(0,0,0,.2);padding:12px 16px;display:flex;align-items:center;gap:12px;z-index:9990;max-width:300px;transform:translateX(-380px);transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.buy-notif.show{transform:translateX(0)}
+.buy-notif img{width:46px;height:46px;border-radius:10px;object-fit:cover}
+.buy-notif .bn-name{font-size:13px;font-weight:700;color:var(--dark)}
+.buy-notif .bn-act{font-size:12px;color:var(--gray)}
+.buy-notif .bn-time{font-size:11px;color:#22c55e;font-weight:600;margin-top:2px}
+/* TRUST PRO (iconos SVG limpios) */
+.trustpro{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;border-top:1px solid var(--border);padding-top:20px}
+.tp-item{display:flex;flex-direction:column;align-items:center;text-align:center;gap:7px}
+.tp-item svg{width:26px;height:26px;stroke:var(--teal);fill:none;stroke-width:1.8}
+.tp-item .tp-t{font-size:11px;font-weight:700;color:var(--dark);line-height:1.25}
+/* FAQ ACORDEON delante de la compra */
+.qa-box{border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-top:4px}
+.qa-item{border-bottom:1px solid var(--border)}
+.qa-item:last-child{border-bottom:none}
+.qa-q{width:100%;background:#fff;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:15px 18px;font-size:14px;font-weight:700;color:var(--dark);text-align:left;transition:background .15s}
+.qa-q:hover{background:var(--light)}
+.qa-q .qa-ico{display:flex;align-items:center;gap:10px}
+.qa-q .qa-ico svg{width:20px;height:20px;stroke:var(--teal);fill:none;stroke-width:1.8;flex-shrink:0}
+.qa-arr{font-size:20px;color:var(--teal);transition:transform .25s;line-height:1}
+.qa-item.open .qa-arr{transform:rotate(45deg)}
+.qa-a{display:none;padding:0 18px 16px 48px;font-size:13px;color:var(--gray);line-height:1.6}
+.qa-item.open .qa-a{display:block}
+/* BOTON TRACKING */
+.track-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:15px;background:#fff;border:2px solid var(--teal);color:var(--teal);font-size:15px;font-weight:800;border-radius:14px;cursor:pointer;text-decoration:none;transition:all .2s;margin-top:4px}
+.track-btn:hover{background:var(--teal-l)}
+.track-btn svg{width:20px;height:20px;stroke:var(--teal);fill:none;stroke-width:1.8}
+</style>
+
+<div class="ann">🎁 <strong>10% OFF your first order</strong> — code <strong style="color:#ffd700">WELCOME10</strong> · FREE US Shipping · Ships in 24h</div>
+
+<header>
+  <a href="/" class="logo" style="text-decoration:none">Nova<span>Home</span>™</a>
+  <nav>
+    <a href="/products/usb-mini-portable-electric-fan">AirClip™</a>
+    <a href="/products/drone-fan">DroneFan™</a>
+    <a href="/products/mini-turbo-usb-handheld-fan">Mini Turbo™</a>
+    <a href="/pages/contact">Contact</a>
+  </nav>
+  <div class="h-right">
+    <span>🔒 Secure</span>
+    <span>🚚 Free Shipping</span>
+    <button onclick="openDrawer()" style="background:none;border:none;cursor:pointer;font-size:18px;position:relative;padding:4px 8px">🛒<span id="navCartCount" style="position:absolute;top:-2px;right:0;background:var(--red);color:#fff;font-size:10px;font-weight:800;border-radius:50%;width:16px;height:16px;display:none;align-items:center;justify-content:center">0</span></button>
+  </div>
+  <button onclick="openDrawer()" class="mob-cart-icon">🛒</button>
+</header>
+
+<div class="cd-overlay" id="cdOverlay" onclick="closeDrawer()"></div>
+<div class="cd-drawer" id="cdDrawer">
+  <div class="cd-head">
+    <h3>Your Cart 🛒</h3>
+    <button class="cd-head-close" onclick="closeDrawer()">✕</button>
+  </div>
+  <div class="cd-body" id="cdBody">
+    <div class="cd-empty">Your cart is empty</div>
+  </div>
+  <div class="cd-foot" id="cdFoot" style="display:none">
+    <div class="cd-total-row">
+      <span class="cd-total-label">Total</span>
+      <span class="cd-total-val" id="cdTotal">$0.00</span>
+    </div>
+    <div class="cd-shipping-note" id="cdShipNote">✅ You qualify for free shipping!</div>
+    <a href="/checkout" onclick="if(window.fbq)fbq('track','InitiateCheckout',{content_type:'product',currency:'USD'});" class="cd-checkout-btn">🔒 Checkout Securely</a>
+    <button onclick="closeDrawer()" class="cd-continue-btn">← Continue Shopping</button>
+    <div class="cd-pay-badges">💳 Visa · Mastercard · PayPal · Apple Pay · Shop Pay</div>
+  </div>
+</div>
+
+<div class="product-wrap">
+  <div class="gallery">
+    <div class="slider" id="sl">
+      <div class="slider-track" id="slTrack">
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/1035/2931/6682/files/miniturbo-01-lifestyle.png?v=1780238689" alt="Mini Turbo Fan lifestyle"></div>
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/1035/2931/6682/files/miniturbo-02-street.png?v=1780238689" alt="Mini Turbo Fan outdoor"></div>
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/1035/2931/6682/files/miniturbo-06-benefits.png?v=1780238689" alt="Mini Turbo Fan features"></div>
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/1035/2931/6682/files/miniturbo-03-display.png?v=1780238689" alt="Mini Turbo Fan digital display"></div>
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/1035/2931/6682/files/miniturbo-04-folded.png?v=1780238689" alt="Mini Turbo Fan folded"></div>
+        <div class="slide"><img src="https://file.zendrop.com/products/75/7a/26b16d9249ed83fb6e1a64c30ad0_import.webp" alt="Mini Turbo Fan"></div>
+      </div>
+      <button class="slider-prev" onclick="slide(-1)">‹</button>
+      <button class="slider-next" onclick="slide(1)">›</button>
+    </div>
+    <div class="slider-dots" id="slDots"></div>
+  </div>
+
+  <div class="p-info">
+    <div class="p-badge">⚡ NovaHome™ — Summer 2026</div>
+    <div>
+      <h1 class="p-title">Mini Turbo™ Handheld Fan</h1>
+      <p class="p-sub">100-speed turbo cooling in your pocket. Digital display, 6-hour battery, folds flat 180°. The viral fan everyone's carrying this summer.</p>
+    </div>
+    <div class="stars-row">
+      <span class="stars">★★★★★</span>
+      <span style="font-weight:800;font-size:15px">4.9</span>
+      <span class="review-count" onclick="document.querySelector('.test-sec').scrollIntoView({behavior:'smooth'})">43 reviews</span>
+      <span class="sold-badge">🔥 Selling fast</span>
+    </div>
+
+    <div>
+      <div class="price-row">
+        <span class="price-now" id="showPrice">{{ product.price | money }}</span>
+        {% if product.compare_at_price > product.price %}<span class="price-was">{{ product.compare_at_price | money }}</span>
+        <span class="price-off">Save {{ product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round }}%</span>{% endif %}
+      </div>
+      <div class="stock-note">✅ In stock — ready to ship</div>
+    </div>
+
+    <div>
+      <div class="bundle-title">Quantity</div>
+      <div class="bundles">
+        <div class="b-card sel" onclick="pick(this,'{{ product.price | money }}',1)">
+          <div class="b-left"><div class="b-radio"></div><div><div class="b-qty">1 Fan</div><div class="b-desc">Free shipping included</div></div></div>
+          <div class="b-right"><div class="b-price">{{ product.price | money }}</div></div>
+        </div>
+        <div class="b-card" onclick="pick(this,'{{ product.price | times: 2 | money }}',2)">
+          <div class="b-tag" style="background:var(--red)">+ FREE AIRCLIP 🎁</div>
+          <div class="b-left"><div class="b-radio"></div><div><div class="b-qty">2 Fans</div><div class="b-desc">Add an AirClip → it's FREE, auto at checkout</div></div></div>
+          <div class="b-right"><div class="b-price">{{ product.price | times: 2 | money }}</div></div>
+        </div>
+      </div>
+      <!-- Selector de color del AirClip REGALO (aparece al elegir 2) -->
+      <div id="giftPicker" style="display:none;background:#e8f5f2;border:2px solid #00695c;border-radius:12px;padding:12px 14px;margin-top:10px">
+        <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#00695c;margin-bottom:8px">🎁 Choose your FREE AirClip™ color:</div>
+        <div style="display:flex;gap:8px">
+          <button onclick="setGift(61916644180298,this)" class="gift-btn gift-sel" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;padding:8px 6px;border:2px solid #00695c;border-radius:10px;background:#fff;cursor:pointer;font-size:12px;font-weight:700"><img src="https://cdn.shopify.com/s/files/1/1035/2931/6682/files/a47bdd814253aaeb3ae5f4439688.png?v=1780565589" alt="White AirClip" style="width:46px;height:46px;object-fit:cover;border-radius:8px">White</button>
+          <button onclick="setGift(61916644114762,this)" class="gift-btn" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;padding:8px 6px;border:2px solid #cce5e0;border-radius:10px;background:#fff;cursor:pointer;font-size:12px;font-weight:700"><img src="https://cdn.shopify.com/s/files/1/1035/2931/6682/files/d6bf6d57438c912c22197400f435.jpg?v=1780565547" alt="Green AirClip" style="width:46px;height:46px;object-fit:cover;border-radius:8px">Green</button>
+          <button onclick="setGift(61916644147530,this)" class="gift-btn" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;padding:8px 6px;border:2px solid #cce5e0;border-radius:10px;background:#fff;cursor:pointer;font-size:12px;font-weight:700"><img src="https://cdn.shopify.com/s/files/1/1035/2931/6682/files/6a7534e1482d8107a6a22c079bb1.jpg?v=1780565634" alt="Pink AirClip" style="width:46px;height:46px;object-fit:cover;border-radius:8px">Pink</button>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="opt-title">Color: <span id="colorName">White</span></div>
+      <div class="colors">
+        <div class="c-swatch sel" onclick="col(this,'White',61950087364938)"><div class="c-circle" style="background:#f5f0e8"></div><span class="c-label">White</span></div>
+        <div class="c-swatch" onclick="col(this,'Black',61950087332170)"><div class="c-circle" style="background:#1a1a1a"></div><span class="c-label">Black</span></div>
+        <div class="c-swatch" onclick="col(this,'Gold',61950087299402)"><div class="c-circle" style="background:#c9922a"></div><span class="c-label">Gold</span></div>
+      </div>
+    </div>
+
+    <div class="btns">
+      <button class="btn-cart" id="cartBtn" onclick="addCart()">🛒 Add to Cart — <span id="cartP">{{ product.price | money }}</span></button>
+      <button class="btn-now" onclick="buyNow()">⚡ Buy Now</button>
+    </div>
+
+    <div class="bullets">
+      <div class="bull"><div class="bull-icon">🌀</div><div><div class="bull-t">100 turbo speeds</div><div class="bull-d">From a gentle breeze to a powerful blast — dial it in exactly</div></div></div>
+      <div class="bull"><div class="bull-icon">📟</div><div><div class="bull-t">Digital display</div><div class="bull-d">See your exact speed and battery level at a glance</div></div></div>
+      <div class="bull"><div class="bull-icon">🔋</div><div><div class="bull-t">6-hour battery · USB-C</div><div class="bull-d">Same cable as your phone. Lasts the whole day out</div></div></div>
+      <div class="bull"><div class="bull-icon">📐</div><div><div class="bull-t">Folds flat 180°</div><div class="bull-d">Becomes a desk fan or folds into your pocket / bag</div></div></div>
+      <div class="bull"><div class="bull-icon">🪶</div><div><div class="bull-t">Ultra lightweight</div><div class="bull-d">Pocket-size, take it anywhere — travel, gym, commute</div></div></div>
+    </div>
+
+    <div class="trustpro">
+      <div class="tp-item"><svg viewBox="0 0 24 24"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><span class="tp-t">Free Shipping</span></div>
+      <div class="tp-item"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg><span class="tp-t">30-Day Returns</span></div>
+      <div class="tp-item"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span class="tp-t">Secure Checkout</span></div>
+      <div class="tp-item"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg><span class="tp-t">Buyer Protected</span></div>
+    </div>
+
+    <a href="/apps/17TRACK" class="track-btn">
+      <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Track My Order
+    </a>
+
+    <div class="guarantee-box">
+      <div class="g-ico">🛡️</div>
+      <div class="g-t">100% Money-Back Guarantee</div>
+      <div class="g-d">Love it or get every cent back within 30 days. No risk, no questions, no need to return it. You're fully protected.</div>
+    </div>
+
+    <div class="qa-box">
+      <div class="qa-item open"><button class="qa-q" onclick="qa(this)"><span class="qa-ico"><svg viewBox="0 0 24 24"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>How fast will I get it?</span><span class="qa-arr">+</span></button><div class="qa-a">Free shipping on every order. We ship within 1–3 business days and delivery takes 5–8 days. You'll get a tracking number by email the moment it ships.</div></div>
+      <div class="qa-item"><button class="qa-q" onclick="qa(this)"><span class="qa-ico"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>What if I don't like it?</span><span class="qa-arr">+</span></button><div class="qa-a">You're fully covered by our 30-day money-back guarantee. If you're not happy, email us within 30 days for a full refund — you don't even need to return the product.</div></div>
+      <div class="qa-item"><button class="qa-q" onclick="qa(this)"><span class="qa-ico"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Is payment secure?</span><span class="qa-arr">+</span></button><div class="qa-a">100%. Checkout is SSL-encrypted and processed by Shopify. Pay safely with Visa, Mastercard, Amex, PayPal, Apple Pay or Shop Pay.</div></div>
+      <div class="qa-item"><button class="qa-q" onclick="qa(this)"><span class="qa-ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Can I track my order?</span><span class="qa-arr">+</span></button><div class="qa-a">Yes — every order comes with full live tracking. You'll receive a tracking link by email and can follow your package every step of the way using the "Track My Order" button above.</div></div>
+      <div class="qa-item"><button class="qa-q" onclick="qa(this)"><span class="qa-ico"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg>How does the free gift work?</span><span class="qa-arr">+</span></button><div class="qa-a">Add 2 Mini Turbo fans + 1 AirClip to your cart — the AirClip becomes free automatically at checkout. No code needed. One free gift per order.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="proof-bar">
+  <div class="proof-track">
+    <span>🔥 <strong>Selling fast</strong> · the 2-Pack is our most popular bundle</span>
+    <span>⭐ <strong>Rated #1</strong> Handheld Fan on TikTok Shop</span>
+    <span>📦 <strong>Fast free shipping</strong> across the US</span>
+    <span>🌡️ <strong>Perfect for</strong> festivals · travel · gym · commute</span>
+    <span>💬 <strong>"100 speeds is insane for something this small"</strong></span>
+    <span>🔥 <strong>Selling fast</strong> · the 2-Pack is our most popular bundle</span>
+    <span>⭐ <strong>Rated #1</strong> Handheld Fan on TikTok Shop</span>
+    <span>📦 <strong>Fast free shipping</strong> across the US</span>
+    <span>🌡️ <strong>Perfect for</strong> festivals · travel · gym · commute</span>
+    <span>💬 <strong>"100 speeds is insane for something this small"</strong></span>
+  </div>
+</div>
+
+<section class="features">
+  <div class="feat-inner">
+    <div class="feat-row">
+      <div class="feat-img"><img src="https://cdn.shopify.com/s/files/1/1035/2931/6682/files/miniturbo-02-street.png?v=1780238689" alt="Turbo airflow"></div>
+      <div class="feat-content">
+        <span class="feat-tag">✨ Power</span>
+        <h2 class="feat-h">100 Speeds.<br><em>One Tiny Fan.</em></h2>
+        <p class="feat-p">A turbo brushless motor pushes serious airflow — and you control all 100 levels from a single dial. From a soft breeze for sleep to a blast that cools you in seconds.</p>
+        <div class="feat-bullets">
+          <div class="feat-bull">100 adjustable speed levels</div>
+          <div class="feat-bull">Turbo brushless motor — strong &amp; silent</div>
+          <div class="feat-bull">Digital display shows speed + battery</div>
+          <div class="feat-bull">USB-C — same charger as your phone</div>
+        </div>
+      </div>
+    </div>
+    <div class="feat-row rev">
+      <div class="feat-img"><img src="https://cdn.shopify.com/s/files/1/1035/2931/6682/files/miniturbo-04-folded.png?v=1780238689" alt="Foldable"></div>
+      <div class="feat-content">
+        <span class="feat-tag">📐 2-in-1</span>
+        <h2 class="feat-h">Handheld. <em>Or Desk Fan.</em></h2>
+        <p class="feat-p">Fold it flat 180° and it stands on its own — a personal desk fan at the office, by the bed, in the kitchen. Fold it back and it's a pocket fan again.</p>
+        <div class="feat-bullets">
+          <div class="feat-bull">Folds 180° to stand hands-free</div>
+          <div class="feat-bull">Handheld, desk, or stroller clip-on</div>
+          <div class="feat-bull">Slips into any pocket or bag</div>
+          <div class="feat-bull">Lightweight — take it everywhere</div>
+        </div>
+      </div>
+    </div>
+    <div class="feat-row">
+      <div class="feat-img"><img src="https://cdn.shopify.com/s/files/1/1035/2931/6682/files/miniturbo-03-display.png?v=1780238689" alt="Digital display"></div>
+      <div class="feat-content">
+        <span class="feat-tag">🔋 All-Day</span>
+        <h2 class="feat-h">6 Hours.<br><em>One Charge.</em></h2>
+        <p class="feat-p">Outlast the heat. A full charge gives you up to 6 hours of cooling — enough for the whole festival, the flight, the beach day, the shift. Recharge with any USB-C cable.</p>
+        <div class="feat-bullets">
+          <div class="feat-bull">Up to 6h battery life</div>
+          <div class="feat-bull">Fast USB-C recharge</div>
+          <div class="feat-bull">Use while charging — unlimited runtime</div>
+          <div class="feat-bull">Battery % shown on the digital display</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.rv-section{background:#fff;padding:60px 20px}.rv-inner{max-width:1100px;margin:0 auto}
+.rv-head{text-align:center;margin-bottom:40px}.rv-head h2{font-size:30px;font-weight:900;color:#1a1a1a;margin-bottom:8px}
+.rv-head .rv-avg{color:#f59e0b;font-size:20px;font-weight:700}.rv-head .rv-sub{color:#888;font-size:14px;margin-top:4px}
+.rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}@media(max-width:768px){.rv-grid{grid-template-columns:1fr}}
+.rv-card{background:#faf9f7;border:1px solid #eee;border-radius:16px;padding:22px;display:flex;flex-direction:column}
+.rv-stars{color:#f59e0b;font-size:16px;margin-bottom:10px;letter-spacing:2px}
+.rv-photo{margin-bottom:12px;border-radius:12px;overflow:hidden}.rv-photo img{width:100%;height:200px;object-fit:cover;display:block}
+.rv-text{font-size:14px;line-height:1.6;color:#333;flex:1;margin-bottom:14px;font-style:italic}
+.rv-foot{display:flex;align-items:center;gap:10px}.rv-av{width:38px;height:38px;border-radius:50%;background:#00695c;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+.rv-name{font-weight:700;font-size:14px;color:#1a1a1a}.rv-verified{font-size:11px;color:#00897b}
+</style>
+<div class="rv-section"><div class="rv-inner"><div class="rv-head"><h2>What Our Customers Say</h2><div class="rv-avg">★★★★★ 4.7 out of 5</div><div class="rv-sub">Based on 13 verified reviews</div></div><div class="rv-grid"><div class="rv-card"><div class="rv-stars">★★★★★</div><div class="rv-photo"><img src="{{ 'mturbo0.jpg' | asset_url }}" alt="Verified customer photo" loading="lazy"></div><p class="rv-text">"Received it quickly and safely.   The box is damaged, but the product itself is fine.   This product was repurchased because I was satisfied with it.   As expected, the satisfaction level is good.   The cooling mode is especially good, and the clever flashlight is also nice.   Th"</p><div class="rv-foot"><div class="rv-av">M</div><div><div class="rv-name">Min S.</div><div class="rv-verified">✓ Verified Purchase</div></div></div></div><div class="rv-card"><div class="rv-stars">★★★★★</div><div class="rv-photo"><img src="{{ 'mturbo1.jpg' | asset_url }}" alt="Verified customer photo" loading="lazy"></div><p class="rv-text">"Fast and careful shipping. The fan works well and it&#x27;s not too noisy even at 25% it blows well, the cooling function is perfect."</p><div class="rv-foot"><div class="rv-av">C</div><div><div class="rv-name">Camille</div><div class="rv-verified">✓ Verified Purchase</div></div></div></div><div class="rv-card"><div class="rv-stars">★★★★★</div><div class="rv-photo"><img src="{{ 'mturbo2.jpg' | asset_url }}" alt="Verified customer photo" loading="lazy"></div><p class="rv-text">"Received quickly and safely.   The box arrived damaged, but the product is in good condition.   I especially like the ice mode.   I hope it&#x27;s durable and can be used for a long time.   I am satisfied with the product itself and will use it well.   Thank you."</p><div class="rv-foot"><div class="rv-av">M</div><div><div class="rv-name">Min S.</div><div class="rv-verified">✓ Verified Purchase</div></div></div></div><div class="rv-card"><div class="rv-stars">★★★★★</div><div class="rv-photo"><img src="{{ 'mturbo3.jpg' | asset_url }}" alt="Verified customer photo" loading="lazy"></div><p class="rv-text">"The fan blows wind but if it&#x27;s cold outside today, you&#x27;ll feel it; if it&#x27;s hot at the moment, I recommend it."</p><div class="rv-foot"><div class="rv-av">A</div><div><div class="rv-name">Anna K.</div><div class="rv-verified">✓ Verified Purchase</div></div></div></div><div class="rv-card"><div class="rv-stars">★★★★★</div><div class="rv-photo"><img src="{{ 'mturbo4.jpg' | asset_url }}" alt="Verified customer photo" loading="lazy"></div><p class="rv-text">"The product arrived on time, but the box was a bit dented, although it was functioning normally.   Powerful fan. I inform everyone."</p><div class="rv-foot"><div class="rv-av">L</div><div><div class="rv-name">Lucas</div><div class="rv-verified">✓ Verified Purchase</div></div></div></div><div class="rv-card"><div class="rv-stars">★★★★★</div><div class="rv-photo"><img src="{{ 'mturbo5.jpg' | asset_url }}" alt="Verified customer photo" loading="lazy"></div><p class="rv-text">"It&#x27;s beautiful, a good size, and wow with its power."</p><div class="rv-foot"><div class="rv-av">S</div><div><div class="rv-name">Sofía</div><div class="rv-verified">✓ Verified Purchase</div></div></div></div><div class="rv-card"><div class="rv-stars">★★★★☆</div><p class="rv-text">"It has arrived safe it was much faster than i expected. I’ve not had chance to check package yet as it arrived while i was  overseas i will check when i return and then add another review once home…"</p><div class="rv-foot"><div class="rv-av">V</div><div><div class="rv-name">Verified Buyer</div><div class="rv-verified">✓ Verified Purchase</div></div></div></div><div class="rv-card"><div class="rv-stars">★★★★☆</div><p class="rv-text">"Delivered ahead of schedule, I haven&#x27;t tested them yet but as shown in the video."</p><div class="rv-foot"><div class="rv-av">C</div><div><div class="rv-name">Camille</div><div class="rv-verified">✓ Verified Purchase</div></div></div></div><div class="rv-card"><div class="rv-stars">★★★☆☆</div><p class="rv-text">"Poor construction of the item obviously lets air in but nothing like previous versions, very disappointed."</p><div class="rv-foot"><div class="rv-av">M</div><div><div class="rv-name">María</div><div class="rv-verified">✓ Verified Purchase</div></div></div></div><div class="rv-card"><div class="rv-stars">★★★★★</div><p class="rv-text">"It has 5 levels of speed control and produces a fairly strong airflow. It does make some noise, but it&#x27;s not as powerful as a fan that costs over 50,000 won. The cooling function works properly and creates water droplets, but I&#x27;m not sure about its significant effect... It might "</p><div class="rv-foot"><div class="rv-av">M</div><div><div class="rv-name">Min S.</div><div class="rv-verified">✓ Verified Purchase</div></div></div></div><div class="rv-card"><div class="rv-stars">★★★★★</div><p class="rv-text">"Good product overall. Gives out very strong breeze on the highest setting, although the battery does drain quick on this setting like -10/15% gone in 5 minutes. The exterior is of good heavy material.   The price could be a little lesser because the battery isnt the very best, bu"</p><div class="rv-foot"><div class="rv-av">V</div><div><div class="rv-name">Verified Buyer</div><div class="rv-verified">✓ Verified Purchase</div></div></div></div><div class="rv-card"><div class="rv-stars">★★★★★</div><p class="rv-text">"It&#x27;s great, it&#x27;s small but big at the same time, it cools a lot, has a lot of power, and lasts quite long without draining. The only downside is that it takes a while to charge."</p><div class="rv-foot"><div class="rv-av">M</div><div><div class="rv-name">María</div><div class="rv-verified">✓ Verified Purchase</div></div></div></div><div class="rv-card"><div class="rv-stars">★★★★★</div><p class="rv-text">"I bought various mini fans, but this model has the best cost-performance ratio. It has good wind power and also comes with a handy flashlight, which is useful."</p><div class="rv-foot"><div class="rv-av">M</div><div><div class="rv-name">Min S.</div><div class="rv-verified">✓ Verified Purchase</div></div></div></div></div></div></div>
+
+<section class="vidtest-sec">
+  <div class="vidtest-inner">
+    <div class="sec-hd">
+      <h2>People Are <em style="color:#ffd700">Obsessed</em></h2>
+      <p>Millions of views. Real people. Real heat. Real relief.</p>
+    </div>
+    <div class="vid-row">
+      <div>
+        <div class="vid-phone">
+          <video src="https://media.winninghunter.com/tiktok-shop/videos/7636727163265355021.mp4" loop muted playsinline preload="metadata"></video>
+          <div class="vid-overlay"><div class="play-btn">▶</div></div>
+        </div>
+        <div class="vid-info">
+          <div class="vid-stars">★★★★★</div>
+          <div class="vid-quote">"100 speeds is no joke. On turbo it cools me in seconds at the festival. Battery lasted the whole day."</div>
+          <div class="vid-views">👁 2.7M views</div>
+        </div>
+      </div>
+      <div>
+        <div class="vid-phone">
+          <video src="https://media.winninghunter.com/tiktok-shop/videos/7633588418236304671.mp4" loop muted playsinline preload="metadata"></video>
+          <div class="vid-overlay"><div class="play-btn">▶</div></div>
+        </div>
+        <div class="vid-info">
+          <div class="vid-stars">★★★★★</div>
+          <div class="vid-quote">"The digital display is everything. I love seeing the battery % and exact speed. Folds flat into my bag too."</div>
+          <div class="vid-views">👁 2.7M views</div>
+        </div>
+      </div>
+      <div>
+        <div class="vid-phone">
+          <video src="https://media.winninghunter.com/tiktok-shop/videos/7575993443491597599.mp4" loop muted playsinline preload="metadata"></video>
+          <div class="vid-overlay"><div class="play-btn">▶</div></div>
+        </div>
+        <div class="vid-info">
+          <div class="vid-stars">★★★★★</div>
+          <div class="vid-quote">"Tiny but mighty. I keep it on my desk folded flat, then grab it for my walk. Best summer buy."</div>
+          <div class="vid-views">👁 404K views</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="specs-sec">
+  <div class="specs-inner">
+    <div class="sec-hd"><h2>Technical <em>Specs</em></h2></div>
+    <table class="spec-table">
+      <thead><tr><th>Specification</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr><td class="sn">Motor</td><td class="sv">Turbo brushless — silent &amp; long-lasting</td></tr>
+        <tr><td class="sn">Wind Speeds</td><td class="sv">100 adjustable levels</td></tr>
+        <tr><td class="sn">Display</td><td class="sv">Digital LED — speed + battery %</td></tr>
+        <tr><td class="sn">Runtime</td><td class="sv">Up to 6 hours</td></tr>
+        <tr><td class="sn">Charge Time</td><td class="sv">~2 hours via USB-C</td></tr>
+        <tr><td class="sn">Fold</td><td class="sv">180° foldable (handheld ↔ desk)</td></tr>
+        <tr><td class="sn">Charging</td><td class="sv">USB-C (cable included)</td></tr>
+        <tr><td class="sn">Colors</td><td class="sv">White / Black / Gold</td></tr>
+        <tr><td class="sn">Best For</td><td class="sv">Travel · festivals · gym · office · outdoors</td></tr>
+        <tr><td class="sn">Warranty</td><td class="sv">30-Day satisfaction guarantee</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="faq-sec">
+  <div class="faq-inner">
+    <div class="sec-hd"><h2>Frequently Asked <em>Questions</em></h2></div>
+    <div class="faq-list">
+      <div class="faq-item open"><button class="faq-q" onclick="faq(this)">How do the 100 speeds work?<span class="faq-arr">+</span></button><div class="faq-a">A single dial lets you fine-tune airflow across 100 levels — from a barely-there breeze for sleeping to full turbo that cools you in seconds. The current level shows on the digital display.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="faq(this)">How long does the battery last?<span class="faq-arr">+</span></button><div class="faq-a">Up to 6 hours on lower speeds. Recharges fully via USB-C in about 2 hours. You can also use it while plugged in for unlimited runtime at your desk.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="faq(this)">How does the free gift offer work?<span class="faq-arr">+</span></button><div class="faq-a">Add 2 Mini Turbo fans to your cart, then add 1 AirClip™ — it becomes free automatically at checkout. No code needed. One free gift per order.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="faq(this)">Does it really fold flat?<span class="faq-arr">+</span></button><div class="faq-a">Yes — it folds 180° so it stands on its own as a desk fan, and folds back into a compact handheld that slips into any pocket or bag.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="faq(this)">What's your return policy?<span class="faq-arr">+</span></button><div class="faq-a">Full 30-day no-questions-asked returns. Email support@novahomeco.shop for a refund. No forms, no hassle.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="faq(this)">How fast does it ship?<span class="faq-arr">+</span></button><div class="faq-a">Standard US: 5–8 business days. Express 2–3 days available at checkout. Free shipping on every order.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="also-sec">
+  <div class="also-inner">
+    <div class="sec-hd"><h2>You Might Also <em>Love</em></h2></div>
+    <div class="also-card">
+      <div class="also-img" style="padding:0;overflow:hidden;background:#e8f5f2"><img src="https://cdn.shopify.com/s/files/1/1035/2931/6682/files/5fb279044e8393895413f091789c.jpg?v=1779697817" alt="DroneFan" style="width:100%;height:300px;object-fit:cover;display:block"></div>
+      <div class="also-info">
+        <div class="also-tag">New Arrival · #2 Best Seller</div>
+        <h3 class="also-title">DroneFan™</h3>
+        <p class="also-desc">The next evolution in personal cooling. Drone-inspired handheld design. Bladeless, powerful, and striking. </p>
+        <div class="also-price">$34.90</div>
+        <a href="/products/drone-fan" class="btn-also">Shop DroneFan™ →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 <strong>NovaHome™</strong> — novahomeco.shop<br>
+  <a href="/policies/privacy-policy">Privacy Policy</a> · <a href="/policies/terms-of-service">Terms</a> · <a href="/policies/refund-policy">Refunds</a> · <a href="/apps/17TRACK">📦 Track Your Order</a> · <a href="/pages/contact">Contact</a></p>
+</footer>
+
+<div class="sticky-bar">
+  <div class="sticky-row">
+    <span class="sticky-price" id="mP">{{ product.price | money }}</span>
+    <button class="btn-cart" onclick="addCart()">🛒 Add to Cart</button>
+  </div>
+</div>
+
+<div class="toast" id="toast">✅ Added to cart!</div>
+
+<script>
+// META PIXEL — NovaHome
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1699938487861927');
+fbq('track','PageView');
+fbq('track','ViewContent',{content_name:'Mini Turbo USB Handheld Fan',content_type:'product',value:{{ product.price | divided_by: 100.0 }},currency:'USD'});
+var sl=0,total=6;
+(function initDots(){var d=document.getElementById('slDots');for(var i=0;i<total;i++){var dot=document.createElement('div');dot.className='dot'+(i===0?' on':'');dot.onclick=(function(i){return function(){goSlide(i)}})(i);d.appendChild(dot)}})();
+function goSlide(n){sl=n;document.getElementById('slTrack').style.transform='translateX(-'+sl*100+'%)';document.querySelectorAll('.dot').forEach(function(d,i){d.className='dot'+(i===sl?' on':'')})}
+function slide(d){goSlide((sl+d+total)%total)}
+setInterval(function(){slide(1)},3500);
+
+var qty=1;
+function pick(c,p,q){document.querySelectorAll('.b-card').forEach(function(x){x.classList.remove('sel')});c.classList.add('sel');qty=q;document.getElementById('showPrice').textContent=p;document.getElementById('cartP').textContent=p;document.getElementById('mP').textContent=p;var gp=document.getElementById('giftPicker');if(gp)gp.style.display=(q>=2)?'block':'none'}
+function setGift(vid,btn){mtGiftVar=vid;document.querySelectorAll('.gift-btn').forEach(function(x){x.classList.remove('gift-sel');x.style.borderColor='#cce5e0'});btn.classList.add('gift-sel');btn.style.borderColor='#00695c'}
+
+var variantId=61950087364938;
+function col(s,n,vid){document.querySelectorAll('.c-swatch').forEach(function(x){x.classList.remove('sel')});s.classList.add('sel');document.getElementById('colorName').textContent=n;variantId=vid}
+
+function openDrawer(){
+  document.getElementById('cdOverlay').classList.add('open');
+  document.getElementById('cdDrawer').classList.add('open');
+  document.body.style.overflow='hidden';
+  fetchCart();
+}
+function closeDrawer(){
+  document.getElementById('cdOverlay').classList.remove('open');
+  document.getElementById('cdDrawer').classList.remove('open');
+  document.body.style.overflow='';
+}
+function fetchCart(){
+  fetch('/cart.js').then(function(r){return r.json()}).then(function(cart){
+    var body=document.getElementById('cdBody');
+    var foot=document.getElementById('cdFoot');
+    var totalEl=document.getElementById('cdTotal');
+    var shipNote=document.getElementById('cdShipNote');
+    var navCount=document.getElementById('navCartCount');
+    var totalQty=cart.items.reduce(function(s,i){return s+i.quantity},0);
+    if(navCount){if(totalQty>0){navCount.textContent=totalQty;navCount.style.display='flex'}else{navCount.style.display='none'}}
+    if(!cart.items.length){
+      body.innerHTML='<div class="cd-empty">🛒 Your cart is empty</div>';
+      foot.style.display='none';return;
+    }
+    foot.style.display='flex';
+    var total=cart.total_price/100;
+    totalEl.textContent='$'+total.toFixed(2);
+    shipNote.style.display=total>=35?'block':'none';
+    body.innerHTML=cart.items.map(function(item){
+      var img=item.image||'';
+      var vt=item.variant_title&&item.variant_title!=='Default Title'?'<div class="cd-item-var">'+item.variant_title+'</div>':'';
+      return '<div class="cd-item">'
+        +'<img class="cd-item-img" src="'+img+'" alt="'+item.product_title+'">'
+        +'<div class="cd-item-info">'
+        +'<div class="cd-item-name">'+item.product_title+'</div>'
+        +vt
+        +'<div class="cd-item-bottom">'
+        +'<div class="cd-qty-ctrl">'
+        +'<button onclick="chgQty(\''+item.key+'\','+(item.quantity-1)+')">−</button>'
+        +'<span>'+item.quantity+'</span>'
+        +'<button onclick="chgQty(\''+item.key+'\','+(item.quantity+1)+')">+</button>'
+        +'</div>'
+        +'<span class="cd-item-price">$'+(item.final_line_price/100).toFixed(2)+'</span>'
+        +'</div>'
+        +'<button class="cd-item-remove" onclick="chgQty(\''+item.key+'\',0)">Remove</button>'
+        +'</div></div>';
+    }).join('');
+  }).catch(function(){document.getElementById('cdBody').innerHTML='<div class="cd-empty">Error loading cart. Please refresh.</div>';});
+}
+function chgQty(key,q){
+  fetch('/cart/change.js',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:key,quantity:q})})
+  .then(function(r){return r.json()}).then(function(){fetchCart()});
+}
+function updateCartCount(){
+  fetch('/cart.js').then(function(r){return r.json()}).then(function(cart){
+    var n=document.getElementById('navCartCount');
+    if(!n)return;
+    var q=cart.items.reduce(function(s,i){return s+i.quantity},0);
+    if(q>0){n.textContent=q;n.style.display='flex'}else{n.style.display='none'}
+  });
+}
+updateCartCount();
+
+// AirClip White = regalo cuando compras 2 Mini Turbo (el descuento automático lo pone a $0)
+var mtGiftVar=61916644180298;
+function mtBuildItems(){
+  var items=[{id:variantId,quantity:qty}];
+  if(qty>=2)items.push({id:mtGiftVar,quantity:1});
+  return items;
+}
+function addCart(){
+  var btn=document.getElementById('cartBtn');
+  var origHtml=btn?btn.innerHTML:'';
+  if(btn){btn.textContent='Adding...';btn.disabled=true}
+  if(window.fbq)fbq('track','AddToCart',{content_name:'Mini Turbo USB Handheld Fan',content_type:'product',value:{{ product.price | divided_by: 100.0 }},currency:'USD'});
+  fetch('/cart/add.js',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({items:mtBuildItems()})})
+  .then(function(r){return r.json()})
+  .then(function(){
+    if(btn){btn.innerHTML=origHtml;btn.disabled=false}
+    openDrawer();
+  })
+  .catch(function(){
+    if(btn){btn.innerHTML=origHtml;btn.disabled=false}
+    openDrawer();
+  });
+}
+function buyNow(){
+  var btn=document.querySelector('.btn-now');
+  if(btn){btn.textContent='Going to checkout...';btn.disabled=true}
+  if(window.fbq)fbq('track','InitiateCheckout',{content_name:'Mini Turbo',content_type:'product',value:{{ product.price | divided_by: 100.0 }},currency:'USD'});
+  fetch('/cart/add.js',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({items:mtBuildItems()})})
+  .then(function(){window.location.href='/checkout'})
+  .catch(function(){window.location.href='/checkout'});
+}
+
+function faq(b){var it=b.parentElement;it.classList.toggle('open')}
+function qa(b){var it=b.parentElement;it.classList.toggle('open')}
+
+// COUNTDOWN TIMER
+(function(){
+  var end=Date.now()+ (4*3600+59*60+59)*1000;
+  var el=document.getElementById('cdClock');
+  function tick(){
+    var d=Math.max(0,end-Date.now());
+    if(d<=0){end=Date.now()+5*3600*1000;d=5*3600*1000}
+    var h=Math.floor(d/3600000),m=Math.floor(d%3600000/60000),s=Math.floor(d%60000/1000);
+    if(el)el.textContent=(h<10?'0':'')+h+':'+(m<10?'0':'')+m+':'+(s<10?'0':'')+s;
+  }
+  tick();setInterval(tick,1000);
+})();
+// LIVE VIEWERS (fluctua)
+(function(){
+  var el=document.getElementById('liveN');
+  setInterval(function(){ if(el){var n=22+Math.floor(Math.random()*14);el.textContent=n;} },4000);
+})();
+// STOCK baja lento
+(function(){
+  var el=document.getElementById('stockN');var n=38;
+  setInterval(function(){ if(el&&n>9&&Math.random()>0.6){n--;el.textContent=n;} },22000);
+})();
+
+function initVideos(){
+  var vids=document.querySelectorAll('.vid-phone');
+  vids.forEach(function(phone){
+    var vid=phone.querySelector('video');
+    var ov=phone.querySelector('.vid-overlay');
+    ov.addEventListener('click',function(){vid.play();ov.classList.add('hide')});
+    vid.addEventListener('click',function(){if(vid.paused){vid.play();ov.classList.add('hide')}else{vid.pause();ov.classList.remove('hide')}});
+  });
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      var v=e.target.querySelector('video');
+      var o=e.target.querySelector('.vid-overlay');
+      if(e.isIntersecting){if(v)v.play();if(o)o.classList.add('hide')}
+      else{if(v)v.pause();if(o)o.classList.remove('hide')}
+    });
+  },{threshold:0.6});
+  vids.forEach(function(p){obs.observe(p)});
+}
+initVideos();
+</script>
+
+{% schema %}
+{"name":"Mini Turbo Product","settings":[]}
+{% endschema %}
